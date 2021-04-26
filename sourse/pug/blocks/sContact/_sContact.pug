@@ -1,4 +1,4 @@
-mixin sContact()
+mixin sContact(data)
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
 		.container
@@ -8,13 +8,13 @@ mixin sContact()
 			+e.row.row
 				mixin item(t,icon,link)
 					.col-lg-4.col-6
-						+e.item(href= link)
-							+e.iconWrap(class=`--${icon}`)
+						+e.item(href= link class=`--${icon}` target='_blank')
+							+e.iconWrap
 								+icon(icon)
 							span= t
-				+item('WhatsApp','whatsapp','#')
-				+item('Viber','viber','#')
-				+item('Telegram','telegram','#')
+				+item('WhatsApp','whatsapp','https://wa.me/83519232020')
+				+item('Viber','viber','viber://chat?number=83519232020')
+				+item('Telegram','telegram','tg://resolve?domain=83519232020')
 			.text-center
 				h3 Или свяжитесь с нами по номеру
 				+e.tel(href="tel:83519232020") 8 (3519) 23-20-20

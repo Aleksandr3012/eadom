@@ -25,6 +25,31 @@
 			border: 1px solid #e7e7e7;
 			background-color: #ffffff;
 		}
+
+		&--whatsapp {
+			.sContact__iconWrap {
+				background-color: #27d365;
+			}
+			span {
+				color: #26d367;
+			}
+		}
+		&--viber {
+			.sContact__iconWrap {
+				background-color: #665dac;
+			}
+			span {
+				color: #675bad;
+			}
+		}
+		&--telegram {
+			.sContact__iconWrap {
+				background-color: #139bcf;
+			}
+			span {
+				color: #139ad1;
+			}
+		}
 	}
 
 	&__row {
@@ -58,16 +83,6 @@
 		.icon {
 			font-size: rem(23);
 			color: #fff;
-		}
-
-		&--whatsapp {
-			background-color: #27d365;
-		}
-		&--viber {
-			background-color: #665dac;
-		}
-		&--telegram {
-			background-color: #139bcf;
 		}
 	}
 	@include media-breakpoint-up(xs) {
