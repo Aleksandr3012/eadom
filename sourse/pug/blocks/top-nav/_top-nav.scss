@@ -15,6 +15,9 @@
 	&.fixed {
 		bottom: auto;
 		// margin-top: 0;
+		.top-nav__inner {
+			box-shadow: 3px 3px 20px rgba(125, 132, 136, 0.42);
+		}
 	}
 
 	&__inner {
