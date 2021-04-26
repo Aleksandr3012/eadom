@@ -1,0 +1,151 @@
+.footer {
+	padding-bottom: rem(30);
+	margin-top: auto;
+	@include media-breakpoint-down(sm) {
+		text-align: center;
+	}
+
+	&__logo {
+		display: inline-block;
+		margin-bottom: rem(24);
+	}
+	&__copyright {
+		font-size: $small;
+		color: #3a3a3a;
+		font-weight: 300;
+		max-width: rem(266);
+		@include media-breakpoint-down(sm) {
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: rem(40);
+		}
+	}
+	&__news {
+		color: #535353;
+		font-size: 13px;
+		font-weight: 300;
+		padding-bottom: rem(13);
+	}
+	&__soc {
+		@include media-breakpoint-down(sm) {
+		}
+	}
+	&__socLink {
+		font-size: 15px;
+		font-weight: 300;
+		display: flex;
+		@include media-breakpoint-down(sm) {
+			justify-content: center;
+		}
+		margin-bottom: rem(13);
+		align-items: center;
+		text-decoration: none;
+		color: #535353 !important;
+
+		.icon {
+			flex-shrink: 0;
+			margin-right: rem(13);
+			font-size: rem(18);
+			color: #535353;
+		}
+		img {
+			flex-shrink: 0;
+			margin-right: rem(13);
+		}
+	}
+
+	&__mainRow {
+		// @include roww(10px);
+		padding-bottom: rem(40);
+		@include media-breakpoint-up(md) {
+			padding-bottom: rem(70);
+		}
+		@include media-breakpoint-up(xl) {
+			@include roww(68px);
+		}
+	}
+
+	&__polite {
+		color: #bababa;
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: rem(27);
+		display: inline-block;
+		text-decoration: none;
+	}
+
+	&__devWrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		span {
+			color: #595959;
+			font-size: 13px;
+			letter-spacing: 0.26px;
+		}
+	}
+	&__dev {
+		max-width: rem(102);
+		display: inline-block;
+		margin-left: rem(10);
+	}
+
+	@include media-breakpoint-up(xs) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xs) {
+	}
+}
+
+.footerMnu {
+	@extend .row;
+	@include roww(10px);
+	@include media-breakpoint-up(xl) {
+		@include roww(87px);
+	}
+	&__item {
+		list-style: none;
+		@extend .col-md-6;
+		padding-bottom: rem(10);
+		@include media-breakpoint-up(xl) {
+			padding-bottom: rem(27);
+		}
+	}
+	&__link {
+		text-decoration: none;
+		color: #535353;
+		font-size: rem(15);
+		font-weight: 300;
+		max-width: rem(222);
+		display: inline-block;
+		&:hover {
+			color: $primary;
+		}
+	}
+}
+
+.partners {
+	padding-bottom: rem(50);
+	&__title {
+		text-align: center;
+		text-transform: uppercase;
+		color: #3a3a3a;
+		font-size: 12px;
+		margin-bottom: rem(27);
+	}
+
+	&__slider {
+		max-width: rem(970);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__slide {
+		max-width: 65px;
+	}
+}

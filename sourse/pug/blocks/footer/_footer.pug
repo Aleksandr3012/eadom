@@ -1,0 +1,35 @@
+mixin footer(data)
+	+b.FOOTER.footer
+		.container
+			+e.mainRow.row 
+				.col-sm-auto 
+					+e.logo(href="/")
+						img.res-i(src="img/@2x/logo.png" alt="" loading='lazy')
+					+e.copyright &copy;&nbsp;Копирование и&nbsp;распространение материалов с&nbsp;сайта, без письменного согласия правообладателя запрещено.
+				.col-sm 
+					+b.UL.footerMnu
+						each link in data.links 
+							+e.LI.item 
+								+e.A.link(href!= link.href)!= link.text 
+				.col-lg-auto
+					+e.news Следите за новостями:
+					+e.soc 
+						+e.socLink(href=data.instargam target="_blank") 
+							+icon('instagram')
+							| Instagram
+						+e.socLink(href=data.vk target="_blank") 
+							+pic('vk.png','','')
+							| ВКонтакте
+			+b.partners 
+				+e.title НАШИ ПАРТНЕРЫ:
+				+e.slider--js.swiper-container
+					.swiper-wrapper
+						each slide in data.slides 
+							+e.slide.swiper-slide
+								+pic(slide.img,'','')
+			.text-center
+				+e.polite(href= data.politeLink target="_blank") ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
+			+e.devWrap 
+				span Создание и продвижение сайта: 
+				+e.dev(href="https://simonov.marketing" target="_blank")
+					img.res-i(src="img/svg/simonov.svg" loading='lazy')

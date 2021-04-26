@@ -1,0 +1,42 @@
+.soc {
+	@include roww(2px, m);
+	display: flex;
+	&__item {
+		text-decoration: none !important;
+		vertical-align: middle;
+		@include mt;
+		display: grid;
+		place-items: center;
+		background: var(--soc-bg);
+		border-radius: 50%;
+		padding: rem(3);
+		&:hover {
+			opacity: 0.8;
+		}
+
+		&--whatsapp {
+			--soc-bg: #27d365;
+		}
+		&--viber {
+			--soc-bg: #665dac;
+		}
+		&--telegram {
+			--soc-bg: #139bcf;
+		}
+	}
+	.icon {
+		font-size: rem(18);
+		color: #fff;
+	}
+}
+
+.counter {
+	counter-reset: num;
+	&__item {
+		position: relative;
+		&::before {
+			content: counter(num);
+			counter-increment: num;
+		}
+	}
+}

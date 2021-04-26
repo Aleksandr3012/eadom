@@ -1,0 +1,47 @@
+//- WP menu
+mixin mnu()
+	-
+		var nav= { 
+			"Наши работы":"#",
+			"Цены":"#",
+			"Калькулятор":"#",
+			"Акции":"#" ,
+			"Заказать":"#",
+			}
+	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
+		li.menu-item.menu-item-has-children
+			a(href="#" itemprop="url") О нас
+			ul.sub-menu
+				-
+					var subnav= { 
+						"Строительство загородных домов":"#",
+						"Отделка загородных домов":"#",
+						"Покраска деревянных домов":"#",
+						"Штукатурные фасады загородных домов":"#" ,
+						}
+				each sublinkPatch, sublinkName in nav
+					li.menu-item(itemprop="item" ): a(href= sublinkPatch itemprop="url")= sublinkName
+		each linkPatch, linkName in nav
+			li.menu-item(itemprop="item" ): a(href= linkPatch itemprop="url")= linkName
+
+//- menu
+//- /WP menu
+
+
+
+mixin mnu()
+
+	+b.UL.navMenu(itemscope itemtype="http://schema.org/SiteNavigationElement")
+		+e.LI.item.active( temprop="item" itemprop="url"): +e.A.link(href="#" itemprop="url") Главная
+		+e.LI.item--has-children( itemprop="item" )
+			+e.A.link(href="#" itemprop="url") Услуги
+			+b.UL.sub-menu
+				+e.LI.item( temprop="item"  ): +e.A.link(href="#" itemprop="url") Строительство и&nbsp;ремонт коммерческой недвижимости
+				+e.LI.item( temprop="item"  ): +e.A.link(href="#" itemprop="url") Строительство домов и&nbsp;коттеджей
+				+e.LI.item( temprop="item"  ): +e.A.link(href="#" itemprop="url") Проекты домов со&nbsp;стоимостью
+				+e.LI.item( temprop="item"  ): +e.A.link(href="#" itemprop="url") Производство и&nbsp;продажа строительных материалов
+		+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="#" itemprop="url") Проекты домов 
+		+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="#" itemprop="url") Вакансии
+		+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="#" itemprop="url") Контакты
+
+//- /menu

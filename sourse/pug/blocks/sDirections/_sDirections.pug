@@ -1,0 +1,20 @@
+mixin sDirections(data)
+	// start sDirections
+	+b.SECTION.sDirections.section#sDirections&attributes(attributes)
+		.container
+			+e.inner.text-center
+				+b.section-title
+					h2!= data.h2
+					h3!= data.h3
+
+				.row
+					each item in data.items 
+						.col-md-6 
+							+e.item 
+								+pic(item.img, 'bg', '')(class="picture-bg")
+								+e.title!= item.title
+								+e.hidden
+									p!= item.subtitle 
+									+e.btnWrap
+										+btn('Выбрать','','#') 
+	// end sDirections

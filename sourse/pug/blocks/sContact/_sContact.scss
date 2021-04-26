@@ -1,0 +1,81 @@
+// start .sContact
+.sContact {
+	--sTPB: #{rem(55)};
+	--sPB: #{rem(71)};
+	.section-title {
+	}
+
+	h3 {
+		color: #707070;
+	}
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 3px 3px 35px rgba(154, 187, 206, 0.19);
+		border-radius: 5px;
+		background-color: #ffffff;
+		border: 1px solid transparent;
+		padding: rem(16);
+		margin-bottom: rem(15);
+		text-decoration: none;
+		&:hover {
+			box-shadow: 3px 3px 20px rgba(125, 132, 136, 0.42);
+			border-radius: 5px;
+			border: 1px solid #e7e7e7;
+			background-color: #ffffff;
+		}
+	}
+
+	&__row {
+		@include roww(31px);
+		margin-bottom: rem(64);
+		justify-content: center;
+	}
+
+	&__tel {
+		@extend .mono;
+		letter-spacing: rem(1.2px);
+		font-size: rem(35);
+		@include media-breakpoint-up(sm) {
+			font-size: rem(60);
+		}
+		color: $gray-900 !important;
+		text-decoration: none;
+	}
+
+	&__iconWrap {
+		border-radius: 50%;
+		margin-right: rem(10);
+		// padding: rem(5);
+		flex-shrink: 0;
+		width: rem(36);
+		height: rem(36);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.icon {
+			font-size: rem(23);
+			color: #fff;
+		}
+
+		&--whatsapp {
+			background-color: #27d365;
+		}
+		&--viber {
+			background-color: #665dac;
+		}
+		&--telegram {
+			background-color: #139bcf;
+		}
+	}
+	@include media-breakpoint-up(xs) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xs) {
+	}
+} // end.sContact

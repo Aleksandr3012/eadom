@@ -1,0 +1,142 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sDirections/_sDirections.pug
+
+block variables
+	- let  mainPage= 'mainPage' 
+	- let  bg= null
+
+block title
+	- let  title= 'Eвразия'
+	title= title
+block pagecontent
+
+
+	+mob-mnu()
+	+header()
+		+top-nav()
+	+headerBlock({
+		h1: `Проектирование, строительство, ремонт`,
+		h3: `Коммерческой недвижимости, домов и&nbsp;коттеджей`,
+		strong: `С 2001 г. сдали более 600 объектов `,
+		smText: `в&nbsp;Магнитогорске, Челябиской обл., Респ. Башкортостан`
+	})
+	+sDirections({
+		h2: `Компания ООО ПСК Евразия работает по&nbsp;разным направлениям`,
+		h3: `Выберите, что вас интересует:`,
+		items: [
+			{
+				img: 'sDirections-1.jpg',
+				title: `Строительство и&nbsp;ремонт коммерческой недвижимости`,
+				subtitle: `офисов, магазинов, производственных, промышленных зданий и&nbsp;сооружений`
+			},
+			{
+				img: 'sDirections-2.jpg',
+				title: `Строительство домов и&nbsp;коттеджей`,
+				subtitle: `офисов, магазинов, производственных, промышленных зданий и&nbsp;сооружений`
+			},
+			{
+				img: 'sDirections-3.jpg',
+				title: `Проекты домов со&nbsp;стоимостью`,
+				subtitle: `офисов, магазинов, производственных, промышленных зданий и&nbsp;сооружений`
+			},
+			{
+				img: 'sDirections-4.jpg',
+				title: `Производство и&nbsp;продажа строительных материалов`,
+				subtitle: `офисов, магазинов, производственных, промышленных зданий и&nbsp;сооружений`
+			},
+		]
+	})
+	+sForm({
+		h2: `Приезжайте в наш офис, <br>чтобы лично обсудить условия сотрудничества`,
+		formTitle: `Запишитесь на&nbsp;встречу в&nbsp;1&nbsp;клик`,
+		text: `Офис-менеджер Наталья позвонит, чтобы уточнить детали и&nbsp;запишет&nbsp;вас на&nbsp;удобное время`
+	})
+	+sContact()
+	+footer({
+		instargam: '#',
+		vk: '#',
+		politeLink: '#',
+
+		links: [
+			{
+				text: `Строительство и&nbsp;ремонт коммерческой недвижимости`,
+				href: `#`
+			},
+			{
+				text: `Проекты домов со&nbsp;стоимостью`,
+				href: `#`
+			},
+			{
+				text: `Строительство домов и&nbsp;коттеджей`,
+				href: `#`
+			},
+			{
+				text: `Производство и&nbsp;продажа строительных материалов`,
+				href: `#`
+			},
+			{
+				text: `Вакансии`,
+				href: `#`
+			},
+			{
+				text: `Контакты`,
+				href: `#`
+			}
+		],
+		slides: [
+			{
+				img: 'partner-1.jpg'
+			},
+			{
+				img: 'partner-2.jpg'
+			},
+			{
+				img: 'partner-3.jpg'
+			},
+			{
+				img: 'partner-4.jpg'
+			},
+			{
+				img: 'partner-5.jpg'
+			},
+			{
+				img: 'partner-6.jpg'
+			},
+			{
+				img: 'partner-7.jpg'
+			},
+			{
+				img: 'partner-8.jpg'
+			}
+		],
+	})
+
+	//- +b.tabs--js.opacity-50
+	//- 	+e.caption.d-flex
+	//- 		+e.btn.btn.btn-warning.active  btn1
+	//- 		+e.btn.btn.btn-warning btn 2
+	//- 		+e.btn.btn.btn-warning btn 3
+	//- 		+e.btn.btn.btn-warning btn 4
+	//- 	+e.wrap
+	//- 		+e.content.active content 1
+	//- 		+e.content content 2
+	//- 		+e.content content 3
+	//- 		+e.content content 4
+	//- +b.tabs--js
+	//- 	+e.caption.d-flex
+	//- 		+e.btn.btn.btn-success.active  btn  2 1
+	//- 		+e.btn.btn.btn-success btn 2  2
+	//- 		+e.btn.btn.btn-success btn 2  3
+	//- 		+e.btn.btn.btn-success btn  2 4
+	//- 	+e.wrap
+	//- 		+e.content.active content 1
+	//- 		+e.content content 2
+	//- 		+e.content content 3
+	//- 		+e.content content 4
+
+
+

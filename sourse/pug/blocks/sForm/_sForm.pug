@@ -1,0 +1,28 @@
+mixin sForm(data)
+	// start sForm
+	+b.SECTION.sForm.section#sForm&attributes(attributes)
+		+pic('form-bg.png','bg')(class="picture-bg")
+		.container
+			+b.section-title.text-center
+				h2!= data.h2
+
+			.row
+				+e.imgCol.col.d-none.d-lg-block.align-self-end 
+					+e.imgWrap 
+						+pic('manager.png')
+				.col 
+					+e.form 
+						+e.fotmTitle!= data.formTitle 
+							img.d-none.d-lg-inline(src="img/@2x/tap.png" alt="" loading='lazy')
+						+e.textWrap
+							.row 
+								.col
+									p!= data.text 
+								.col-auto.d-lg-none 
+									+e.imgSm 
+										+pic('manager-sm.png','','')
+						+form-wrap 
+							+input('Введите ваш телефон','tel')
+							+btn('Записаться на встречу','btn')
+							+polite
+	// end sForm

@@ -1,0 +1,102 @@
+// start .sForm
+.sForm {
+	--sPT: #{rem(30)};
+	padding-bottom: 0;
+	// --sPB: ;
+	// --sTPB: ;
+	position: relative;
+	&__form {
+		box-shadow: 3px 3px 35px rgba(154, 187, 206, 0.19);
+		border-radius: 5px;
+		background-color: #ffffff;
+		padding: rem(27) rem(16);
+		@include media-breakpoint-up(sm) {
+			padding: rem(57) rem(53) rem(49) rem(65);
+		}
+		padding-bottom: var(--sPB);
+		max-width: rem(518);
+		margin-bottom: rem(20);
+		@include media-breakpoint-between(sm, lg) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	h2 {
+		letter-spacing: rem(0.9px);
+	}
+
+	&__fotmTitle {
+		@extend .mono;
+		color: #1b1b1b;
+		font-size: rem(36);
+		letter-spacing: 0.72px;
+		position: relative;
+		line-height: calc(40 / 36);
+		img {
+			display: inline-block;
+		}
+	}
+	&__textWrap {
+	}
+	p {
+		color: #707070;
+		font-weight: 300;
+		font-size: rem(20);
+		letter-spacing: 0.4px;
+		max-width: rem(350);
+	}
+	&__imgWrap {
+		margin-right: rem(-50);
+		margin-left: rem(50);
+	}
+
+	.form-wrap {
+		@include media-breakpoint-up(sm) {
+			max-width: rem(371);
+		}
+		&__input {
+			height: rem(50);
+			@include media-breakpoint-up(md) {
+				height: rem(82);
+			}
+		}
+		&__input-wrap {
+			padding-bottom: rem(35);
+		}
+		&__btn {
+			margin-bottom: rem(25);
+			display: block;
+			width: 100%;
+			span {
+				display: block;
+				padding: rem(33) rem(20);
+			}
+		}
+	}
+
+	&__imgSm {
+		// float: right;
+	}
+
+	@include media-breakpoint-up(xs) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xs) {
+	}
+} // end.sForm
+
+input[type="tel"] {
+	background-image: url("../img/svg/phone.svg");
+	background-repeat: no-repeat;
+	background-position-x: 15px;
+	background-position-y: center;
+	padding-left: rem(50);
+	@include media-breakpoint-up(md) {
+		background-position-x: 30px;
+		padding-left: rem(70);
+	}
+}

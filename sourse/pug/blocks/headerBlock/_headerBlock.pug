@@ -1,0 +1,21 @@
+mixin headerBlock(data)
+	// start headerBlock
+	+b.headerBlock.section#headerBlock&attributes(attributes)
+		+pic('header-bg.jpg','bg')(class='picture-bg')
+		.container
+
+
+			.row
+				.col 
+					+b.section-title
+						h1!= data.h1
+						h3!= data.h3
+				.col-md-auto 
+					+e.descrWrap 
+						+e.descr
+							+e.imgWrap
+								+pic('checked.png','','')
+							p #[strong!= data.strong]
+								span!= data.smText
+
+	// end headerBlock

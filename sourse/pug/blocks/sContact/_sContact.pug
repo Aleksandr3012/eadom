@@ -1,0 +1,21 @@
+mixin sContact()
+	// start sContact
+	+b.SECTION.sContact.section#sContact&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Задавайте свои вопросы прямо сейчас:
+
+			+e.row.row
+				mixin item(t,icon,link)
+					.col-lg-4.col-6
+						+e.item(href= link)
+							+e.iconWrap(class=`--${icon}`)
+								+icon(icon)
+							span= t
+				+item('WhatsApp','whatsapp','#')
+				+item('Viber','viber','#')
+				+item('Telegram','telegram','#')
+			.text-center
+				h3 Или свяжитесь с нами по номеру
+				+e.tel(href="tel:83519232020") 8 (3519) 23-20-20
+	// end sContact

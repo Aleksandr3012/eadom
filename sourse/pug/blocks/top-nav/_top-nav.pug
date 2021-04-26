@@ -1,0 +1,45 @@
+mixin mob-mnu()
+	-
+		//- let path = require('path');
+		//- let fs = require('fs');
+		//- var requestURL = 'top-nav.json';
+		//- var request = new XMLHttpRequest();
+		//- request.open('GET', requestURL);
+		//- request.responseType = 'json';
+		//- let dataJson = JSON.parse(json);
+		//- h1= dataJson['lala'] 
+	+b.menu-mobile--js.d-lg-none
+		+b.toggle-menu-mobile--js.on
+			span
+		+e.inner
+
+			+mnu()
+			.text-right
+	//  мобильное меню
+mixin top-nav() 
+	// start top-nav
+	+b.top-nav.block-with-lazy
+		+e.inner
+			.container
+				+e.row.row
+					.col.col-lg-auto 
+						+e.logo(href='#')
+							img.res-i(src="img/@2x/logo.png" alt="")
+					.col.d-none.d-lg-block
+						+mnu()
+					.col-auto 
+						+e.cantactsModal.d-md-none.link-modal.js(href="#modal-contacts")
+							img(src="img/@2x/phone-call.png" alt="")
+						+e.contacts.d-none.d-md-block
+							.row.justify-content-end 
+								.col-auto 
+									+soc()
+								.col-auto
+									+e.tel(href="tel:8(3519)232020") 8 (3519) 23-20-20
+								.col-12
+									+e.call.link-modal-js(href='midal-call') ЗАКАЗАТЬ ЗВОНОК
+					.col-auto.d-lg-none
+						+b.toggle-menu-mobile--js
+							span
+
+	// end top-nav
