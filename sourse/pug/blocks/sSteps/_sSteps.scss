@@ -10,10 +10,12 @@
 
 	&__row {
 		@include roww(40px);
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(-25px);
+		}
 		@include media-breakpoint-up(xl) {
 			@include roww(105px);
 		}
-		margin-bottom: rem(-25px);
 	}
 
 	.container {
@@ -81,14 +83,25 @@
 	}
 
 	.accardion-item {
-		@include media-breakpoint-down(sm) {
+		@include media-breakpoint-down(md) {
 			display: none;
 		}
 	}
 
 	.accardion-toggle {
-		@include media-breakpoint-up(sm) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include media-breakpoint-up(md) {
 			display: none;
+		}
+
+		img {
+			margin-left: rem(10);
+		}
+
+		span {
+			border-bottom: dashed 1px;
 		}
 	}
 

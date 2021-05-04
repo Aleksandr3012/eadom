@@ -23,7 +23,10 @@ block pagecontent
 	//- +b.page-head
 	//- 	.container
 	//- 		+breadcrumb('Главная','Вакансии') 
-	+sThanks()
+	+sThanks({
+		h2: `<span class="text-primary">Благодарим за доверие,</span> проявленное к&nbsp;нашей компании!`,
+		h4: `Перезвоним вам в&nbsp;рабочее время с&nbsp;8:00 до&nbsp;17:00<br>Если у&nbsp;вас срочный вопрос, звоните нам по&nbsp;телефону:`
+	})
 	+footer({
 		instargam: '#',
 		vk: '#',

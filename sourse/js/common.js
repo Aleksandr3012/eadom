@@ -562,6 +562,10 @@ function eventHandler() {
 		},
 	});
 
+	$('.accardion-toggle--js').on('click', function(){
+		$(this).parent().find('.accardion-item').slideToggle();
+	})
+
 
 
 	let items = document.querySelectorAll(".sOurWork__item");

@@ -1,9 +1,25 @@
 mixin sThanks(data)
 	// start sThanks
 	+b.SECTION.sThanks.section#sThanks&attributes(attributes)
+		+pic('thank-bg.jpg','bg')(class="picture-bg")
 		.container
-			+b.section-title
-				h2 sThanks
-
 			.row
+				.col-lg-6.col-md-8
+					+b.section-title
+						h2!= data.h2
+					h4!= data.h4
+					+e.link(href="tel:8(3519)23-20-20") 
+						img.mr-1(src="img/@2x/call.png" alt="" loading="lazy") 
+						|8 (3519) 23-20-20
+					h4 Проекты домов можно посмотреть тут:
+					+e.link(href="https://eadompro.ru")
+						img.mr-1(src="img/@2x/web.png" alt="" loading="lazy") 
+						|eadompro.ru
+				+e.col.col-lg.align-self-end
+					+e.rightBlck 
+						+e.nameBlock 
+							+e.name Андрей Владимирович
+							+e.post Генеральный дирекор <br>ООО ПСК «Евразия»
+						+e.imgWrap 
+							+pic('director-2.png','','')
 	// end sThanks

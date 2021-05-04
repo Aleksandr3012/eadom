@@ -541,6 +541,9 @@ function eventHandler() {
 			clickable: true
 		}
 	});
+	$('.accardion-toggle--js').on('click', function () {
+		$(this).parent().find('.accardion-item').slideToggle();
+	});
 	var items = document.querySelectorAll(".sOurWork__item");
 	items.forEach(function (ell) {
 		var slider = ell.querySelector('.sOurWork__slider--js');
