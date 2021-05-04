@@ -1,8 +1,13 @@
 // start .sSteps
 .sSteps {
 	--sPT: #{rem(43)};
-	--sPB: 0;
+	@include media-breakpoint-up(md) {
+		--sPB: 0;
+	}
 	--sTPB: #{rem(100)};
+	@include media-breakpoint-down(md) {
+		background-color: $light;
+	}
 
 	h2 {
 		letter-spacing: 0.9px;
