@@ -19,3 +19,30 @@ mixin sContact(data)
 				h3 Или свяжитесь с нами по номеру
 				+e.tel(href="tel:83519232020") 8 (3519) 23-20-20
 	// end sContact
+
+
+mixin sContact-inner(data)
+	// start sContact
+	+b.SECTION.sContact--inner.section#sContact&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h1 Контакты
+				h3 Звоните, пишите на email или в мессенджерах
+
+			+e.wrap
+				.text-center
+					h3 По&nbsp;вопросам проектирования, строительства и&nbsp;ремонта
+					+e.tel(href="tel:83519232020") 8 (3519) 23-20-20
+					+e.mail(href="mailto:ea.mgn@mail.ru") ea.mgn@mail.ru
+				+e.row.row
+					mixin item(t,icon,link)
+						.col-lg-4.col-6
+							+e.item(href= link class=`--${icon}` target='_blank')
+								+e.iconWrap
+									+icon(icon)
+								span= t
+					+item('WhatsApp','whatsapp','https://wa.me/83519232020')
+					+item('Viber','viber','viber://chat?number=83519232020')
+					+item('Telegram','telegram','tg://resolve?domain=83519232020')
+
+	// end sContact

@@ -1,0 +1,22 @@
+mixin sVacancies(data)
+	// start sVacancies
+	+b.SECTION.sVacancies.section#sVacancies&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h1 Открытые вакансии
+
+			ol
+				each link in data.links 
+					li
+						//- a(href=link.link )!= link.text
+						a(href='#sForm' )!= link.text
+			+e.sendResume(href="#sForm") Отправить резюме
+			each item in data.items 
+				+e.item(id= item.id) 
+					h3!= item.title 
+					each block in item.blocks
+						+e.subtitle!= block.subtitle 
+						ul 
+							each list in block.lists 
+								li!= list.item
+	// end sVacancies

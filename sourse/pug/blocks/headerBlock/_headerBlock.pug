@@ -1,7 +1,7 @@
 mixin headerBlock(data)
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
-		+pic('header-bg.jpg','bg')(class='picture-bg')
+		+pic(data.bg,'bg')(class='picture-bg')
 		.container
 
 
@@ -19,3 +19,42 @@ mixin headerBlock(data)
 								span!= data.smText
 
 	// end headerBlock
+
+mixin headerBlock-02(data)
+	// start headerBlock
+	+b.headerBlock--commerce.section#headerBlock&attributes(attributes)
+		+pic(data.bg,'bg')(class='picture-bg')
+		.container
+			+e.row.row
+				.col-lg-6 
+					+b.section-title
+						h1!= data.h1
+						h4!= data.h3
+					+btn('Узнать стоимость работ','',data.btnLink)
+					+e.descrWrap--modal 
+						+e.descr
+							.row 
+								.col-6
+									+e.num 01.
+									+e.txt 
+										strong Состоим 
+										a.link-modal-js(href="#modal-certificates-1") 
+											strong в&nbsp;СРО 
+											| по&nbsp;строительству и&nbsp;проектированию
+								.col-6
+									+e.num 02.
+									+e.txt Имеем 
+										a.link-modal-js.d-inline-block(href="#modal-certificates-1") 
+											strong лицензию МЧС
+
+				.col-6.d-none.d-lg-block 
+					+e.slider--js.swiper-container
+						.swiper-wrapper
+							each slide in data.slides 
+								+e.slide.swiper-slide
+									+e.sliderPhoto 
+										+pic(slide.img,'bg')(class='picture-bg')
+									+e.sliderDescr!= slide.slideText
+						+e.nav
+							+arrow
+	// end headerBlock-02

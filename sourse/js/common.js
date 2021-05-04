@@ -133,7 +133,7 @@ const JSCCommon = {
 
 				const active = content.classList.contains('active') ? 'active' : '';
 				// console.log(el.innerHTML);
-				content.insertAdjacentHTML("beforebegin", `<div class="tabs__btn-accordion  btn btn-primary  mb-1 ${active}" data-tab-btn="${data}">${el.innerHTML}</div>`)
+				content.insertAdjacentHTML("beforebegin", `<div class="tabs__btn ${active}" data-tab-btn="${data}">${el.innerHTML}</div>`)
 			})
 
 
@@ -241,9 +241,9 @@ const JSCCommon = {
 
 		$(document).on('click', " .top-nav li a, .scroll-link", function () {
 			const elementClick = $(this).attr("href");
-			const destination = $(elementClick).offset().top;
+			const destination = $(elementClick).offset().top(100);
 
-			$('html, body').animate({ scrollTop: destination }, 1100);
+			$('html, body').animate({ scrollTop: destination }, 1000);
 
 			return false;
 		});
@@ -252,7 +252,71 @@ const JSCCommon = {
 		let now = new Date();
 		let currentYear = document.querySelector(el);
 		if (currentYear) currentYear.innerText = now.getFullYear();
-	}
+	},
+	CustomInputFile: function CustomInputFile() {
+		var file = $(".add-file input[type=file]");
+		file.change(function () {
+			var filename = $(this).val().replace(/.*\\/, "");
+			var name = $(".add-file__filename  ");
+			name.text(filename);
+
+		});
+	},
+	// customRange: function customRange() {
+	// 	$(".range-wrap").each(function () {
+	// 		var _this = $(this);
+	// 		var $range = _this.find(".slider-js");
+	// 		var $inputFrom = _this.find(".input_from");
+	// 		var $inputTo = _this.find(".input_to");
+	// 		var instance,
+	// 			from,
+	// 			to,
+	// 			min = $range.data('min'),
+	// 			max = $range.data('max');
+	// 		$range.ionRangeSlider({
+	// 			skin: "round",
+	// 			type: "double",
+	// 			grid: false,
+	// 			grid_snap: false,
+	// 			hide_min_max: true,
+	// 			hide_from_to: true,
+	// 			onStart: updateInputs,
+	// 			onChange: updateInputs,
+	// 			onFinish: updateInputs
+	// 		});
+	// 		instance = $range.data("ionRangeSlider");
+	// 		function updateInputs(data) {
+	// 			from = data.from;
+	// 			to = data.to;
+	// 			$inputFrom.prop("value", from);
+	// 			$inputTo.prop("value", to);
+	// 		}
+	// 		$inputFrom.on("change", function () {
+	// 			var val = $(this).prop("value"); // validate
+	// 			if (val < min) {
+	// 				val = min;
+	// 			} else if (val > to) {
+	// 				val = to;
+	// 			}
+	// 			instance.update({
+	// 				from: val
+	// 			});
+	// 			$(this).prop("value", val);
+	// 		});
+	// 		$inputTo.on("change", function () {
+	// 			var val = $(this).prop("value"); // validate
+	// 			if (val < from) {
+	// 				val = from;
+	// 			} else if (val > max) {
+	// 				val = max;
+	// 			}
+	// 			instance.update({
+	// 				to: val
+	// 			});
+	// 			$(this).prop("value", val);
+	// 		});
+	// 	});
+	// },
 };
 const $ = jQuery;
 
@@ -265,14 +329,31 @@ function eventHandler() {
 	JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
+	JSCCommon.CustomInputFile();
+	// JSCCommon.customRange();
 
-	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
 	let screenName;
-	screenName = 'main.png';
+	screenName = '02.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
+
+	$(".range-area").ionRangeSlider({
+		skin: "round",
+		min: 0,
+		max: 2000,
+		from: 200,
+		postfix: " кв. м."
+	});
+
+	$(".range-month").ionRangeSlider({
+		skin: "round",
+		min: 0,
+		max: 24,
+		from: 4,
+		postfix: "мес."
+	});
 
 
 	function setFixedNav() {
@@ -297,39 +378,139 @@ function eventHandler() {
 
 	whenResize();
 
+	$(" .qwiz-radio-btn").each(function () { 
+		let parent = $(this).parents(".sQwiz__item");
+		parent.find(".sQwiz__toggle-block").on('input change copy paste','input', function () {
+			if ($(this).val() != '') {
+				parent.find(".sQwiz__next").removeClass("disabled")
+			}
+			else {
+				parent.find(".sQwiz__next").addClass("disabled")
+			}
+		})
+		$(this).change(function () {  
+			if (!$(this).hasClass("toggle-input-js")) {
+				parent.find(".sQwiz__next").removeClass("disabled")
+			}
 
-	let defaultSl = {
-		spaceBetween: 0,
-		lazy: {
-			loadPrevNext: true,
-		},
-		watchOverflow: true,
-		spaceBetween: 0,
-		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
+			else if (parent.find(".sQwiz__toggle-block").find('input').val() != '') {
+				console.log('1')
+				parent.find(".sQwiz__next").removeClass("disabled")
+			}
+			else {
+				console.log('2')
+				parent.find(".sQwiz__next").addClass("disabled")
+
+			} 
+			if ($(this).is(':checked') && $(this).hasClass("toggle-input-js")) {
+				
+				parent.find(".sQwiz__toggle-block").slideDown();
+			}
+			else {
+				parent.find(".sQwiz__toggle-block").slideUp();
+				
+				}
+			})
+	})
+
+	$('.btn-last-js').click(function(){
+		$('.sQwiz__top').hide();
+		$('.sQwiz').addClass('align-items-center justify-content-center');
+	});
+
+	var testSwiper = new Swiper('.jsTestSlider', {
+		effect: 'fade',
+		speed: 400,
+		simulateTouch: false,
+		longSwipes: false,
+		followFinger: false,
+		allowTouchMove: false,
+		allowNext: false,
+		// autoHeight: true,
 		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
+			el: '.scr2__ind',
+			type: 'custom',
+			renderCustom: function (swiper, current, total) {
+				var progress = '<div class="jsTestInd" style="width:' + current * 100 / 6 + '%"></div>';
+				if (current == 1) {
+
+					var progresText = '<div class="jsTestCounter">Осталось 6 вопросов</div>'
+				} else {
+					var progresText = '<div class="jsTestCounter">Вопрос ' + (current - 1) + '/' + (total - 1) + '</div>';
+				}
+				return progress + progresText;
+			},
 		},
+	});
+	//Переключение слайда по кнопке
+	var jsNextQuest = document.querySelectorAll('.jsNextQuest', '.jsTestSlider');
+	for (var i = 0; i < jsNextQuest.length; ++i) {
+		jsNextQuest[i].addEventListener("click", function (e) {
+			e.preventDefault();
+			testSwiper.slideNext();
+		});
 	}
 
-	const swiper4 = new Swiper('.sBanners__slider--js', {
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
+
+	var jsSlideBack = document.querySelectorAll('.jsSlideBack');
+	for (var i = 0; i < jsSlideBack.length; ++i) {
+		jsSlideBack[i].addEventListener("click", function (e) {
+			e.preventDefault();
+			testSwiper.slidePrev();
+		});
+	}
+	// Простановка значений при переключении
+	testSwiper.on('slideChangeTransitionEnd', function () {
+		var testCounter = document.querySelector('.jsTestCounter');
+		if (testSwiper.activeIndex == 0) {
+			// $('.jsSlideBack').hide();
+			// testCounter.textContent = "Осталось 6 вопросов";
+		} else {
+			// testCounter.textContent = "Вопрос " + (testSwiper.activeIndex ) + "/6";
+			// $('.jsSlideBack').show();
+		}
+		//Управление кнопкой "Назад"
+		if (testSwiper.activeIndex == 0) {
+			$('.jsSlideBack').hide();
+		} else {
+			$('.jsSlideBack').show();
+		}
 	});
+
+
+
+	// let defaultSl = {
+	// 	spaceBetween: 0,
+	// 	lazy: {
+	// 		loadPrevNext: true,
+	// 	},
+	// 	watchOverflow: true,
+	// 	spaceBetween: 0,
+	// 	loop: true,
+	// 	navigation: {
+	// 		nextEl: '.swiper-button-next',
+	// 		prevEl: '.swiper-button-prev',
+	// 	},
+	// 	pagination: {
+	// 		el: ' .swiper-pagination',
+	// 		type: 'bullets',
+	// 		clickable: true,
+	// 		// renderBullet: function (index, className) {
+	// 		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+	// 		// }
+	// 	},
+	// }
+
+	// const swiper4 = new Swiper('.sBanners__slider--js', {
+	// 	// slidesPerView: 5,
+	// 	...defaultSl,
+	// 	slidesPerView: 'auto',
+	// 	freeMode: true,
+	// 	loopFillGroupWithBlank: true,
+	// 	touchRatio: 0.2,
+	// 	slideToClickedSlide: true,
+	// 	freeModeMomentum: true,
+	// });
 
 	const partnerSlider = new Swiper('.partners__slider--js', {
 		slidesPerView: 'auto',
@@ -343,6 +524,73 @@ function eventHandler() {
 			}
 		}
 	});
+
+	
+	const headerBlockSlider = new Swiper('.headerBlock__slider--js', {
+		slidesPerView: 1,
+		loop: true,
+		spaceBetween: 0,
+		navigation: {
+			nextEl: '.headerBlock .swiper-button-next',
+			prevEl: '.headerBlock .swiper-button-prev',
+		},
+	});
+
+
+	const sResultsSlider = new Swiper('.tabs__content .sResults__slider--js', {
+		slidesPerView: 1,
+		loop: true,
+		spaceBetween: 0,
+		observer: true,
+		observeParents: true,
+		navigation: {
+			nextEl: '.tabs__content .swiper-button-next',
+			prevEl: '.tabs__content .swiper-button-prev',
+		},
+	});
+
+
+
+	const sOurWorkSlider = new Swiper('.sOurWork__itemWrap .sOurWork__slider--js', {
+		slidesPerView: 1,
+		// loop: true,
+		spaceBetween: 0,
+		pagination: {
+			el: '.sOurWork__itemWrap .swiper-pagination',
+			type: 'bullet',
+			clickable: true,
+		},
+	});
+
+
+
+	let items = document.querySelectorAll(".sOurWork__item");
+	items.forEach(ell => {
+
+		let slider = ell.querySelector('.sOurWork__slider--js');
+
+		const swiper4 = new Swiper(slider, {
+			slidesPerView: 1,
+			spaceBetween: 0,
+			// by: 'container',
+			loop: true,
+			lazy: {
+				loadPrevNext: true,
+			},
+			pagination: {
+				el: ell.querySelector('.swiper-pagination'),
+				type: 'bullets',
+				clickable: true
+			}
+		});
+
+		ell.addEventListener(`mouseover`,function(element) {
+			const puginBtn = element.target.closest('.swiper-pagination-bullet');
+			if (!puginBtn) return;
+			$(puginBtn).click();
+		})
+	})
+
 	// modal window
 
 };

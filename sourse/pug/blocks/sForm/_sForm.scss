@@ -5,22 +5,6 @@
 	// --sPB: ;
 	// --sTPB: ;
 	position: relative;
-	&__form {
-		box-shadow: 3px 3px 35px rgba(154, 187, 206, 0.19);
-		border-radius: 5px;
-		background-color: #ffffff;
-		padding: rem(27) rem(16);
-		@include media-breakpoint-up(sm) {
-			padding: rem(57) rem(53) rem(49) rem(65);
-		}
-		padding-bottom: var(--sPB);
-		max-width: rem(518);
-		margin-bottom: rem(20);
-		@include media-breakpoint-between(sm, lg) {
-			margin-left: auto;
-			margin-right: auto;
-		}
-	}
 
 	h2 {
 		letter-spacing: rem(0.9px);
@@ -79,6 +63,88 @@
 		// float: right;
 	}
 
+	&__form {
+		box-shadow: 3px 3px 35px rgba(154, 187, 206, 0.19);
+		border-radius: 5px;
+		background-color: #ffffff;
+		padding: rem(27) rem(16);
+		@include media-breakpoint-up(sm) {
+			padding: rem(57) rem(53) rem(49) rem(65);
+		}
+		padding-bottom: var(--sPB);
+		max-width: rem(518);
+		margin-bottom: rem(20);
+		@include media-breakpoint-between(sm, lg) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&--transporant {
+			background-color: transparent;
+			box-shadow: none;
+			padding: 0 !important;
+			max-width: none;
+
+			p {
+				max-width: none;
+			}
+
+			.form-wrap {
+				@include media-breakpoint-up(sm) {
+					max-width: none;
+				}
+
+				&__input {
+					text-align: center;
+				}
+
+				&__btn {
+					span {
+						padding: rem(26);
+					}
+				}
+			}
+		}
+	}
+
+	&--sm {
+		padding-bottom: var(--sPB);
+		.section-title {
+			min-width: rem(530);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.sForm__form {
+			min-width: rem(503);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.form-wrap {
+		}
+
+		.polite a {
+			text-decoration: underline;
+		}
+	}
+
+	&--02 {
+		.sForm__ {
+		}
+		--sPT: #{rem(70)};
+
+		p {
+			margin-bottom: rem(27);
+		}
+
+		.form-wrap {
+			@include media-breakpoint-up(md) {
+				padding-top: rem(40);
+			}
+		}
+	}
+
 	@include media-breakpoint-up(xs) {
 	}
 	@include media-breakpoint-between(md, xl) {
@@ -98,5 +164,54 @@ input[type="tel"] {
 	@include media-breakpoint-up(md) {
 		background-position-x: 30px;
 		padding-left: rem(70);
+	}
+
+	&.withoutPicture {
+		background-image: none;
+		padding-left: rem(24) !important;
+	}
+}
+
+.add-file {
+	// padding-bottom: 25px;
+	label {
+		width: 100%;
+		display: block;
+	}
+	input {
+		display: none;
+	}
+
+	&__text {
+		color: #707070;
+		font-size: $h4-font-size;
+		font-weight: 300;
+		margin-bottom: rem(25);
+		display: block;
+	}
+
+	&__btn {
+		color: #707070;
+		outline: none !important;
+		cursor: pointer;
+		border: 1px solid $gray-400;
+		border-radius: 5px;
+		height: rem(82);
+		width: 100%;
+		display: flex;
+		align-items: center;
+		font-size: rem(18px);
+		@include media-breakpoint-up(md) {
+			padding-left: rem(77);
+		}
+
+		&:hover {
+			border-color: $warning;
+		}
+	}
+	&__filename {
+		padding: 10px;
+		display: block;
+		margin-bottom: rem(15);
 	}
 }

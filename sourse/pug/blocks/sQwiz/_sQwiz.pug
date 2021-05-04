@@ -1,0 +1,146 @@
+mixin radio(p,n,t)
+	input.qwiz-radio-btn(type="radio" name=`step-${p}` id=`${n}`   value= t)&attributes(attributes)
+	label.btn(for=`${n}`)= t
+
+
+mixin sQwiz()
+	// start sQwiz
+	+b.sQwiz#sQwiz&attributes(attributes)
+		.container
+			+e.FORM.wrap
+				input(type='hidden' name='example-input-field')
+				input(type='hidden' class="order" name='order', value=`Ответы на квиз`) 
+				input(type='hidden' class="qw" name='qwiz', value=`qwiz`) 
+				input(type="hidden" class='utm_source' name='utm_source')
+				input(type="hidden" class='utm_term' name='utm_term')
+				input(type="hidden" class='utm_medium' name='utm_medium')
+				input(type="hidden" class='utm_campaign' name='utm_campaign')
+				+e.top
+					+e.to-main(href="/")
+						+icon('arrowL')
+						span На главную
+					+e.descr Ответьте на&nbsp;несколько вопросов, чтобы мы&nbsp;могли точнее понять задачу и&nbsp;рассчитать стоимость работы:
+				.swiper-container.jsTestSlider
+					.swiper-wrapper
+						mixin item(pr,progress,t,inp, not, name,per)
+							.swiper-slide
+								+e.item
+									if pr
+										.row
+											.col-lg
+												+e.main
+													+e.progress
+														+e.progress-bar(style=`width:${progress/4*100}%`)
+													+e.head
+														span Вопрос&nbsp;
+														span= pr
+														|&nbsp;из 5
+													+e.body
+														+e.title.h2= t
+														.custom-radio&attributes(attributes)
+															block
+														//- 	each item in items
+														//- 		input(type="radio" name=`Вопрос:${pr}` id=`${item}`)
+														//- 		label.btn(for=`${item}`)= item
+														if inp
+															+e.toggle-block
+																+input(`${inp}`,'text','', `step-${pr}-text`)
+													+e.foot.row
+														.col-xl-4.col-sm-6.order-sm-last
+															+e.next.jsNextQuest.btn.btn-primary(type="button" class= per)
+																span Далее
+
+														.col-sm
+															if not
+																+e.btn-back.jsSlideBack.h6(type="button")
+																	+icon('arrowPrev')
+																	| Назад
+
+
+											+e.sitebar.col
+												+e.sitebarWrap
+													+e.supervisor
+														+pic('director-sm.png','','')
+														div
+															.h6 Андрей Владимирович
+															p Генеральный директор
+													+e.about.text-center
+														if pr == 1
+															p Мы&nbsp;имеем успешный опыт работы как с&nbsp;небольшими объектами, так&nbsp;и&nbsp;со сложнейшими эксклюзивными решениями
+															p Поэтому готовы реализовать любую&nbsp;вашу идею
+														if pr == 2
+															p В&nbsp;зависимости от&nbsp;выбранного варианта, мы&nbsp;подключим специалистов, которые специализируются на&nbsp;конкретном типе помещения.
+															p При необходимости разработаем дизайн&#8209;проект.
+														if pr == 3
+															p Чем больше объем выполняемых работ, тем больше скидку мы&nbsp;сможем предоставить.
+															p Так как стоимость закупки материалов у&nbsp;наших партнеров зависит от&nbsp;объема.
+														if pr == 4
+															p Мы&nbsp;поможем составить грамотный проект, если это необходимо.
+														if pr == 5
+															p Мы&nbsp;сможем оценить загруженность своей команды и&nbsp;организовать работу дизайнеров, проектировщиков и&nbsp;строителей.
+															p Если работы нужно начать &laquo;еще вчера&raquo;, найдем решение
+													+e.consultationWrap
+														+e.consultation.link-modal(href="#modal-call") Получить консультацию
+													+e.telWrap
+														+e.tel(href="tel:+8(3519)23-20-20") 8 (3519) 23-20-20
+													+soc
+									else
+										+e.final.text-center
+											.h6.text-primary Спасибо за ответы!
+											.h2 Как с&nbsp;вами связаться, чтобы уточнить детали и&nbsp;обсудить стоимость?
+											+form-tabs-qwiz()
+											//- +input('+7 (912) 345-67-89','tel')(value="+7")
+											+e.discuss.btn.btn-primary(type="submit") 
+												span Обсудить стоимость работ
+											+polite()
+
+
+
+						+item('1','1',' Какой тип работ вам необходим?', 'Напишите, какую задачу вам необходимо решить')
+							.row
+								.col-md-6
+									+radio('1','New-construction','Новое строительство')(checked)
+								.col-md-6
+									+radio('1','Major-overhaul','Капитальный ремонт')
+								.col-md-6
+									+radio('1','Redecorating','Косметический ремонт')
+								.col-md-6
+									+radio('1','Reconstruction','Реконструкция')
+								.col-md-6
+									+radio('1','other1','Другое')(class='toggle-input-js')
+
+						+item('2','2',' Какой у вас тип помещения?','Напишите, какой у вас тип помещения','not')(class="twoItem")
+							.row
+								.col-xl-4.col-md-6
+									+radio('1','Office','Офис')(checked)
+								.col-xl-4.col-md-6
+									+radio('1','shop','Магазин')
+								.col-xl-4.col-md-6
+									+radio('1','restaurant ','Ресторан')
+								.col-xl-4.col-md-6
+									+radio('1','Hotel','Гостиница')
+								.col-xl-4.col-md-6
+									+radio('1','Beauty-saloon','Салон красоты')
+								.col-xl-4.col-md-6
+									+radio('1','Bank ','Банк')
+								.col-xl-4.col-md-6
+									+radio('1','Manufacturing-facility','Производственный цех')
+								.col-xl-4.col-md-6
+									+radio('1','other2','Другое')(class='toggle-input-js')
+						+item('3','2.8','Какая общая площадь помещения?','','not')(class="twoItem")
+							.range-area.rangeWrap
+								input.range-slider.slider-js(type='text')
+						+item('4','3.5',' У вас уже имеется проект?','','not','')
+							.row
+								.col-md-6
+									+radio('4','yes4','Да')(checked)
+								.col-md-6
+									+radio('4','no4','Нет')
+						+item('3','2.8','Какая общая площадь помещения?','','not','','btn-last-js')(class="twoItem")
+							.range-month.rangeWrap
+								input.range-slider.slider-js(type='text')
+						+item('')
+
+
+
+	// end sQwiz

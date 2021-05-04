@@ -1,0 +1,223 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sDirections/_sDirections.pug
+include ../blocks/sVacancies/_sVacancies.pug
+
+block variables
+	- let  mainPage= null
+	- let  bg= null
+
+block title
+	- let  title= 'Eвразия'
+	title= title
+block pagecontent
+
+
+	+mob-mnu()
+	+header()
+		+top-nav()
+	+b.page-head
+		.container
+			+breadcrumb('Главная','Вакансии') 
+	+sVacancies({
+		links: [
+			{
+				link: `#finishers`,
+				text: `Отделочники`
+			},
+			{
+				link: `#construction-specialties`,
+				text: `Рабочие строительных специальностей`
+			},
+		],
+
+		items: [
+			{
+				title: `Отделочники`,
+				id: 'finishers',
+				blocks: [
+					{
+						subtitle: `Требования:`,
+						lists: [
+							{
+								item: `Высшее техническое образование (машиностроение, металлургия);`,
+							},
+							{
+								item: `Пользователь ПК MS Office (Word, Excel, Outlook), AutoCAD/ Компас 3D;`,
+							},
+							{
+								item: `Умение читать машиностроительные чертежи;`,
+							},
+						],
+					},
+					{
+						subtitle: `Обязанности:`,
+						lists: [
+							{
+								item: `Работа с существующей базой клиентов (командировки, встречи);`,
+							},
+							{
+								item: `Работа с входящими заявками;`,
+							},
+							{
+								item: `Согласование технических требований заказчика и выставление ТКП;`,
+							},
+						],
+					},
+					{
+						subtitle: `Условия:`,
+						lists: [
+							{
+								item: `Оформление согласно ТК РФ, полный рабочий день;`,
+							},
+							{
+								item: `Работа в офисном здании;`,
+							},
+							{
+								item: `Заработная плата от 50.000 рублей.`,
+							},
+						],
+					},
+				],
+			},
+
+			{
+				title: `Рабочие строительных специальностей`,
+				id: 'construction-specialties',
+				blocks: [
+					{
+						subtitle: `Требования:`,
+						lists: [
+							{
+								item: `Высшее техническое образование (машиностроение, металлургия);`,
+							},
+							{
+								item: `Пользователь ПК MS Office (Word, Excel, Outlook), AutoCAD/ Компас 3D;`,
+							},
+							{
+								item: `Умение читать машиностроительные чертежи;`,
+							},
+						],
+					},
+					{
+						subtitle: `Обязанности:`,
+						lists: [
+							{
+								item: `Работа с существующей базой клиентов (командировки, встречи);`,
+							},
+							{
+								item: `Работа с входящими заявками;`,
+							},
+							{
+								item: `Согласование технических требований заказчика и выставление ТКП;`,
+							},
+						],
+					},
+					{
+						subtitle: `Условия:`,
+						lists: [
+							{
+								item: `Оформление согласно ТК РФ, полный рабочий день;`,
+							},
+							{
+								item: `Работа в офисном здании;`,
+							},
+							{
+								item: `Заработная плата от 50.000 рублей.`,
+							},
+						],
+					},
+				],
+			},
+		]
+	})
+	+sForm-sm({
+		h2: `Отправьте ваше резюме и&nbsp;мы&nbsp;свяжемся с&nbsp;вами`,
+	})
+	+footer({
+		instargam: '#',
+		vk: '#',
+		politeLink: '#',
+
+		links: [
+			{
+				text: `Строительство и&nbsp;ремонт коммерческой недвижимости`,
+				href: `#`
+			},
+			{
+				text: `Проекты домов со&nbsp;стоимостью`,
+				href: `#`
+			},
+			{
+				text: `Строительство домов и&nbsp;коттеджей`,
+				href: `#`
+			},
+			{
+				text: `Производство и&nbsp;продажа строительных материалов`,
+				href: `#`
+			},
+			{
+				text: `Вакансии`,
+				href: `#`
+			},
+			{
+				text: `Контакты`,
+				href: `#`
+			}
+		],
+		slides: [
+			{
+				img: 'partner-1.jpg'
+			},
+			{
+				img: 'partner-2.jpg'
+			},
+			{
+				img: 'partner-3.jpg'
+			},
+			{
+				img: 'partner-4.jpg'
+			},
+			{
+				img: 'partner-5.jpg'
+			},
+			{
+				img: 'partner-6.jpg'
+			},
+			{
+				img: 'partner-7.jpg'
+			},
+			{
+				img: 'partner-8.jpg'
+			}
+		],
+	})
+
+	//- +b.tabs--js.opacity-50
+	//- 	+e.caption.d-flex
+	//- 		+e.btn.btn.btn-warning.active  btn1
+	//- 		+e.btn.btn.btn-warning btn 2
+	//- 		+e.btn.btn.btn-warning btn 3
+	//- 		+e.btn.btn.btn-warning btn 4
+	//- 	+e.wrap
+	//- 		+e.content.active content 1
+	//- 		+e.content content 2
+	//- 		+e.content content 3
+	//- 		+e.content content 4
+	//- +b.tabs--js
+	//- 	+e.caption.d-flex
+	//- 		+e.btn.btn.btn-success.active  btn  2 1
+	//- 		+e.btn.btn.btn-success btn 2  2
+	//- 		+e.btn.btn.btn-success btn 2  3
+	//- 		+e.btn.btn.btn-success btn  2 4
+	//- 	+e.wrap
+	//- 		+e.content.active content 1
+	//- 		+e.content content 2
+	//- 		+e.content content 3
+	//- 		+e.content content 4
+
+
+

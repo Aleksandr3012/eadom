@@ -23,6 +23,52 @@ mixin sForm(data)
 										+pic('manager-sm.png','','')
 						+form-wrap 
 							+input('Введите ваш телефон','tel')
-							+btn('Записаться на встречу','btn')
+							+btn('Записаться на встречу','submit')
 							+polite
+	// end sForm
+
+mixin sForm-02(data)
+	// start sForm
+	+b.SECTION.sForm--02.section#sForm&attributes(attributes)
+		+pic('form-bg.png','bg')(class="picture-bg")
+		.container
+
+
+			.row
+				+e.imgCol.col.d-none.d-lg-block.align-self-end 
+					+e.imgWrap 
+						+pic('director.png')
+				.col 
+					+e.form--transporant 
+						+b.section-title
+							h2!= data.h2
+						+e.textWrap
+							.row 
+								.col
+									each paragraph in data.paragraphs 
+										p!= paragraph.text 
+								.col-auto.d-lg-none 
+									+e.imgSm 
+										+pic('manager-sm.png','','')
+						+form-wrap 
+							.row 
+								.col-sm-5
+									+input('Введите ваш телефон','tel')(class="withoutPicture bg-transparent")
+								.col-sm-7
+									+btn('Обсудить сотрудничество','submit')
+	// end sForm
+
+mixin sForm-sm(data)
+	// start sForm
+	+b.SECTION.sForm--sm.section#sForm&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2!= data.h2
+
+			+e.form
+				+form-wrap 
+					+add-file
+					+input('Введите ваш телефон','tel')(class="")
+					+btn('Отравить резюме','submit')
+					+polite
 	// end sForm

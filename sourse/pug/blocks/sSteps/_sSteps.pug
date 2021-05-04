@@ -1,0 +1,35 @@
+mixin sSteps(data)
+	// start sSteps
+	+b.SECTION.sSteps.section#sSteps&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 6 простых шагов до сдачи объекта
+
+
+			+e.row.row
+				mixin item(i,num)
+					+e.col.col-lg-4.col-sm-6&attributes(attributes)
+						+e.num= num
+						+e.itemWrap 
+							+e.item
+								+e.img 
+									+pic(`step-${i}.png`,'','')
+								block
+				+item(1,'01')
+					p Вы звоните нам по телефону
+						+e.tel(href="tel:83519232020") 8 (3519) 23-20-20
+						span или 
+							+e.modal.link-modal-js(href="#modal-call") оставляете заявку
+				+item(2,'02')
+					p Встречаемся. Производим осмотр объекта. Обсуждаем детали и&nbsp;особенности строительства или ремонта.
+				+item(3,'03').accardion-item--js
+					p Составляем подробную смету, согласовываем стоимость. 
+				+item(4,'04').accardion-item--js
+					p Заключаем договор с&nbsp;обозначением сроков, стоимости, гарантий.
+				+item(5,'05').accardion-item--js
+					p Специалисты выезжают на&nbsp;объект. Завозим стройматериалы. Начинаем работу.
+				+item(6,'06').accardion-item--js
+					p После завершения работ помогаем подготовить помещение  к&nbsp;открытию. Вы&nbsp;осуществляете приемку объекта
+			.accardion-toggle.accardion-toggle--js СМОТРЕТЬ ВСЕ ШАГИ
+				img(src="img/@2x/arrow-down.png" alt="" loading="lazy")
+	// end sSteps

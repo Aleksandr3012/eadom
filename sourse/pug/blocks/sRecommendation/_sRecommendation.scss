@@ -1,0 +1,71 @@
+// start .sRecommendation
+.sRecommendation {
+	--sPB: 0;
+	@include media-breakpoint-up(md) {
+		--sPT: #{rem(90)};
+		--sTPB: #{rem(70)};
+	}
+	.section-title {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	h2 {
+		letter-spacing: 0.9px;
+	}
+
+	&__listWrap {
+		max-width: 1100px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	ul {
+		@extend .row;
+
+		@include media-breakpoint-up(md) {
+			@include roww(50px);
+		}
+		@include media-breakpoint-up(xl) {
+			@include roww(130px);
+		}
+		list-style: none;
+
+		li {
+			@extend .col-sm-6;
+			@extend .col-lg-4;
+			position: relative;
+			display: flex;
+			padding-bottom: rem(52);
+			&::before {
+				content: "";
+				width: 26px;
+				height: 26px;
+				flex-shrink: 0;
+				background-image: url("../img/@2x/webp/check.webp");
+				background-repeat: no-repeat;
+				background-size: 100%;
+				background-position: center;
+				margin-right: rem(10);
+			}
+		}
+
+		strong {
+			display: block;
+			padding-bottom: rem(18);
+			@extend .mono;
+			font-size: rem(24);
+			color: #262626;
+			line-height: calc(32 / 24);
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sRecommendation

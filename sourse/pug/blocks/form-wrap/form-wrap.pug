@@ -18,7 +18,7 @@ mixin input(placeholder,  t='text', label, name= t)
 		else if t=='number'
 			+e.INPUT.input.form-control(name=name type=t placeholder=placeholder step='any')
 		else
-			+e.INPUT.input.form-control(name=name type=t placeholder=placeholder)
+			+e.INPUT.input.form-control(name=name type=t placeholder=placeholder)&attributes(attributes)
 	+e.input-wrap.form-group
 		if label
 			label
@@ -65,9 +65,9 @@ mixin in-c(typ="checkbox", text, name= typ )
 mixin add-file(n)
 	+b.add-file
 		label
+			+e.SPAN.text Загрузите резюме<br> (.doc, .docx, .pdf не более 5 Мб)
 			+e.INPUT.input(name='file' type='file')
-			+e.SPAN.btn 
-			+e.SPAN.text   Прикрепить резюме
+			+e.SPAN.btn Выберите файл
 		+e.SPAN.filename 
 
 

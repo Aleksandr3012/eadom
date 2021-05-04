@@ -1,0 +1,61 @@
+mixin sHowGet(data)
+	// start sHowGet
+	+b.SECTION.sHowGet.section#sHowGet&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Как добраться
+				h3 К&nbsp;нам можно доехать за&nbsp;20&nbsp;минут из&nbsp;любой точки города
+
+			.map-wrap
+				+e.contact-block
+					ul
+						li 
+							| Адрес: <br>
+							span г. Магнитогорск, <br> ул.Комсомольская, 5
+							img(loading="lazy" src="img/@2X/maps-and-flags.png" alt="")
+						li 
+							| Телефон: <br>
+							a(href="tel:+7(3519)23-20-20") +7 (3519) 23-20-20
+							img(loading="lazy" src="img/@2x/telephone.png" alt="")
+						li 
+							| Email: <br>
+							a(href="mailto:ea.mgn@mail.ru") ea.mgn@mail.ru
+							img(loading="lazy" src="img/@2x/envelope-shape.png" alt="")
+						li 
+							| Работаем: <br>
+							span Пн-Чт: с 08:00 до 17:00<br>Пт: с 08:00 до 16:00
+							img(loading="lazy" src="img/@2x/clock-circular-outline.png" alt="")
+				.map-wrap#map
+
+				//- <iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3Adb87e64c101c358488e2d4335179bc5033ea071ebbe8c26551fe3a6251514200&amp;source=constructor" height="578"></iframe>
+				<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+				script.
+					ymaps.ready(function () {
+					var myMap = new ymaps.Map('map', {
+						center: [53.425920, 58.993065],
+						zoom: 16
+							}, {
+								searchControlProvider: 'yandex#search'
+							}),
+
+							myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+								hintContent: 'Собственный значок метки',
+								balloonContent: 'Это красивая метка'
+							}, {
+								// Опции.
+								// Необходимо указать данный тип макета.
+								iconLayout: 'default#image',
+								// Своё изображение иконки метки.
+								iconImageHref: 'img/@2x/mark.png',
+								// Размеры метки.
+								iconImageSize: [400, 400],
+								// Смещение левого верхнего угла иконки относительно
+								// её "ножки" (точки привязки).
+								iconImageOffset: [-200, -200]
+							});
+
+					myMap.geoObjects
+						.add(myPlacemark);
+					});
+	// end sHowGet

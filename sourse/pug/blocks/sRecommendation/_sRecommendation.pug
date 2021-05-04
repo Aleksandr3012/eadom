@@ -1,0 +1,15 @@
+mixin sRecommendation(data)
+	// start sRecommendation
+	+b.SECTION.sRecommendation.section#sRecommendation&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2!= data.title
+
+			+e.listWrap
+				ul
+					each item in data.items 
+						li
+							+e.textWrap
+								strong!= item.title
+								span!= item.text
+	// end sRecommendation

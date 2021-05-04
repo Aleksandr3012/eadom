@@ -1,0 +1,169 @@
+// start .sResults
+.sResults {
+	@include media-breakpoint-up(xl) {
+		--swiperArrowPosition: #{rem(-90)};
+	}
+
+	@include media-breakpoint-up(md) {
+		--sPT: #{rem(70)};
+		--sTPB: #{rem(70)};
+		--sPB: #{rem(55)};
+	}
+
+	.section-title {
+		max-width: 610px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	h2 {
+		margin-bottom: rem(17);
+		letter-spacing: 0.9px;
+	}
+
+	h3 {
+		font-weight: 300;
+		max-width: 510px;
+		margin-left: auto;
+		margin-right: auto;
+		font-weight: 300;
+		color: #707070;
+		letter-spacing: 0.46px;
+	}
+
+	&__slide {
+		position: relative;
+		max-height: 380px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__slider {
+		max-height: 380px;
+	}
+
+	&__sliderWrap {
+		position: relative;
+		max-width: 560px;
+		margin-bottom: rem(44);
+	}
+
+	&__col {
+		@include media-breakpoint-up(xl) {
+			width: 21% !important;
+		}
+	}
+
+	&__row {
+		@include roww(10px);
+	}
+	.container {
+		@include media-breakpoint-up(xl) {
+			max-width: 1140px;
+		}
+	}
+
+	h4 {
+		color: #1a1a1a;
+		font-weight: 700;
+		letter-spacing: 0.4px;
+		margin-bottom: rem(29);
+	}
+
+	p {
+		margin-bottom: rem(21);
+		color: #1a1a1a;
+		letter-spacing: 0.34px;
+		line-height: calc(26 / 16);
+	}
+
+	&__btn {
+		span {
+			height: auto;
+			padding: rem(27) rem(40);
+			font-size: $h4-font-size;
+		}
+	}
+
+	&__btnRow {
+		padding-top: rem(32);
+
+		h4 {
+			margin-bottom: rem(10);
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sResults
+
+.tabs {
+	@include roww(50px);
+	@include media-breakpoint-up(xl) {
+		@include roww(146px);
+	}
+	&__caption {
+		@include media-breakpoint-down(lg) {
+			display: none;
+		}
+	}
+	&__wrap {
+		.tabs__btn {
+			@include media-breakpoint-up(lg) {
+				display: none;
+			}
+		}
+	}
+	&__btn {
+		padding: rem(10);
+		@include media-breakpoint-up(md) {
+			padding: rem(30);
+		}
+		@include media-breakpoint-up(xl) {
+			padding: rem(25) rem(42);
+		}
+		background-color: #f9f9f9;
+		border-bottom: solid 1px transparent;
+		&:not(:last-child) {
+			border-color: $gray-400;
+		}
+
+		&:first-child {
+			border-radius: 5px 5px 0 0;
+		}
+
+		&:last-child {
+			border-radius: 0 0 5px 5px;
+		}
+
+		&.active {
+			background-image: linear-gradient(
+				to top,
+				#f6b73e 0%,
+				#fdd467 79%,
+				#ffdb72 99%,
+				#ffdb72 100%
+			);
+			border-bottom-color: transparent;
+		}
+
+		strong {
+			@include media-breakpoint-up(lg) {
+				display: block;
+			}
+			font-weight: 700;
+		}
+	}
+	&__content {
+		padding-top: 8px;
+	}
+}

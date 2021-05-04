@@ -1,0 +1,88 @@
+mixin sOurWork(data)
+	// start sOurWork
+	+b.SECTION.sOurWork.section#sOurWork&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Работы, которые мы выполняем
+
+			+e.itemsWrap
+				.row
+					mixin item(items)
+						.col-lg-3 
+							+e.item(href="#")
+								+e.DIV.slider--js.swiper-container
+									.swiper-wrapper
+										each slide in items.slides 
+											+e.DIV.slide.swiper-slide
+												+pic(slide.img,'bg','')(class="picture-bg")
+									.swiper-pagination
+								+e.title= items.title
+					+item({
+						title: `Строительство зданий`,
+						slides: [
+							{
+							img: 'our-work-1.jpg',
+							},
+							{
+							img: 'our-work-2.jpg',
+							},
+							{
+							img: 'our-work-1.jpg',
+							},
+							{
+							img: 'our-work-2.jpg',
+							},
+						]
+					})
+					+item({
+						title: `Капитальный ремонт`,
+						slides: [
+							{
+							img: 'our-work-2.jpg',
+							},
+							{
+							img: 'our-work-1.jpg',
+							},
+							{
+							img: 'our-work-2.jpg',
+							},
+							{
+							img: 'our-work-1.jpg',
+							},
+						]
+					})
+					+item({
+						title: `Реконструкция`,
+						slides: [
+							{
+							img: 'our-work-3.jpg',
+							},
+							{
+							img: 'our-work-1.jpg',
+							},
+							{
+							img: 'our-work-3.jpg',
+							},
+							{
+							img: 'our-work-2.jpg',
+							},
+						]
+					})
+					+item({
+						title: `Косметический ремонт`,
+						slides: [
+							{
+							img: 'our-work-4.jpg',
+							},
+							{
+							img: 'our-work-2.jpg',
+							},
+							{
+							img: 'our-work-4.jpg',
+							},
+							{
+							img: 'our-work-3.jpg',
+							},
+						]
+					})
+	// end sOurWork

@@ -1,8 +1,13 @@
 .footer {
+	border-top: solid 1px $gray-400;
 	padding-bottom: rem(30);
 	margin-top: auto;
+	padding-top: rem(25);
 	@include media-breakpoint-down(sm) {
 		text-align: center;
+	}
+	@include media-breakpoint-up(md) {
+		padding-top: rem(50);
 	}
 
 	&__logo {

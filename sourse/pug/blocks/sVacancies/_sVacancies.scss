@@ -1,0 +1,88 @@
+// start .sVacancies
+.sVacancies {
+	// --sPT: ;
+	// --sPB: ;
+	// --sTPB: ;
+
+	ol {
+		list-style-type: none;
+		counter-reset: item;
+		color: #707070;
+		padding-left: 0;
+		li {
+			&::before {
+				content: counter(item) ". ";
+				counter-increment: item;
+				font-size: $h3-font-size;
+				font-weight: 300;
+			}
+		}
+		a {
+			border-bottom: dashed 1px;
+			@extend .h3;
+			text-decoration: none;
+			color: #707070 !important;
+			font-weight: 300;
+
+			&:hover {
+				border-color: transparent;
+			}
+		}
+	}
+
+	&__sendResume {
+		@extend .h3;
+		font-weight: 700;
+		display: inline-block;
+		margin-bottom: rem(57);
+		margin-left: rem(26);
+		text-decoration: none;
+		color: $warning !important;
+		border-bottom: dashed 1px;
+
+		&:hover {
+			border-color: transparent;
+		}
+	}
+	&__item {
+		padding-bottom: rem(20);
+		h3 {
+			@extend .mono;
+			color: #262626;
+			font-size: rem(24);
+			margin-bottom: rem(20);
+		}
+	}
+
+	&__subtitle {
+		font-weight: 700;
+	}
+
+	ul {
+		margin-bottom: rem(30);
+		li {
+			font-weight: 300;
+			list-style: none;
+
+			&::before {
+				content: "";
+				width: 13px;
+				height: 13px;
+				display: inline-block;
+				margin-right: rem(10);
+				background-image: url("../img/@2x/webp/check.webp");
+				background-size: 100%;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sVacancies

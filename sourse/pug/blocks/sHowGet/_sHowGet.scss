@@ -1,0 +1,95 @@
+// start .sHowGet
+.sHowGet {
+	// --sPT: ;
+	// --sPB: ;
+	// --sTPB: ;
+	background-color: #f9f9f9;
+	h3 {
+		color: #707070;
+		font-weight: 300;
+	}
+
+	.map-wrap {
+		position: relative;
+
+		#map,
+		iframe,
+		> ymaps {
+			height: rem(578);
+			// width: 100%;
+		}
+	}
+
+	&__contact-block {
+		position: absolute;
+		z-index: 4;
+
+		@include media-breakpoint-down(md) {
+			position: inherit;
+			margin-bottom: rem(60);
+		}
+
+		@include media-breakpoint-up(lg) {
+			top: 8%;
+			left: rem(65);
+		}
+
+		img {
+			width: rem(25);
+		}
+
+		a {
+			color: $body-color;
+
+			&:hover {
+				text-decoration: none;
+				color: #398bff;
+			}
+
+			&:active {
+				color: #1c61c1;
+			}
+		}
+
+		ul {
+			max-width: rem(390);
+			padding: rem(54) rem(45) rem(46) rem(33);
+			background-color: #fff;
+			box-shadow: 3px 2px rem(35) rgba(154, 187, 206, 0.17);
+			border-radius: $border-radius-lg;
+
+			li {
+				position: relative;
+				text-align: left;
+				list-style: none;
+				padding-left: rem(47);
+				font-size: rem(18);
+				padding-bottom: rem(38);
+
+				&:nth-last-child(1) {
+					padding-bottom: 0;
+				}
+
+				span {
+					font-weight: 400;
+					letter-spacing: rem(0.36);
+				}
+
+				img {
+					position: absolute;
+					left: 0;
+					top: rem(6);
+				}
+			}
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sHowGet

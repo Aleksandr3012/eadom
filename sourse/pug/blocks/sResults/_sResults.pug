@@ -1,0 +1,42 @@
+mixin sResults(data)
+	// start sResults
+	+b.SECTION.sResults.section#sResults&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Узнайте, на&nbsp;какой результат вы&nbsp;можете рассчитывать
+				h3 Посмотрите работы, которые мы&nbsp;выполнили для наших клиентов
+
+
+			.tabs.tabs--js.row
+				.tabs__caption.col-auto
+					each btn in data.btns 
+						.tabs__btn(class= btn.class) 
+							strong= btn.name
+							span= btn.sity
+				.tabs__wrap.col
+					each content in data.contents 
+						.tabs__content(class= content.class) 
+							h4!= content.name
+							+e.sliderWrap
+								+e.slider--js.swiper-container
+									.swiper-wrapper
+										each slide in content.slides 
+											+e.slide.swiper-slide
+												+e.A.slideWrap(data-fancybox='photo' href=`img/@2x/${slide.img}`)
+													+pic(slide.img)
+								+arrow
+							each row in content.rows 
+								+e.row.row 
+									+e.col.col-sm-3
+										strong!= row.title
+									.col 
+										p!= row.text
+							+e.btnRow.row 
+								.col-5
+									h4 
+										strong У вас похожая задача?
+									p Ответьте на&nbsp;5&nbsp;вопросов и&nbsp;узнайте стоимость работ
+								.col 
+									+btn('Узнать стоимость работ','','#')
+
+	// end sResults

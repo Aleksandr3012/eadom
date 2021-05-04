@@ -1,0 +1,84 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sDirections/_sDirections.pug
+include ../blocks/sVacancies/_sVacancies.pug
+include ../blocks/sThanks/_sThanks.pug
+
+block variables
+	- let  mainPage= null
+	- let  bg= null
+
+block title
+	- let  title= 'Eвразия'
+	title= title
+block pagecontent
+
+
+	//- +mob-mnu()
+	+header()
+		+top-nav()
+	//- +b.page-head
+	//- 	.container
+	//- 		+breadcrumb('Главная','Вакансии') 
+	+sThanks()
+	+footer({
+		instargam: '#',
+		vk: '#',
+		politeLink: '#',
+
+		links: [
+			{
+				text: `Строительство и&nbsp;ремонт коммерческой недвижимости`,
+				href: `#`
+			},
+			{
+				text: `Проекты домов со&nbsp;стоимостью`,
+				href: `#`
+			},
+			{
+				text: `Строительство домов и&nbsp;коттеджей`,
+				href: `#`
+			},
+			{
+				text: `Производство и&nbsp;продажа строительных материалов`,
+				href: `#`
+			},
+			{
+				text: `Вакансии`,
+				href: `#`
+			},
+			{
+				text: `Контакты`,
+				href: `#`
+			}
+		],
+		slides: [
+			{
+				img: 'partner-1.jpg'
+			},
+			{
+				img: 'partner-2.jpg'
+			},
+			{
+				img: 'partner-3.jpg'
+			},
+			{
+				img: 'partner-4.jpg'
+			},
+			{
+				img: 'partner-5.jpg'
+			},
+			{
+				img: 'partner-6.jpg'
+			},
+			{
+				img: 'partner-7.jpg'
+			},
+			{
+				img: 'partner-8.jpg'
+			}
+		],
+	})
