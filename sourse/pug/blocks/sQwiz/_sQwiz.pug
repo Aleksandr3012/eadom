@@ -30,7 +30,7 @@ mixin sQwiz()
 											.col-lg
 												+e.main
 													+e.progress
-														+e.progress-bar(style=`width:${progress/4*50}%`)
+														+e.progress-bar(style=`width:${progress}%`)
 													+e.head
 														span Вопрос&nbsp;
 														span= pr
@@ -96,7 +96,7 @@ mixin sQwiz()
 
 
 
-						+item('1','1',' Какой тип работ вам необходим?', 'Напишите, какую задачу вам необходимо решить')
+						+item('1','50',' Какой тип работ вам необходим?', 'Напишите, какую задачу вам необходимо решить')
 							.row
 								.col-md-6
 									+radio('1','New-construction','Новое строительство')(checked)
@@ -109,7 +109,7 @@ mixin sQwiz()
 								.col-md-6
 									+radio('1','other1','Другое')(class='toggle-input-js')
 
-						+item('2','2',' Какой у вас тип помещения?','Напишите, какой у вас тип помещения','not')(class="twoItem")
+						+item('2','60',' Какой у вас тип помещения?','Напишите, какой у вас тип помещения','not')(class="twoItem")
 							.row
 								.col-xl-4.col-md-6
 									+radio('1','Office','Офис')(checked)
@@ -127,16 +127,16 @@ mixin sQwiz()
 									+radio('1','Manufacturing-facility','Производственный цех')
 								.col-xl-4.col-md-6
 									+radio('1','other2','Другое')(class='toggle-input-js')
-						+item('3','2.8','Какая общая площадь помещения?','','not')(class="twoItem")
+						+item('3','70','Какая общая площадь помещения?','','not')(class="twoItem")
 							.range-area.rangeWrap
 								input.range-slider.slider-js(type='text')
-						+item('4','3.5',' У вас уже имеется проект?','','not','')
+						+item('4','80',' У вас уже имеется проект?','','not','')
 							.row
 								.col-md-6
 									+radio('4','yes4','Да')(checked)
 								.col-md-6
 									+radio('4','no4','Нет')
-						+item('5','2.8','Когда планируется открытие?','','not','','btn-last-js')(class="twoItem")
+						+item('5','90','Когда планируется открытие?','','not','','btn-last-js')(class="twoItem")
 							.range-month.rangeWrap
 								input.range-slider.slider-js(type='text')
 						+item('')
