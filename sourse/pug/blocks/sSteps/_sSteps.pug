@@ -3,7 +3,7 @@ mixin sSteps(data)
 	+b.SECTION.sSteps.section#sSteps&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 6 простых шагов до сдачи объекта
+				h2 6&nbsp;простых шагов до&nbsp;сдачи объекта
 
 
 			+e.row.row
@@ -31,6 +31,7 @@ mixin sSteps(data)
 				+item(6,'06').accardion-item.accardion-item--js
 					p После завершения работ помогаем подготовить помещение  к&nbsp;открытию. Вы&nbsp;осуществляете приемку объекта
 			.accardion-toggle.accardion-toggle--js 
-				span СМОТРЕТЬ ВСЕ ШАГИ
+				span.all СМОТРЕТЬ ВСЕ ШАГИ
+				span.hidden скрыть
 				img(src="img/@2x/arrow-down.png" alt="" loading="lazy")
 	// end sSteps

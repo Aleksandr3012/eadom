@@ -1,17 +1,79 @@
+mixin foot 
+	+footer({
+		instargam: '#',
+		vk: '#',
+		politeLink: '#',
+
+		links: [
+			{
+				text: `Строительство и&nbsp;ремонт коммерческой недвижимости`,
+				href: `#`
+			},
+			{
+				text: `Проекты домов со&nbsp;стоимостью`,
+				href: `#`
+			},
+			{
+				text: `Строительство домов и&nbsp;коттеджей`,
+				href: `#`
+			},
+			{
+				text: `Производство и&nbsp;продажа строительных материалов`,
+				href: `#`
+			},
+			{
+				text: `Вакансии`,
+				href: `#`
+			},
+			{
+				text: `Контакты`,
+				href: `#`
+			}
+		],
+		slides: [
+			{
+				img: 'partner-1.jpg'
+			},
+			{
+				img: 'partner-2.jpg'
+			},
+			{
+				img: 'partner-3.jpg'
+			},
+			{
+				img: 'partner-4.jpg'
+			},
+			{
+				img: 'partner-5.jpg'
+			},
+			{
+				img: 'partner-6.jpg'
+			},
+			{
+				img: 'partner-7.jpg'
+			},
+			{
+				img: 'partner-8.jpg'
+			}
+		],
+	})
+
+
 mixin footer(data)
 	+b.FOOTER.footer
+
 		.container
 			+e.mainRow.row 
 				.col-sm-auto 
 					+e.logo(href="/")
-						img.res-i(src="img/@2x/logo.png" alt="" loading='lazy')
+						+pic('logo.png','','')
 					+e.copyright &copy;&nbsp;Копирование и&nbsp;распространение материалов с&nbsp;сайта, без письменного согласия правообладателя запрещено.
 				.col-sm 
 					+b.UL.footerMnu
 						each link in data.links 
 							+e.LI.item 
 								+e.A.link(href!= link.href)!= link.text 
-				.col-lg-auto
+				+e.col.col-lg-auto
 					+e.news Следите за новостями:
 					+e.soc 
 						+e.socLink(href=data.instargam target="_blank") 
@@ -33,3 +95,6 @@ mixin footer(data)
 				span Создание и продвижение сайта: 
 				+e.dev(href="https://simonov.marketing" target="_blank")
 					img.res-i(src="img/svg/simonov.svg" loading='lazy')
+
+	+b.scroll-top.d-lg-none
+		img(src="img/@2x/up.png" alt="" loading="lazy")

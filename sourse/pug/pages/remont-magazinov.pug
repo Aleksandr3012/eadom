@@ -15,7 +15,7 @@ block variables
 	- let  bg= null
 
 block title
-	- let  title= 'Eвразия'
+	- let  title= 'Коммерческое строительство'
 	title= title
 block pagecontent
 
@@ -27,7 +27,7 @@ block pagecontent
 		bg: 'header-bg-2.jpg',
 		h1: `Реконструкция, ремонт, строительство`,
 		h3: `офисов, магазинов, производственных, промышленных зданий и&nbsp;сооружений`,
-		btnLink: '#',
+		btnLink: '/qwiz.html',
 		slides: [
 			{
 				img: 'magnit.png',
@@ -48,7 +48,7 @@ block pagecontent
 			},
 			{
 				title: `Экномия до&nbsp;30% на&nbsp;материалах `,
-				text: `У&nbsp;нас оптовые цены во&nbsp;многих строительных магазинах. Покупку и&nbsp;доставку берем на&nbsp;себя`
+				text: `У&nbsp;нас оптовые цены во&nbsp;многих строительных магазинах. Покупку&nbsp;и&nbsp;доставку берем на&nbsp;себя`
 			},
 			{
 				title: `Неизменная смета `,
@@ -74,7 +74,7 @@ block pagecontent
 		h2: `ООО &laquo;ПСК Евразия&raquo; работает <span class="text-warning">с&nbsp;2013 года</span>`,
 		paragraphs: [
 			{
-				text: `Здравствуйте! Меня зовут Яременко Андрей Владимирович. Я&nbsp;генеральный директор компании ООО &laquo;ПСК Евразия&raquo;`
+				text: `<span>Здравствуйте!</span> Меня зовут Яременко Андрей Владимирович. Я&nbsp;генеральный директор компании ООО&nbsp;&laquo;ПСК Евразия&raquo;`
 			},
 			{
 				text: `Более 20&nbsp;лет мы&nbsp;занимаемся проектированием, строительством, ремонтом и&nbsp;реконструкцией.`
@@ -335,64 +335,7 @@ block pagecontent
 	//- sResults end
 
 	+sContact().bg-light
-	+footer({
-		instargam: '#',
-		vk: '#',
-		politeLink: '#',
-
-		links: [
-			{
-				text: `Строительство и&nbsp;ремонт коммерческой недвижимости`,
-				href: `#`
-			},
-			{
-				text: `Проекты домов со&nbsp;стоимостью`,
-				href: `#`
-			},
-			{
-				text: `Строительство домов и&nbsp;коттеджей`,
-				href: `#`
-			},
-			{
-				text: `Производство и&nbsp;продажа строительных материалов`,
-				href: `#`
-			},
-			{
-				text: `Вакансии`,
-				href: `#`
-			},
-			{
-				text: `Контакты`,
-				href: `#`
-			}
-		],
-		slides: [
-			{
-				img: 'partner-1.jpg'
-			},
-			{
-				img: 'partner-2.jpg'
-			},
-			{
-				img: 'partner-3.jpg'
-			},
-			{
-				img: 'partner-4.jpg'
-			},
-			{
-				img: 'partner-5.jpg'
-			},
-			{
-				img: 'partner-6.jpg'
-			},
-			{
-				img: 'partner-7.jpg'
-			},
-			{
-				img: 'partner-8.jpg'
-			}
-		],
-	})
+	+foot
 
 	//- +b.tabs--js.opacity-50
 	//- 	+e.caption.d-flex

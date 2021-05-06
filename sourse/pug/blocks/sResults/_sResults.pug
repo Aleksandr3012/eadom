@@ -24,7 +24,8 @@ mixin sResults(data)
 											+e.slide.swiper-slide
 												+e.A.slideWrap(data-fancybox='photo' href=`img/@2x/${slide.img}`)
 													+pic(slide.img)
-								+arrow
+								+e.navWrap
+									+arrow
 							each row in content.rows 
 								+e.row.row 
 									+e.col.col-sm-3
@@ -32,11 +33,11 @@ mixin sResults(data)
 									.col 
 										p!= row.text
 							+e.btnRow.row 
-								.col-5
+								.col-sm-5
 									h4 
 										strong У вас похожая задача?
 									p Ответьте на&nbsp;5&nbsp;вопросов и&nbsp;узнайте стоимость работ
 								.col 
-									+btn('Узнать стоимость работ','','#')
+									+btn('Узнать стоимость работ','','/qwiz.html')
 
 	// end sResults

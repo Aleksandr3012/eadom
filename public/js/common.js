@@ -212,12 +212,12 @@ var JSCCommon = {
 				type: 'POST',
 				data: data
 			}).done(function (data) {
-				$.fancybox.close();
-				$.fancybox.open({
-					src: '#modal-thanks',
-					type: 'inline'
-				}); // window.location.replace("/thanks.html");
+				$.fancybox.close(); // $.fancybox.open({
+				// 	src: '#modal-thanks',
+				// 	type: 'inline'
+				// });
 
+				window.location.replace("/thanks.html");
 				setTimeout(function () {
 					// Done Functions
 					th.trigger("reset"); // $.magnificPopup.close();
@@ -244,17 +244,12 @@ var JSCCommon = {
 	animateScroll: function animateScroll() {
 		$(document).on('click', " .top-nav li a, .scroll-link", function () {
 			var elementClick = $(this).attr("href");
-			var destination = $(elementClick).offset().top(100);
+			var destination = $(elementClick).offset().top - 150;
 			$('html, body').animate({
 				scrollTop: destination
 			}, 1000);
 			return false;
 		});
-	},
-	getCurrentYear: function getCurrentYear(el) {
-		var now = new Date();
-		var currentYear = document.querySelector(el);
-		if (currentYear) currentYear.innerText = now.getFullYear();
 	},
 	CustomInputFile: function CustomInputFile() {
 		var file = $(".add-file input[type=file]");
@@ -263,62 +258,7 @@ var JSCCommon = {
 			var name = $(".add-file__filename  ");
 			name.text(filename);
 		});
-	} // customRange: function customRange() {
-	// 	$(".range-wrap").each(function () {
-	// 		var _this = $(this);
-	// 		var $range = _this.find(".slider-js");
-	// 		var $inputFrom = _this.find(".input_from");
-	// 		var $inputTo = _this.find(".input_to");
-	// 		var instance,
-	// 			from,
-	// 			to,
-	// 			min = $range.data('min'),
-	// 			max = $range.data('max');
-	// 		$range.ionRangeSlider({
-	// 			skin: "round",
-	// 			type: "double",
-	// 			grid: false,
-	// 			grid_snap: false,
-	// 			hide_min_max: true,
-	// 			hide_from_to: true,
-	// 			onStart: updateInputs,
-	// 			onChange: updateInputs,
-	// 			onFinish: updateInputs
-	// 		});
-	// 		instance = $range.data("ionRangeSlider");
-	// 		function updateInputs(data) {
-	// 			from = data.from;
-	// 			to = data.to;
-	// 			$inputFrom.prop("value", from);
-	// 			$inputTo.prop("value", to);
-	// 		}
-	// 		$inputFrom.on("change", function () {
-	// 			var val = $(this).prop("value"); // validate
-	// 			if (val < min) {
-	// 				val = min;
-	// 			} else if (val > to) {
-	// 				val = to;
-	// 			}
-	// 			instance.update({
-	// 				from: val
-	// 			});
-	// 			$(this).prop("value", val);
-	// 		});
-	// 		$inputTo.on("change", function () {
-	// 			var val = $(this).prop("value"); // validate
-	// 			if (val < from) {
-	// 				val = from;
-	// 			} else if (val > max) {
-	// 				val = max;
-	// 			}
-	// 			instance.update({
-	// 				to: val
-	// 			});
-	// 			$(this).prop("value", val);
-	// 		});
-	// 	});
-	// },
-
+	}
 };
 var $ = jQuery;
 
@@ -331,11 +271,10 @@ function eventHandler() {
 	JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
-	JSCCommon.CustomInputFile(); // JSCCommon.customRange();
-
+	JSCCommon.CustomInputFile();
 	var x = window.location.host;
 	var screenName;
-	screenName = '02.png';
+	screenName = '05-320.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -468,37 +407,36 @@ function eventHandler() {
 		} else {
 			$('.jsSlideBack').show();
 		}
-	}); // let defaultSl = {
-	// 	spaceBetween: 0,
-	// 	lazy: {
-	// 		loadPrevNext: true,
-	// 	},
-	// 	watchOverflow: true,
-	// 	spaceBetween: 0,
-	// 	loop: true,
-	// 	navigation: {
-	// 		nextEl: '.swiper-button-next',
-	// 		prevEl: '.swiper-button-prev',
-	// 	},
-	// 	pagination: {
-	// 		el: ' .swiper-pagination',
-	// 		type: 'bullets',
-	// 		clickable: true,
-	// 		// renderBullet: function (index, className) {
-	// 		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-	// 		// }
-	// 	},
-	// }
-	// const swiper4 = new Swiper('.sBanners__slider--js', {
-	// 	// slidesPerView: 5,
-	// 	...defaultSl,
-	// 	slidesPerView: 'auto',
-	// 	freeMode: true,
-	// 	loopFillGroupWithBlank: true,
-	// 	touchRatio: 0.2,
-	// 	slideToClickedSlide: true,
-	// 	freeModeMomentum: true,
-	// });
+	});
+	fixedStip();
+
+	function fixedStip() {
+		var fixedStrip = document.querySelector('.scroll-top');
+		if (!fixedStrip) return;
+		window.addEventListener("scroll", toggleFixedStrip.bind(undefined, fixedStrip), {
+			passive: true
+		});
+		toggleFixedStrip(fixedStrip);
+		$(fixedStrip).click(function () {
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth"
+			});
+		});
+	}
+
+	function toggleFixedStrip(fixedStrip) {
+		if (window.scrollY > calcVh(10)) {
+			$(fixedStrip).addClass('active');
+		} else {
+			$(fixedStrip).removeClass('active');
+		}
+	}
+
+	function calcVh(v) {
+		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		return v * h / 100;
+	}
 
 	var partnerSlider = new Swiper('.partners__slider--js', {
 		slidesPerView: 'auto',
@@ -542,7 +480,10 @@ function eventHandler() {
 		}
 	});
 	$('.accardion-toggle--js').on('click', function () {
-		$(this).parent().find('.accardion-item').slideToggle();
+		$(this).toggleClass('active').parent().find('.accardion-item').slideToggle();
+	});
+	$('.custom-input__input').change(function () {
+		$(this).parents('form').find('.toggle-block').slideToggle().toggleClass('active');
 	});
 	var items = document.querySelectorAll(".sOurWork__item");
 	items.forEach(function (ell) {

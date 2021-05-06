@@ -3,12 +3,12 @@ mixin sOurWork(data)
 	+b.SECTION.sOurWork.section#sOurWork&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 Работы, которые мы выполняем
+				h2 Работы, которые мы&nbsp;выполняем
 
 			+e.itemsWrap
 				.row
 					mixin item(items)
-						.col-lg-3 
+						.col-6.col-lg-3 
 							+e.item(href="#")
 								+e.DIV.slider--js.swiper-container
 									.swiper-wrapper

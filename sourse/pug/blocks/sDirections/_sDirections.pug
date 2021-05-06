@@ -9,7 +9,7 @@ mixin sDirections(data)
 
 				.row
 					each item in data.items 
-						.col-md-6 
+						+e.col.col-lg-6 
 							+e.item 
 								+pic(item.img, 'bg', '')(class="picture-bg")
 								+e.title!= item.title

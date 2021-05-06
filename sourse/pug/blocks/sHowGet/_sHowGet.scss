@@ -1,12 +1,29 @@
 // start .sHowGet
 .sHowGet {
-	// --sPT: ;
-	// --sPB: ;
 	// --sTPB: ;
+	@include media-breakpoint-up(md) {
+		--sPB: #{rem(60)};
+		--sPT: #{rem(56)};
+	}
 	background-color: #f9f9f9;
 	h3 {
 		color: #707070;
 		font-weight: 300;
+		letter-spacing: 0.32px;
+		@include media-breakpoint-up(md) {
+			letter-spacing: 0.46px;
+		}
+		@include media-breakpoint-down(sm) {
+			font-size: 16px;
+		}
+	}
+
+	h2 {
+		color: $gray-900;
+
+		@include media-breakpoint-up(md) {
+			letter-spacing: 0.9px;
+		}
 	}
 
 	.map-wrap {
@@ -15,23 +32,37 @@
 		#map,
 		iframe,
 		> ymaps {
-			height: rem(578);
-			// width: 100%;
+			height: 353px !important;
+			@include media-breakpoint-up(md) {
+				height: rem(578) !important;
+			}
+
+			> ymaps {
+				height: 353px !important;
+				@include media-breakpoint-up(md) {
+					height: rem(578) !important;
+				}
+			}
 		}
 	}
 
 	&__contact-block {
-		position: absolute;
-		z-index: 4;
+		@include media-breakpoint-up(md) {
+			position: absolute;
+			z-index: 4;
+		}
 
 		@include media-breakpoint-down(md) {
-			position: inherit;
-			margin-bottom: rem(60);
+			display: none;
 		}
 
 		@include media-breakpoint-up(lg) {
-			top: 8%;
-			left: rem(65);
+			top: 7%;
+			left: rem(50);
+		}
+
+		@include media-breakpoint-up(xl) {
+			left: rem(80);
 		}
 
 		img {
@@ -40,20 +71,12 @@
 
 		a {
 			color: $body-color;
-
-			&:hover {
-				text-decoration: none;
-				color: #398bff;
-			}
-
-			&:active {
-				color: #1c61c1;
-			}
+			text-decoration: none;
 		}
 
 		ul {
-			max-width: rem(390);
-			padding: rem(54) rem(45) rem(46) rem(33);
+			max-width: rem(325);
+			padding: rem(54) rem(30) rem(46) rem(33);
 			background-color: #fff;
 			box-shadow: 3px 2px rem(35) rgba(154, 187, 206, 0.17);
 			border-radius: $border-radius-lg;

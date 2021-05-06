@@ -3,9 +3,13 @@
 	padding-top: rem(15);
 	&__toggle-block {
 		display: none;
+
+		.sQwiz__input {
+			text-align: center;
+		}
 	}
 	@include media-breakpoint-up(lg) {
-		padding-top: rem(51);
+		padding-top: rem(30);
 	}
 	padding-bottom: rem(30);
 	@include media-breakpoint-up(lg) {
@@ -26,6 +30,9 @@
 	}
 	&__item {
 		margin-bottom: rem(20);
+		@include media-breakpoint-up(lg) {
+			min-height: rem(694);
+		}
 	}
 	//Верхний блок
 	&__top {
@@ -149,6 +156,19 @@
 			height: 15px;
 			@include media-breakpoint-up(md) {
 				height: 35px;
+			}
+			position: relative;
+			overflow: hidden;
+			&::before {
+				content: "";
+				position: absolute;
+				z-index: 5;
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: rem(50px);
+				background-image: url("../img/@2x/webp/progress-decor.webp");
+				background-repeat: no-repeat;
 			}
 		}
 	}
@@ -532,8 +552,8 @@
 		border-bottom: dashed 1px;
 		margin-bottom: rem(31);
 		font-size: $medium;
+		font-weight: 700;
 		@include media-breakpoint-up(md) {
-			font-weight: 600;
 			margin-bottom: rem(41);
 		}
 		@include mt;
@@ -632,6 +652,7 @@
 			@include media-breakpoint-down(md) {
 				margin-left: -0.6rem;
 				margin-right: -0.6rem;
+				flex-wrap: wrap;
 			}
 			border-radius: 5px;
 			display: flex;
@@ -644,15 +665,24 @@
 			margin-bottom: rem(16);
 		}
 
+		&__wrap {
+			.tabs__btn {
+				display: none;
+			}
+		}
+
 		&__btn {
 			@include mt;
-			padding: rem(14) rem(20);
+			padding: rem(14) rem(10);
+			@include media-breakpoint-up(sm) {
+				padding: rem(14) rem(20);
+			}
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			width: 25%;
 			flex: 0 0 25%;
-			@include media-breakpoint-up(lg) {
+			@include media-breakpoint-up(sm) {
 				margin: -2px -1px;
 				border-radius: 0;
 			}
@@ -662,7 +692,7 @@
 			}
 			&:nth-child(2n + 1) {
 				@include media-breakpoint-down(md) {
-					margin-right: 0.5rem;
+					// margin-right: 0.5rem;
 				}
 			}
 			padding-bottom: rem(12);
@@ -719,7 +749,7 @@
 		// padding-bottom: rem(15);
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: rem(18);
+		margin-bottom: rem(20);
 		font-weight: 600;
 		@include media-breakpoint-up(md) {
 			font-size: rem(18);

@@ -23,7 +23,7 @@ mixin top-nav()
 			.container
 				+e.row.row
 					.col.col-lg-auto 
-						+e.logo(href='#')
+						+e.logo(href='/')
 							img.res-i(src="img/@2x/logo.png" alt="")
 					.col.d-none.d-lg-block
 						+mnu()
@@ -37,7 +37,7 @@ mixin top-nav()
 								.col-auto
 									+e.tel(href="tel:8(3519)232020") 8 (3519) 23-20-20
 								.col-12
-									+e.call.link-modal-js(href='modal-call') ЗАКАЗАТЬ ЗВОНОК
+									+e.call.link-modal-js(href='#modal-call') ЗАКАЗАТЬ ЗВОНОК
 					.col-auto.d-lg-none
 						+b.toggle-menu-mobile--js
 							span

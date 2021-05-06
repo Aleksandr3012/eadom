@@ -6,13 +6,14 @@ include ../blocks/sContact/_sContact.pug
 include ../blocks/sDirections/_sDirections.pug
 include ../blocks/sVacancies/_sVacancies.pug
 include ../blocks/sHowGet/_sHowGet.pug
+include ../blocks/s-contact/_s-contact.pug
 
 block variables
 	- let  mainPage= null
 	- let  bg= null
 
 block title
-	- let  title= 'Eвразия'
+	- let  title= 'Контакты'
 	title= title
 block pagecontent
 
@@ -22,67 +23,11 @@ block pagecontent
 		+top-nav()
 	+b.page-head
 		.container
-			+breadcrumb('Главная','Вакансии') 
+			+breadcrumb('Главная', title) 
 	+sContact-inner
 	+sHowGet
-	+footer({
-		instargam: '#',
-		vk: '#',
-		politeLink: '#',
-
-		links: [
-			{
-				text: `Строительство и&nbsp;ремонт коммерческой недвижимости`,
-				href: `#`
-			},
-			{
-				text: `Проекты домов со&nbsp;стоимостью`,
-				href: `#`
-			},
-			{
-				text: `Строительство домов и&nbsp;коттеджей`,
-				href: `#`
-			},
-			{
-				text: `Производство и&nbsp;продажа строительных материалов`,
-				href: `#`
-			},
-			{
-				text: `Вакансии`,
-				href: `#`
-			},
-			{
-				text: `Контакты`,
-				href: `#`
-			}
-		],
-		slides: [
-			{
-				img: 'partner-1.jpg'
-			},
-			{
-				img: 'partner-2.jpg'
-			},
-			{
-				img: 'partner-3.jpg'
-			},
-			{
-				img: 'partner-4.jpg'
-			},
-			{
-				img: 'partner-5.jpg'
-			},
-			{
-				img: 'partner-6.jpg'
-			},
-			{
-				img: 'partner-7.jpg'
-			},
-			{
-				img: 'partner-8.jpg'
-			}
-		],
-	})
+	+s-contact
+	+foot
 
 	//- +b.tabs--js.opacity-50
 	//- 	+e.caption.d-flex

@@ -208,11 +208,11 @@ const JSCCommon = {
 			}).done(function (data) {
 
 				$.fancybox.close();
-				$.fancybox.open({
-					src: '#modal-thanks',
-					type: 'inline'
-				});
-				// window.location.replace("/thanks.html");
+				// $.fancybox.open({
+				// 	src: '#modal-thanks',
+				// 	type: 'inline'
+				// });
+				window.location.replace("/thanks.html");
 				setTimeout(function () {
 					// Done Functions
 					th.trigger("reset");
@@ -241,18 +241,14 @@ const JSCCommon = {
 
 		$(document).on('click', " .top-nav li a, .scroll-link", function () {
 			const elementClick = $(this).attr("href");
-			const destination = $(elementClick).offset().top(100);
+			const destination = $(elementClick).offset().top-150;
 
 			$('html, body').animate({ scrollTop: destination }, 1000);
 
 			return false;
 		});
 	},
-	getCurrentYear(el) {
-		let now = new Date();
-		let currentYear = document.querySelector(el);
-		if (currentYear) currentYear.innerText = now.getFullYear();
-	},
+
 	CustomInputFile: function CustomInputFile() {
 		var file = $(".add-file input[type=file]");
 		file.change(function () {
@@ -262,61 +258,7 @@ const JSCCommon = {
 
 		});
 	},
-	// customRange: function customRange() {
-	// 	$(".range-wrap").each(function () {
-	// 		var _this = $(this);
-	// 		var $range = _this.find(".slider-js");
-	// 		var $inputFrom = _this.find(".input_from");
-	// 		var $inputTo = _this.find(".input_to");
-	// 		var instance,
-	// 			from,
-	// 			to,
-	// 			min = $range.data('min'),
-	// 			max = $range.data('max');
-	// 		$range.ionRangeSlider({
-	// 			skin: "round",
-	// 			type: "double",
-	// 			grid: false,
-	// 			grid_snap: false,
-	// 			hide_min_max: true,
-	// 			hide_from_to: true,
-	// 			onStart: updateInputs,
-	// 			onChange: updateInputs,
-	// 			onFinish: updateInputs
-	// 		});
-	// 		instance = $range.data("ionRangeSlider");
-	// 		function updateInputs(data) {
-	// 			from = data.from;
-	// 			to = data.to;
-	// 			$inputFrom.prop("value", from);
-	// 			$inputTo.prop("value", to);
-	// 		}
-	// 		$inputFrom.on("change", function () {
-	// 			var val = $(this).prop("value"); // validate
-	// 			if (val < min) {
-	// 				val = min;
-	// 			} else if (val > to) {
-	// 				val = to;
-	// 			}
-	// 			instance.update({
-	// 				from: val
-	// 			});
-	// 			$(this).prop("value", val);
-	// 		});
-	// 		$inputTo.on("change", function () {
-	// 			var val = $(this).prop("value"); // validate
-	// 			if (val < from) {
-	// 				val = from;
-	// 			} else if (val > max) {
-	// 				val = max;
-	// 			}
-	// 			instance.update({
-	// 				to: val
-	// 			});
-	// 			$(this).prop("value", val);
-	// 		});
-	// 	});
-	// },
+
 };
 const $ = jQuery;
 
@@ -330,11 +272,10 @@ function eventHandler() {
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
 	JSCCommon.CustomInputFile();
-	// JSCCommon.customRange();
 
 	var x = window.location.host;
 	let screenName;
-	screenName = '02.png';
+	screenName = '05-320.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -477,40 +418,33 @@ function eventHandler() {
 		}
 	});
 
+	fixedStip();
+	function fixedStip(){
+		let fixedStrip = document.querySelector('.scroll-top');
+		if(!fixedStrip) return
 
+		window.addEventListener("scroll", toggleFixedStrip.bind(undefined, fixedStrip), {passive:  true});
+		toggleFixedStrip(fixedStrip);
 
-	// let defaultSl = {
-	// 	spaceBetween: 0,
-	// 	lazy: {
-	// 		loadPrevNext: true,
-	// 	},
-	// 	watchOverflow: true,
-	// 	spaceBetween: 0,
-	// 	loop: true,
-	// 	navigation: {
-	// 		nextEl: '.swiper-button-next',
-	// 		prevEl: '.swiper-button-prev',
-	// 	},
-	// 	pagination: {
-	// 		el: ' .swiper-pagination',
-	// 		type: 'bullets',
-	// 		clickable: true,
-	// 		// renderBullet: function (index, className) {
-	// 		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-	// 		// }
-	// 	},
-	// }
-
-	// const swiper4 = new Swiper('.sBanners__slider--js', {
-	// 	// slidesPerView: 5,
-	// 	...defaultSl,
-	// 	slidesPerView: 'auto',
-	// 	freeMode: true,
-	// 	loopFillGroupWithBlank: true,
-	// 	touchRatio: 0.2,
-	// 	slideToClickedSlide: true,
-	// 	freeModeMomentum: true,
-	// });
+		$(fixedStrip).click(function (){
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth"
+			});
+		});
+	}
+	function toggleFixedStrip(fixedStrip){
+		if (window.scrollY > calcVh(10)){
+			$(fixedStrip).addClass('active');
+		}
+		else{
+			$(fixedStrip).removeClass('active');
+		}
+	}
+	function calcVh(v) {
+		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		return (v * h) / 100;
+	}
 
 	const partnerSlider = new Swiper('.partners__slider--js', {
 		slidesPerView: 'auto',
@@ -563,9 +497,13 @@ function eventHandler() {
 	});
 
 	$('.accardion-toggle--js').on('click', function(){
-		$(this).parent().find('.accardion-item').slideToggle();
+		$(this).toggleClass('active').parent().find('.accardion-item').slideToggle();
 	})
 
+
+	$('.custom-input__input').change(function () {
+		$(this).parents('form').find('.toggle-block').slideToggle().toggleClass('active');
+	})
 
 
 	let items = document.querySelectorAll(".sOurWork__item");

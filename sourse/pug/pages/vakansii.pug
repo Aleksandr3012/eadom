@@ -11,7 +11,7 @@ block variables
 	- let  bg= null
 
 block title
-	- let  title= 'Eвразия'
+	- let  title= 'Вакансии'
 	title= title
 block pagecontent
 
@@ -21,7 +21,7 @@ block pagecontent
 		+top-nav()
 	+b.page-head
 		.container
-			+breadcrumb('Главная','Вакансии') 
+			+breadcrumb('Главная', title) 
 	+sVacancies({
 		links: [
 			{
@@ -137,87 +137,4 @@ block pagecontent
 	+sForm-sm({
 		h2: `Отправьте ваше резюме и&nbsp;мы&nbsp;свяжемся с&nbsp;вами`,
 	})
-	+footer({
-		instargam: '#',
-		vk: '#',
-		politeLink: '#',
-
-		links: [
-			{
-				text: `Строительство и&nbsp;ремонт коммерческой недвижимости`,
-				href: `#`
-			},
-			{
-				text: `Проекты домов со&nbsp;стоимостью`,
-				href: `#`
-			},
-			{
-				text: `Строительство домов и&nbsp;коттеджей`,
-				href: `#`
-			},
-			{
-				text: `Производство и&nbsp;продажа строительных материалов`,
-				href: `#`
-			},
-			{
-				text: `Вакансии`,
-				href: `#`
-			},
-			{
-				text: `Контакты`,
-				href: `#`
-			}
-		],
-		slides: [
-			{
-				img: 'partner-1.jpg'
-			},
-			{
-				img: 'partner-2.jpg'
-			},
-			{
-				img: 'partner-3.jpg'
-			},
-			{
-				img: 'partner-4.jpg'
-			},
-			{
-				img: 'partner-5.jpg'
-			},
-			{
-				img: 'partner-6.jpg'
-			},
-			{
-				img: 'partner-7.jpg'
-			},
-			{
-				img: 'partner-8.jpg'
-			}
-		],
-	})
-
-	//- +b.tabs--js.opacity-50
-	//- 	+e.caption.d-flex
-	//- 		+e.btn.btn.btn-warning.active  btn1
-	//- 		+e.btn.btn.btn-warning btn 2
-	//- 		+e.btn.btn.btn-warning btn 3
-	//- 		+e.btn.btn.btn-warning btn 4
-	//- 	+e.wrap
-	//- 		+e.content.active content 1
-	//- 		+e.content content 2
-	//- 		+e.content content 3
-	//- 		+e.content content 4
-	//- +b.tabs--js
-	//- 	+e.caption.d-flex
-	//- 		+e.btn.btn.btn-success.active  btn  2 1
-	//- 		+e.btn.btn.btn-success btn 2  2
-	//- 		+e.btn.btn.btn-success btn 2  3
-	//- 		+e.btn.btn.btn-success btn  2 4
-	//- 	+e.wrap
-	//- 		+e.content.active content 1
-	//- 		+e.content content 2
-	//- 		+e.content content 3
-	//- 		+e.content content 4
-
-
-
+	+foot

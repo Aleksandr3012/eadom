@@ -83,14 +83,19 @@
 
 .polite {
 	text-align: center;
-	font-size: 13px;
+
+	font-size: 10px;
+	line-height: calc(14 / 10);
+	@include media-breakpoint-up(md) {
+		font-size: 13px;
+		line-height: calc(20 / 13);
+	}
 	color: #bdbdbd;
-	line-height: calc(20 / 13);
 
 	a {
 		color: #bdbdbd !important;
 		display: inline-block;
-		text-decoration: none;
+		// text-decoration: none;
 		letter-spacing: 0.26px;
 	}
 }

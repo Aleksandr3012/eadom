@@ -1,7 +1,7 @@
 mixin sForm(data)
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
-		+pic('form-bg.png','bg')(class="picture-bg")
+		+pic('form-bg.png','bg','')(class="picture-bg")
 		.container
 			+b.section-title.text-center
 				h2!= data.h2
@@ -12,15 +12,12 @@ mixin sForm(data)
 						+pic('manager.png')
 				.col 
 					+e.form 
-						+e.fotmTitle!= data.formTitle 
+						+e.formTitle!= data.formTitle 
 							img.d-none.d-lg-inline(src="img/@2x/tap.png" alt="" loading='lazy')
 						+e.textWrap
-							.row 
-								.col
-									p!= data.text 
-								.col-auto.d-lg-none 
-									+e.imgSm 
-										+pic('manager-sm.png','','')
+							+e.imgSm.d-lg-none 
+								+pic('manager-sm.png','','')
+							p!= data.text 
 						+form-wrap 
 							+input('Введите ваш телефон','tel')
 							+btn('Записаться на встречу','submit')
@@ -30,7 +27,7 @@ mixin sForm(data)
 mixin sForm-02(data)
 	// start sForm
 	+b.SECTION.sForm--02.section#sForm&attributes(attributes)
-		+pic('form-bg.png','bg')(class="picture-bg")
+		+pic('form-bg.png','bg','')(class="picture-bg")
 		.container
 
 
@@ -43,18 +40,15 @@ mixin sForm-02(data)
 						+b.section-title
 							h2!= data.h2
 						+e.textWrap
-							.row 
-								.col
-									each paragraph in data.paragraphs 
-										p!= paragraph.text 
-								.col-auto.d-lg-none 
-									+e.imgSm 
-										+pic('manager-sm.png','','')
+							+e.imgSm.d-lg-none 
+								+pic('director-sm.png','','')
+							each paragraph in data.paragraphs 
+								p!= paragraph.text 
 						+form-wrap 
 							.row 
-								.col-sm-5
+								+e.col.col-sm-6
 									+input('Введите ваш телефон','tel')(class="withoutPicture bg-transparent")
-								.col-sm-7
+								.col-sm
 									+btn('Обсудить сотрудничество','submit')
 	// end sForm
 
@@ -68,7 +62,7 @@ mixin sForm-sm(data)
 			+e.form
 				+form-wrap 
 					+add-file
-					+input('Введите ваш телефон','tel')(class="")
+					+input('Введите ваш телефон','tel','Введите телефон')(class="")
 					+btn('Отравить резюме','submit')
 					+polite
 	// end sForm

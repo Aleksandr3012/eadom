@@ -30,11 +30,11 @@ mixin sQwiz()
 											.col-lg
 												+e.main
 													+e.progress
-														+e.progress-bar(style=`width:${progress/4*100}%`)
+														+e.progress-bar(style=`width:${progress/4*50}%`)
 													+e.head
 														span Вопрос&nbsp;
 														span= pr
-														|&nbsp;из 5
+														|&nbsp;/ 5
 													+e.body
 														+e.title.h2= t
 														.custom-radio&attributes(attributes)
@@ -80,7 +80,7 @@ mixin sQwiz()
 															p Мы&nbsp;сможем оценить загруженность своей команды и&nbsp;организовать работу дизайнеров, проектировщиков и&nbsp;строителей.
 															p Если работы нужно начать &laquo;еще вчера&raquo;, найдем решение
 													+e.consultationWrap
-														+e.consultation.link-modal(href="#modal-call") Получить консультацию
+														+e.consultation.link-modal-js(href="#modal-call") Получить консультацию
 													+e.telWrap
 														+e.tel(href="tel:+8(3519)23-20-20") 8 (3519) 23-20-20
 													+soc
@@ -136,7 +136,7 @@ mixin sQwiz()
 									+radio('4','yes4','Да')(checked)
 								.col-md-6
 									+radio('4','no4','Нет')
-						+item('3','2.8','Какая общая площадь помещения?','','not','','btn-last-js')(class="twoItem")
+						+item('5','2.8','Когда планируется открытие?','','not','','btn-last-js')(class="twoItem")
 							.range-month.rangeWrap
 								input.range-slider.slider-js(type='text')
 						+item('')

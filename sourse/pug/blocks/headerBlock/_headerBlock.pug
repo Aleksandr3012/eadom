@@ -30,7 +30,8 @@ mixin headerBlock-02(data)
 					+b.section-title
 						h1!= data.h1
 						h4!= data.h3
-					+btn('Узнать стоимость работ','',data.btnLink)
+					.d-none.d-md-block
+						+btn('Узнать стоимость работ','',data.btnLink)
 					+e.descrWrap--modal 
 						+e.descr
 							.row 
