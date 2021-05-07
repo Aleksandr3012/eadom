@@ -92,22 +92,22 @@
 				}
 			}
 		}
+	}
 
-		strong {
-			display: block;
-			@extend .mono;
-			font-size: rem(19);
-			padding-bottom: rem(8);
-			line-height: calc(22 / 16);
-			@include media-breakpoint-up(md) {
-				padding-bottom: rem(18);
-				line-height: calc(32 / 24);
-				font-size: rem(24);
-			}
-			color: #262626;
-			@include media-breakpoint-down(md) {
-				max-width: 175px;
-			}
+	&__title {
+		display: block;
+		@extend .mono;
+		font-size: rem(19);
+		padding-bottom: rem(8);
+		line-height: calc(22 / 16);
+		@include media-breakpoint-up(md) {
+			padding-bottom: rem(18);
+			line-height: calc(32 / 24);
+			font-size: rem(24);
+		}
+		color: #262626;
+		@include media-breakpoint-down(md) {
+			max-width: 175px;
 		}
 	}
 

@@ -103,12 +103,11 @@
 				@include media-breakpoint-up(md) {
 					margin-right: rem(10);
 				}
-				@include media-breakpoint-down(md) {
-					margin-top: 4px;
-				}
+				margin-top: 4px;
 				background-image: url("../img/@2x/webp/check.webp");
 				background-size: 100%;
 				background-repeat: no-repeat;
+				flex-shrink: 0;
 			}
 		}
 	}

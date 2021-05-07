@@ -12,6 +12,15 @@
 		// padding-right: 40px 15px;
 	}
 
+	&__wrap {
+		text-align: center;
+
+		p {
+			@extend .mono;
+			font-size: 16px;
+		}
+	}
+
 	.mfp-close {
 		color: $primary;
 		font-size: 40px;
@@ -24,6 +33,16 @@
 
 	.soc {
 		justify-content: center;
+		@include roww(17px, m);
+
+		&__item {
+			width: 27px;
+			height: 27px;
+		}
+
+		.icon {
+			font-size: 18px;
+		}
 	}
 
 	&__call {
@@ -33,6 +52,7 @@
 		text-decoration: none;
 		color: $gray-900;
 		border-bottom: dashed 1px;
+		margin-bottom: rem(35);
 	}
 
 	&__tel {
@@ -40,6 +60,8 @@
 		@extend .mono;
 		text-decoration: none;
 		color: $gray-900;
+		display: block;
+		margin-bottom: rem(18);
 	}
 
 	.form-wrap {
@@ -190,7 +212,8 @@
 }
 
 #modal-contacts {
-	padding: 56px 10px 50px;
+	padding: 50px 10px 50px;
+	max-width: 298px;
 }
 a {
 	outline: 0 !important;

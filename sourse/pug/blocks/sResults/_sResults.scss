@@ -105,6 +105,7 @@
 	}
 
 	p {
+		font-weight: 300;
 		color: #1a1a1a;
 		letter-spacing: 0.1px;
 		margin-bottom: rem(20);
@@ -131,7 +132,7 @@
 		padding-top: rem(32);
 
 		h4 {
-			margin-bottom: rem(10);
+			margin-bottom: rem(10) !important;
 			@include media-breakpoint-down(sm) {
 				margin-left: 0;
 				max-width: none;
@@ -160,17 +161,16 @@
 	}
 	.swiper-button-hand {
 		background-size: cover;
-		background-position: 0 -120px;
-		@include mt(0.2s);
-		background-image: linear-gradient(
-			to top,
-			#f6b73e 0%,
-			#fdd467 79%,
-			#ffdb72 99%,
-			#ffdb72 100%
-		);
+		background: transparent;
+
 		&:hover {
-			background-position: 0 0;
+			background-image: linear-gradient(
+				to top,
+				#f6b73e 0%,
+				#fdd467 79%,
+				#ffdb72 99%,
+				#ffdb72 100%
+			);
 			border-color: #fff;
 
 			.icon {
@@ -179,6 +179,7 @@
 		}
 
 		.icon {
+			color: $gray-400;
 			font-size: rem(20);
 			@include media-breakpoint-up(sm) {
 				font-size: rem(27);
@@ -276,6 +277,10 @@
 			@include media-breakpoint-down(lg) {
 				margin-right: 3px;
 			}
+		}
+
+		span {
+			font-weight: 300;
 		}
 	}
 	&__content {

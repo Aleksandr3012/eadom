@@ -11,6 +11,6 @@ mixin sRecommendation(data)
 						each item in data.items 
 							li
 								+e.textWrap
-									strong!= item.title
+									+e.title!= item.title
 									span!= item.text
 	// end sRecommendation
