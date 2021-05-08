@@ -60,7 +60,8 @@ mixin sQwiz()
 											+e.sitebar.col
 												+e.sitebarWrap
 													+e.supervisor
-														+pic('director-sm.png','','')
+														img(src="img/@2x/director-sm.png" alt="Директор" loading="lazy")
+														//- +pic('director-sm.png','','')
 														div
 															.h6 Андрей Владимирович
 															p Генеральный директор
@@ -129,7 +130,7 @@ mixin sQwiz()
 									+radio('1','other2','Другое')(class='toggle-input-js')
 						+item('3','70','Какая общая площадь помещения?','','not')(class="twoItem")
 							.range-area.rangeWrap
-								input.range-slider.slider-js(type='text')
+								input.range-slider.slider-js(type='text' name="Площадь помещения")
 						+item('4','80',' У вас уже имеется проект?','','not','')
 							.row
 								.col-md-6
@@ -138,7 +139,7 @@ mixin sQwiz()
 									+radio('4','no4','Нет')
 						+item('5','90','Когда планируется открытие?','','not','','btn-last-js')(class="twoItem")
 							.range-month.rangeWrap
-								input.range-slider.slider-js(type='text')
+								input.range-slider.slider-js(type='text' name="Кога открытие")
 						+item('')
 
 
