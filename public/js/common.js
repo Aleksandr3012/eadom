@@ -370,6 +370,12 @@ function eventHandler() {
 
 				return progress + progresText;
 			}
+		},
+		autoHeight: true,
+		breakpoints: {
+			992: {
+				autoHeight: false
+			}
 		}
 	}); //Переключение слайда по кнопке
 
