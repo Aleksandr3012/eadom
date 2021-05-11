@@ -86,7 +86,7 @@ $html = '
     
     //Какой у вас тип помещения?
     if (!empty($_POST['step2text'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;">Какой у вас тип помещения? (cсылка на сайт):</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step2text'] . '</b></td>';
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;">Какой у вас тип помещения?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step2text'] . '</b></td>';
     }
 
     else if (!empty($_POST['step2'])) {

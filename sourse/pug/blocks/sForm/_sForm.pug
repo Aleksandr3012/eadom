@@ -18,7 +18,7 @@ mixin sForm(data)
 							+e.imgSm.d-lg-none 
 								+pic('manager-sm.png','','')
 							p!= data.text 
-						+form-wrap('Записаться на встречу с сайта Евразия')
+						+form-wrap('Запишитесь на встречу в 1 клик')
 							+input('Введите ваш телефон','tel')
 							+btn('Записаться на встречу','submit')
 							+polite
@@ -44,7 +44,7 @@ mixin sForm-02(data)
 								+pic('director-sm.png','','')
 							each paragraph in data.paragraphs 
 								p!= paragraph.text 
-						+form-wrap('Обсудить сотрудничество с сайта Евразия')
+						+form-wrap('Обсудить сотрудничество')
 							.row 
 								+e.col.col-sm-6
 									+input('Введите ваш телефон','tel')(class="withoutPicture bg-transparent")

@@ -24,14 +24,7 @@ var JSCCommon = {
 				en: {
 					CLOSE: "Закрыть",
 					NEXT: "Вперед",
-					PREV: "Назад" // PLAY_START: "Start slideshow",
-					// PLAY_STOP: "Pause slideshow",
-					// FULL_SCREEN: "Full screen",
-					// THUMBS: "Thumbnails",
-					// DOWNLOAD: "Download",
-					// SHARE: "Share", 
-					// ZOOM: "Zoom"
-
+					PREV: "Назад"
 				}
 			},
 			beforeLoad: function beforeLoad() {
@@ -179,12 +172,7 @@ var JSCCommon = {
 					}
 				});
 			});
-		}); // $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-		// 	$(this)
-		// 		.addClass('active').siblings().removeClass('active')
-		// 		.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-		// 		.eq($(this).index()).fadeIn().addClass('active');
-		// });
+		});
 	},
 	// /tabs
 	inputMask: function inputMask() {
@@ -196,59 +184,6 @@ var JSCCommon = {
 		Inputmask("+9(999)999-99-99").mask(InputTel);
 	},
 	// /inputMask
-	ifie: function ifie() {
-		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
-
-		if (isIE11) {
-			document.body.insertAdjacentHTML("beforeend", '<div class="browsehappy">	<p class=" container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p></div>');
-		}
-	},
-	// sendForm() {
-	// 	var gets = (function () {
-	// 		var a = window.location.search;
-	// 		var b = new Object();
-	// 		var c;
-	// 		a = a.substring(1).split("&");
-	// 		for (var i = 0; i < a.length; i++) {
-	// 			c = a[i].split("=");
-	// 			b[c[0]] = c[1];
-	// 		}
-	// 		return b;
-	// 	})();
-	// 	// form
-	// 	$(document).on('submit', "form", function (e) {
-	// 		e.preventDefault();
-	// 		const th = $(this);
-	// 		var data = th.serialize();
-	// 		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-	// 		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-	// 		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-	// 		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-	// 		$.ajax({
-	// 			url: 'action.php',
-	// 			type: 'POST',
-	// 			data: data,
-	// 		}).done(function (data) {
-	// 			$.fancybox.close();
-	// 			// $.fancybox.open({
-	// 			// 	src: '#modal-thanks',
-	// 			// 	type: 'inline'
-	// 			// });
-	// 			if (th.hasClass('sQwiz__wrap')) {
-	// 				window.location.replace("/thanks-qwiz.html");
-	// 			} else {
-	// 				window.location.replace("/thanks.html");
-	// 			}
-	// 			setTimeout(function () {
-	// 				// Done Functions
-	// 				th.trigger("reset");
-	// 				// $.magnificPopup.close();
-	// 				// ym(53383120, 'reachGoal', 'zakaz');
-	// 				// yaCounter55828534.reachGoal('zakaz');
-	// 			}, 4000);
-	// 		}).fail(function () { });
-	// 	});
-	// },
 	heightwindow: function heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		var vh = window.innerHeight * 0.01; // Then we set the value in the --vh custom property to the root of the document
@@ -285,22 +220,13 @@ var JSCCommon = {
 var $ = jQuery;
 
 function eventHandler() {
-	JSCCommon.ifie();
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('.tabs--js');
 	JSCCommon.mobileMenu();
-	JSCCommon.inputMask(); // JSCCommon.sendForm();
-
+	JSCCommon.inputMask();
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
 	JSCCommon.CustomInputFile();
-	var x = window.location.host;
-	var screenName;
-	screenName = '05-320.png';
-
-	if (screenName && x.includes("localhost:30")) {
-		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
-	}
 
 	var gets = function () {
 		var a = window.location.search;
@@ -319,70 +245,49 @@ function eventHandler() {
 	$("form").submit(function (e) {
 		e.preventDefault();
 		var th = $(this);
+
+		var getValue = function getValue(a) {
+			return th.find(a).val() || '';
+		};
+
 		var inputs = {
-			name: th.find('[name="name"]').val() || '',
-			email: th.find('[name="email"]').val() || '',
-			utm_source: th.find('[name="utm_source"]').val() || '',
-			utm_term: th.find('[name="utm_term"]').val() || '',
-			utm_medium: th.find('[name="utm_medium"]').val() || '',
-			utm_campaign: th.find('[name="utm_campaign"]').val() || '',
-			order: th.find('[name="order"]').val() || '',
-			tel: th.find('[name="tel"]').val() || '',
-			step1: th.find('[name="step1"]').val() || '',
-			step1text: th.find('[name="step1text"]').val() || '',
-			step2: th.find('[name="step2"]').val() || '',
-			step2text: th.find('[name="step2text"]').val() || '',
-			area: th.find('[name="area"]').val() || '',
-			step4: th.find('[name="step4"]').val() || '',
-			WhenOpening: th.find('[name="WhenOpening"]').val() || '',
-			whatsapp: th.find('[name="whatsapp"]').val() || '',
-			viber: th.find('[name="viber"]').val() || '',
-			telegram: th.find('[name="telegram"]').val() || '',
-			time: th.find('[name="time"]').val() || '',
-			datetime: th.find('[name="datetime"]').val() || '',
-			comment: th.find('[name="comment"]').val() || ''
+			name: getValue('[name="name"]'),
+			email: getValue('[name="email"]'),
+			utm_source: getValue('[name="utm_source"]'),
+			utm_term: getValue('[name="utm_term"]'),
+			utm_medium: getValue('[name="utm_medium"]'),
+			utm_campaign: getValue('[name="utm_campaign"]'),
+			order: getValue('[name="order"]'),
+			tel: getValue('[name="tel"]'),
+			step1: getValue('[name="step1"]:checked'),
+			step1text: getValue('[name="step1text"]:checked'),
+			step2: getValue('[name="step2"]:checked'),
+			step2text: getValue('[name="step2text"]:checked'),
+			area: getValue('[name="area"]'),
+			step4: getValue('[name="step4"]:checked'),
+			WhenOpening: getValue('[name="WhenOpening"]'),
+			whatsapp: getValue('[name="whatsapp"]'),
+			viber: getValue('[name="viber"]'),
+			telegram: getValue('[name="telegram"]'),
+			time: getValue('[name="time"]'),
+			datetime: getValue('[name="datetime"]'),
+			comment: getValue('[name="comment"]')
 		};
 		inputs.utm_source = decodeURIComponent(gets['utm_source'] || '');
 		inputs.utm_term = decodeURIComponent(gets['utm_term'] || '');
 		inputs.utm_medium = decodeURIComponent(gets['utm_medium'] || '');
 		inputs.utm_campaign = decodeURIComponent(gets['utm_campaign'] || '');
-		var data = new FormData($('form')[0]); // data.append('order', order);
-		// var file = th.find('[name="file"]');
+		var data = new FormData($('form')[0]);
 
 		for (var prop in inputs) {
-			// console.log("inputs." + prop + " = " + inputs[prop]);
 			if (inputs[prop]) data.append(prop, inputs[prop]);
-		} // if(!$('#div').children('#id').length > 0) {...}
-
+		}
 
 		var file = th.find('[name="file"]');
 
 		if (file.length > 0) {
 			data.append('file', file.prop('files')[0]);
-		} // let file = th.find('[name="file"]').prop('files')[0];
-		// if (inputs.email ) data.append('email', inputs.email);
-		// data.append('file', file);
-		// if (tel ) {
-		// 	data.append('organization', organization);
-		// 	data.append('tel', tel);
-		// }
-		// else {
-		// 	var file = th.find('[name="file"]').prop('files')[0]
-		// 	data.append('file', file);
-		// }
-		// data.append('utm_source', inputs.utm_source);
-		// data.append('utm_term', inputs.utm_term);
-		// data.append('utm_medium', inputs.utm_medium);
-		// data.append('utm_campaign', inputs.utm_campaign);
-		// data = th.serialize();
-		// data.append('action_present', 'save');
-		// data.append('product_id', $product_id);
-		// data.append('title', title);
-		// data.append('description', description);
-		// data.append('publish_down', publish_down);
-		// data.append('removefile', removefile);
-		// data.append('file', $('#file_present')[0].files[0]);
-
+		}
 
 		$.ajax({
 			url: 'action.php',
@@ -394,22 +299,16 @@ function eventHandler() {
 			type: 'POST',
 			data: data
 		}).done(function (data) {
-			$.fancybox.close(); // if (th.parent().is("#modal-call-catalog")) {
-			// 	$("#modal-thanks .after-headline").after('<div class="download-wrap"><a class="h3" href="superlok-catalog.pdf" download>Скачать каталог</a> </div>')
-			// }
-			// else {
-			// 	$(".download-wrap").remove();
-			// }
-			// if (th.hasClass('sQwiz__wrap')) {
-			// 	window.location.replace("/thanks-qwiz.html");
-			// } else {
-			// 	window.location.replace("/thanks.html");
-			// }
+			$.fancybox.close();
+
+			if (th.hasClass('sQwiz__wrap')) {
+				window.location.replace("/thanks-qwiz.html");
+			} else {
+				window.location.replace("/thanks.html");
+			}
 
 			setTimeout(function () {
-				// Done Functions
-				th.trigger("reset"); // $.magnificPopup.close();
-				// $.fancybox.close();
+				th.trigger("reset");
 			}, 4000);
 		}).fail(function () {});
 	});
@@ -659,10 +558,4 @@ if (document.readyState !== 'loading') {
 	eventHandler();
 } else {
 	document.addEventListener('DOMContentLoaded', eventHandler);
-} // window.onload = function () {
-// 	document.body.classList.add('loaded_hiding');
-// 	window.setTimeout(function () {
-// 		document.body.classList.add('loaded');
-// 		document.body.classList.remove('loaded_hiding');
-// 	}, 500);
-// }
+}

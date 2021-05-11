@@ -679,9 +679,6 @@
 				position: relative;
 				border: 2px solid #81cd64;
 			}
-			&:hover {
-				// position: relative;
-			}
 		}
 
 		// &__btn:not(:last-child) {
@@ -764,18 +761,7 @@
 	pointer-events: none;
 }
 
-.topBlockHidden {
-	// opacity: 0;
-	// transform: scale(0);
-	// height: 0px;
-	// display: none;
-}
-
 .irs {
-	.irs--round {
-	}
-	.irs-grid {
-	}
 	.irs-bar {
 		top: auto;
 		margin-top: 6px;
@@ -804,8 +790,7 @@
 		top: auto;
 		// margin-top: 5px;
 	}
-	.irs-show {
-	}
+
 	.irs-min,
 	.irs-max {
 		visibility: visible !important;
@@ -817,10 +802,7 @@
 		font-weight: 500;
 		font-family: $default-font;
 	}
-	.irs-min {
-	}
-	.irs-max {
-	}
+
 	.irs-line {
 		margin-top: rem(30);
 	}
@@ -846,7 +828,5 @@
 		&::before {
 			display: none;
 		}
-	}
-	.irs-showhandle {
 	}
 }
