@@ -82,19 +82,23 @@
 
 		&:hover {
 			.sDirections__hidden {
-				transform: scale(1);
+				// transform: scale(1);
 				height: 100%;
+				opacity: 1;
+				visibility: visible;
 			}
 		}
 	}
 	&__hidden {
+		visibility: hidden;
 		display: flex;
 		flex-direction: column;
 		height: 0;
-		transform: scale(1, 0);
-		transform-origin: top;
+		// transform: scale(1, 0);
+		// transform-origin: bottom;
+		opacity: 0;
 		// transition: transform var(--transition);
-		@include mt;
+		@include mt(0.5s);
 	}
 	&__title {
 		@extend .mono;
