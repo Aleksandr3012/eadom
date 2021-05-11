@@ -7,9 +7,9 @@
 
 Для проверки форм
 
-1. <https://http://test2.alekslv.in.net/>
-1. <https://http://test2.alekslv.in.net/remont-magazinov.html>
-1. <https://http://test2.alekslv.in.net/vakansii.html>
-1. <https://http://test2.alekslv.in.net/kontakti.html>
-1. <https://http://test2.alekslv.in.net/qwiz.html>
-1. <https://http://test2.alekslv.in.net/thanks.html>
+1. <http://test2.alekslv.in.net/>
+1. <http://test2.alekslv.in.net/remont-magazinov.html>
+1. <http://test2.alekslv.in.net/vakansii.html>
+1. <http://test2.alekslv.in.net/kontakti.html>
+1. <http://test2.alekslv.in.net/qwiz.html>
+1. <http://test2.alekslv.in.net/thanks.html>
