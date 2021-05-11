@@ -23,3 +23,26 @@ mixin sThanks(data)
 						+e.imgWrap 
 							+pic('director-2.png','','')
 	// end sThanks
+
+mixin sThanks-qwiz(data)
+	// start sThanks
+	+b.SECTION.sThanks.section#sThanks&attributes(attributes)
+		+pic('thank-bg.jpg','bg')(class="picture-bg")
+		.container
+			.row
+				.col-lg-6.col-md-8
+					+b.section-title
+						h2.border-left!= data.h2
+					h4.border-left.mb-4!= data.h4
+					h4 Если у&nbsp;вас срочный вопрос, звоните нам по&nbsp;телефону:
+					+e.link(href="tel:8(3519)23-20-20") 
+						img.mr-1(src="img/@2x/call.png" alt="" loading="lazy") 
+						|8 (3519) 23-20-20
+				+e.col.col-lg.align-self-end
+					+e.rightBlck 
+						+e.nameBlock 
+							+e.name Андрей Владимирович
+							+e.post Генеральный дирекор <br>ООО ПСК «Евразия»
+						+e.imgWrap 
+							+pic('director-2.png','','')
+	// end sThanks

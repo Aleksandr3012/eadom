@@ -20,7 +20,7 @@ $mail->setFrom('info@info.com','info info');
 
 
 //Субъект
-$mail->Subject = 'Заявка с сайта';
+$mail->Subject = 'Заявка с сайта Евразия';
 
 $time = date('d.m.Y в H:i');
 $html = '
@@ -63,6 +63,10 @@ $html = '
                 $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Время для звонка:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['datetime'] . '</b></td></tr>';
         }
 
+        if (!empty($_POST['time'])) {
+            $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Время для звонка:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['time'] . '</b></td></tr>';
+     }
+
     if (!empty($_POST['text'])) {
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Вопрос:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['text'] . '</b></td>';
     }
@@ -72,36 +76,40 @@ $html = '
     }
 
     // Какой тип работ вам необходим?
-    if (!empty($_POST['step-1-text'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Какой тип работ вам необходим?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-1-text'] . '</b></td>';
+    if (!empty($_POST['step1text'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Какой тип работ вам необходим?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step1text'] . '</b></td>';
     }
 
-    else if (!empty($_POST['step-1'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> Какой тип работ вам необходим?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-1'] . '</b></td></tr>';
+    else if (!empty($_POST['step1'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> Какой тип работ вам необходим?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step1'] . '</b></td></tr>';
     }
     
     //Какой у вас тип помещения?
-    if (!empty($_POST['step-2-text'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;">Какой у вас тип помещения? (cсылка на сайт):</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-2-text'] . '</b></td>';
+    if (!empty($_POST['step2text'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;">Какой у вас тип помещения? (cсылка на сайт):</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step2text'] . '</b></td>';
     }
 
-    else if (!empty($_POST['step-2'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;">Какой у вас тип помещения?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-2'] . '</b></td></tr>';
+    else if (!empty($_POST['step2'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;">Какой у вас тип помещения?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step2'] . '</b></td></tr>';
     }
     
     
     // Какая общая площадь помещения?
-    if (!empty($_POST['step-3-text'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Какая общая площадь помещения?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-3-text'] . '</b></td>';
+    if (!empty($_POST['area'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Какая общая площадь помещения?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['area'] . '</b></td>';
     }
 
-   else if (!empty($_POST['step-3'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> Какая общая площадь помещения?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-3'] . '</b></td></tr>';
+
+    // Когда планируется открытие?
+    if (!empty($_POST['WhenOpening'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Когда планируется открытие?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">через ' . $_POST['WhenOpening'] . ' месяцев</b></td>';
     }
+
+
     
     //  У вас уже имеется проект?
-     if (!empty($_POST['step-4'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> У вас уже имеется проект?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-4'] . '</b></td></tr>';
+     if (!empty($_POST['step4'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> У вас уже имеется проект?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step4'] . '</b></td></tr>';
     }
     
 
@@ -135,18 +143,12 @@ if ($_FILES['file']['tmp_name']) {
 //  $mail->addAttachment($_FILES['file2']['tmp_name'],$_FILES['file2']['name']);
 // }
 
-//send the message, check for errors
 if (empty($_POST['example-input-field'])) {
 
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
-       
-        session_start();
-        $_SESSION['success'] = isset($_POST['name']) ? $_POST['name'] : null;
-        $_SESSION['successTime'] = isset($_POST['datetime']) ? $_POST['datetime'] : null;
-        $_SESSION['qwiz'] = isset($_POST['qwiz']) ? $_POST['qwiz'] : null;
-        header( 'Location: /thanks.php', true, 301 );
+        echo "Message sent!";
     }
     if (isset($uploadfile))unlink($uploadfile);
     if (isset($uploadfile2))unlink($uploadfile2);

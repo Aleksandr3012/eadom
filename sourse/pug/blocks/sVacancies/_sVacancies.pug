@@ -9,8 +9,8 @@ mixin sVacancies(data)
 				each link in data.links 
 					li
 						//- a(href=link.link )!= link.text
-						a(href= link.link )!= link.text
-			+e.sendResume(href="#sForm") Отправить резюме
+						a.scroll-link(href= link.link )!= link.text
+			+e.sendResume.scroll-link(href="#sForm") Отправить резюме
 			each item in data.items 
 				+e.item(id= item.id) 
 					h3!= item.title 

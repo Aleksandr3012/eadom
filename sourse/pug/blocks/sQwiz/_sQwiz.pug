@@ -1,5 +1,5 @@
 mixin radio(p,n,t)
-	input.qwiz-radio-btn(type="radio" name=`step-${p}` id=`${n}`   value= t)&attributes(attributes)
+	input.qwiz-radio-btn(type="radio" name=`step${p}` id=`${n}` value= t)&attributes(attributes)
 	label.btn(for=`${n}`)= t
 
 
@@ -35,16 +35,16 @@ mixin sQwiz()
 														span Вопрос&nbsp;
 														span= pr
 														|&nbsp;/ 5
-													+e.body
+													+e.body&attributes(attributes)
 														+e.title.h2= t
-														.custom-radio&attributes(attributes)
-															block
+
+														block
 														//- 	each item in items
 														//- 		input(type="radio" name=`Вопрос:${pr}` id=`${item}`)
 														//- 		label.btn(for=`${item}`)= item
 														if inp
 															+e.toggle-block
-																+input(`${inp}`,'text','', `step-${pr}-text`)
+																+input(`${inp}`,'text','', `step${pr}text`)
 													+e.foot.row
 														.col-xl-4.col-sm-6.order-sm-last
 															+e.next.jsNextQuest.btn.btn-primary(type="button" class= per)
@@ -98,48 +98,49 @@ mixin sQwiz()
 
 
 						+item('1','50',' Какой тип работ вам необходим?', 'Напишите, какую задачу вам необходимо решить')
-							.row
-								.col-md-6
-									+radio('1','New-construction','Новое строительство')(checked)
-								.col-md-6
-									+radio('1','Major-overhaul','Капитальный ремонт')
-								.col-md-6
-									+radio('1','Redecorating','Косметический ремонт')
-								.col-md-6
-									+radio('1','Reconstruction','Реконструкция')
-								.col-md-6
-									+radio('1','other1','Другое')(class='toggle-input-js')
+							.custom-radio
+								.row
+									.col-md-6
+										+radio('1','New-construction','Новое строительство')(checked)
+									.col-md-6
+										+radio('1','Major-overhaul','Капитальный ремонт')
+									.col-md-6
+										+radio('1','Redecorating','Косметический ремонт')
+									.col-md-6
+										+radio('1','Reconstruction','Реконструкция')
+									.col-md-6
+										+radio('1','other1','Другое')(class='toggle-input-js')
 
 						+item('2','60',' Какой у вас тип помещения?','Напишите, какой у вас тип помещения','not')
-							.row
-								.col-xl-4.col-md-6
-									+radio('1','Office','Офис')(checked)
-								.col-xl-4.col-md-6
-									+radio('1','shop','Магазин')
-								.col-xl-4.col-md-6
-									+radio('1','restaurant ','Ресторан')
-								.col-xl-4.col-md-6
-									+radio('1','Hotel','Гостиница')
-								.col-xl-4.col-md-6
-									+radio('1','Beauty-saloon','Салон красоты')
-								.col-xl-4.col-md-6
-									+radio('1','Bank ','Банк')
-								.col-xl-4.col-md-6
-									+radio('1','Manufacturing-facility','Производственный цех')
-								.col-xl-4.col-md-6
-									+radio('1','other2','Другое')(class='toggle-input-js')
+							.custom-radio
+								.row
+									.col-xl-4.col-md-6
+										+radio('2','Office','Офис')(checked)
+									.col-xl-4.col-md-6
+										+radio('2','shop','Магазин')
+									.col-xl-4.col-md-6
+										+radio('2','restaurant ','Ресторан')
+									.col-xl-4.col-md-6
+										+radio('2','Hotel','Гостиница')
+									.col-xl-4.col-md-6
+										+radio('2','Beauty-saloon','Салон красоты')
+									.col-xl-4.col-md-6
+										+radio('2','Bank ','Банк')
+									.col-xl-4.col-md-6
+										+radio('2','Manufacturing-facility','Производственный цех')
+									.col-xl-4.col-md-6
+										+radio('2','other2','Другое')(class='toggle-input-js')
 						+item('3','70','Какая общая площадь помещения?','','not')(class="twoItem")
-							.range-area.rangeWrap
-								input.range-slider.slider-js(type='text' name="Площадь помещения")
+							input.range-slider.slider-js.range-area.rangeWrap(type='text' name="area")
 						+item('4','80',' У вас уже имеется проект?','','not','')
-							.row
-								.col-md-6
-									+radio('4','yes4','Да')(checked)
-								.col-md-6
-									+radio('4','no4','Нет')
+							.custom-radio
+								.row
+									.col-md-6
+										+radio('4','yes4','Да')(checked)
+									.col-md-6
+										+radio('4','no4','Нет')
 						+item('5','90','Когда планируется открытие?','','not','','btn-last-js')(class="twoItem")
-							.range-month.rangeWrap
-								input.range-slider.slider-js(type='text' name="Кога открытие")
+							input.range-slider.slider-js.range-month.rangeWrap(type='text' name="WhenOpening")
 						+item('')
 
 

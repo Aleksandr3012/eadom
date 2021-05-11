@@ -29,7 +29,7 @@ var JSCCommon = {
 					// FULL_SCREEN: "Full screen",
 					// THUMBS: "Thumbnails",
 					// DOWNLOAD: "Download",
-					// SHARE: "Share",
+					// SHARE: "Share", 
 					// ZOOM: "Zoom"
 
 				}
@@ -144,7 +144,7 @@ var JSCCommon = {
 				if (!content.dataset.tabContent == data) return;
 				var active = content.classList.contains('active') ? 'active' : ''; // console.log(el.innerHTML);
 
-				content.insertAdjacentHTML("beforebegin", "<div class=\"tabs__btn ".concat(active, "\" data-tab-btn=\"").concat(data, "\">").concat(el.innerHTML, "</div>"));
+				content.insertAdjacentHTML("beforebegin", "<div class=\"tabs__btn tabs__btn--accordion ".concat(active, "\" data-tab-btn=\"").concat(data, "\">").concat(el.innerHTML, "</div>"));
 			});
 			tabs.addEventListener('click', function (element) {
 				var btn = element.target.closest("[data-tab-btn]:not(.active)");
@@ -156,7 +156,27 @@ var JSCCommon = {
 					element.dataset.tabBtn == data ? element.classList.add('active') : element.classList.remove('active');
 				});
 				content.forEach(function (element) {
-					element.dataset.tabContent == data ? (element.classList.add('active'), element.previousSibling.classList.add('active')) : element.classList.remove('active');
+					if (element.dataset.tabContent == data) {
+						element.classList.add('active'), element.previousSibling.classList.add('active');
+
+						if (btn.classList.contains('tabs__btn--accordion')) {
+							setTimeout(function () {
+								function getCoords(elem) {
+									var box = elem.getBoundingClientRect();
+									return box.top + pageYOffset;
+								}
+
+								var heightHeader = $('.top-nav').height();
+								var destination = getCoords(element);
+								$('html, body').animate({
+									scrollTop: destination - heightHeader
+								}, 1100);
+								console.log(destination);
+							}, 100);
+						}
+					} else {
+						element.classList.remove('active');
+					}
 				});
 			});
 		}); // $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
@@ -183,50 +203,52 @@ var JSCCommon = {
 			document.body.insertAdjacentHTML("beforeend", '<div class="browsehappy">	<p class=" container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p></div>');
 		}
 	},
-	sendForm: function sendForm() {
-		var gets = function () {
-			var a = window.location.search;
-			var b = new Object();
-			var c;
-			a = a.substring(1).split("&");
-
-			for (var i = 0; i < a.length; i++) {
-				c = a[i].split("=");
-				b[c[0]] = c[1];
-			}
-
-			return b;
-		}(); // form
-
-
-		$(document).on('submit', "form", function (e) {
-			e.preventDefault();
-			var th = $(this);
-			var data = th.serialize();
-			th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-			$.ajax({
-				url: 'action.php',
-				type: 'POST',
-				data: data
-			}).done(function (data) {
-				$.fancybox.close(); // $.fancybox.open({
-				// 	src: '#modal-thanks',
-				// 	type: 'inline'
-				// });
-
-				window.location.replace("/thanks.html");
-				setTimeout(function () {
-					// Done Functions
-					th.trigger("reset"); // $.magnificPopup.close();
-					// ym(53383120, 'reachGoal', 'zakaz');
-					// yaCounter55828534.reachGoal('zakaz');
-				}, 4000);
-			}).fail(function () {});
-		});
-	},
+	// sendForm() {
+	// 	var gets = (function () {
+	// 		var a = window.location.search;
+	// 		var b = new Object();
+	// 		var c;
+	// 		a = a.substring(1).split("&");
+	// 		for (var i = 0; i < a.length; i++) {
+	// 			c = a[i].split("=");
+	// 			b[c[0]] = c[1];
+	// 		}
+	// 		return b;
+	// 	})();
+	// 	// form
+	// 	$(document).on('submit', "form", function (e) {
+	// 		e.preventDefault();
+	// 		const th = $(this);
+	// 		var data = th.serialize();
+	// 		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
+	// 		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
+	// 		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
+	// 		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
+	// 		$.ajax({
+	// 			url: 'action.php',
+	// 			type: 'POST',
+	// 			data: data,
+	// 		}).done(function (data) {
+	// 			$.fancybox.close();
+	// 			// $.fancybox.open({
+	// 			// 	src: '#modal-thanks',
+	// 			// 	type: 'inline'
+	// 			// });
+	// 			if (th.hasClass('sQwiz__wrap')) {
+	// 				window.location.replace("/thanks-qwiz.html");
+	// 			} else {
+	// 				window.location.replace("/thanks.html");
+	// 			}
+	// 			setTimeout(function () {
+	// 				// Done Functions
+	// 				th.trigger("reset");
+	// 				// $.magnificPopup.close();
+	// 				// ym(53383120, 'reachGoal', 'zakaz');
+	// 				// yaCounter55828534.reachGoal('zakaz');
+	// 			}, 4000);
+	// 		}).fail(function () { });
+	// 	});
+	// },
 	heightwindow: function heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		var vh = window.innerHeight * 0.01; // Then we set the value in the --vh custom property to the root of the document
@@ -244,7 +266,7 @@ var JSCCommon = {
 	animateScroll: function animateScroll() {
 		$(document).on('click', " .top-nav li a, .scroll-link", function () {
 			var elementClick = $(this).attr("href");
-			var destination = $(elementClick).offset().top - 150;
+			var destination = $(elementClick).offset().top - 120;
 			$('html, body').animate({
 				scrollTop: destination
 			}, 1000);
@@ -267,8 +289,8 @@ function eventHandler() {
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('.tabs--js');
 	JSCCommon.mobileMenu();
-	JSCCommon.inputMask();
-	JSCCommon.sendForm();
+	JSCCommon.inputMask(); // JSCCommon.sendForm();
+
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
 	JSCCommon.CustomInputFile();
@@ -280,6 +302,117 @@ function eventHandler() {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
 	}
 
+	var gets = function () {
+		var a = window.location.search;
+		var b = new Object();
+		var c;
+		a = a.substring(1).split("&");
+
+		for (var i = 0; i < a.length; i++) {
+			c = a[i].split("=");
+			b[c[0]] = c[1];
+		}
+
+		return b;
+	}();
+
+	$("form").submit(function (e) {
+		e.preventDefault();
+		var th = $(this);
+		var inputs = {
+			name: th.find('[name="name"]').val() || '',
+			email: th.find('[name="email"]').val() || '',
+			utm_source: th.find('[name="utm_source"]').val() || '',
+			utm_term: th.find('[name="utm_term"]').val() || '',
+			utm_medium: th.find('[name="utm_medium"]').val() || '',
+			utm_campaign: th.find('[name="utm_campaign"]').val() || '',
+			order: th.find('[name="order"]').val() || '',
+			tel: th.find('[name="tel"]').val() || '',
+			step1: th.find('[name="step1"]').val() || '',
+			step1text: th.find('[name="step1text"]').val() || '',
+			step2: th.find('[name="step2"]').val() || '',
+			step2text: th.find('[name="step2text"]').val() || '',
+			area: th.find('[name="area"]').val() || '',
+			step4: th.find('[name="step4"]').val() || '',
+			WhenOpening: th.find('[name="WhenOpening"]').val() || '',
+			whatsapp: th.find('[name="whatsapp"]').val() || '',
+			viber: th.find('[name="viber"]').val() || '',
+			telegram: th.find('[name="telegram"]').val() || '',
+			time: th.find('[name="time"]').val() || '',
+			datetime: th.find('[name="datetime"]').val() || '',
+			comment: th.find('[name="comment"]').val() || ''
+		};
+		inputs.utm_source = decodeURIComponent(gets['utm_source'] || '');
+		inputs.utm_term = decodeURIComponent(gets['utm_term'] || '');
+		inputs.utm_medium = decodeURIComponent(gets['utm_medium'] || '');
+		inputs.utm_campaign = decodeURIComponent(gets['utm_campaign'] || '');
+		var data = new FormData($('form')[0]); // data.append('order', order);
+		// var file = th.find('[name="file"]');
+
+		for (var prop in inputs) {
+			// console.log("inputs." + prop + " = " + inputs[prop]);
+			if (inputs[prop]) data.append(prop, inputs[prop]);
+		} // if(!$('#div').children('#id').length > 0) {...}
+
+
+		var file = th.find('[name="file"]');
+
+		if (file.length > 0) {
+			data.append('file', file.prop('files')[0]);
+		} // let file = th.find('[name="file"]').prop('files')[0];
+		// if (inputs.email ) data.append('email', inputs.email);
+		// data.append('file', file);
+		// if (tel ) {
+		// 	data.append('organization', organization);
+		// 	data.append('tel', tel);
+		// }
+		// else {
+		// 	var file = th.find('[name="file"]').prop('files')[0]
+		// 	data.append('file', file);
+		// }
+		// data.append('utm_source', inputs.utm_source);
+		// data.append('utm_term', inputs.utm_term);
+		// data.append('utm_medium', inputs.utm_medium);
+		// data.append('utm_campaign', inputs.utm_campaign);
+		// data = th.serialize();
+		// data.append('action_present', 'save');
+		// data.append('product_id', $product_id);
+		// data.append('title', title);
+		// data.append('description', description);
+		// data.append('publish_down', publish_down);
+		// data.append('removefile', removefile);
+		// data.append('file', $('#file_present')[0].files[0]);
+
+
+		$.ajax({
+			url: 'action.php',
+			dataType: 'text',
+			// what to expect back from the PHP script, if anything
+			cache: false,
+			contentType: false,
+			processData: false,
+			type: 'POST',
+			data: data
+		}).done(function (data) {
+			$.fancybox.close(); // if (th.parent().is("#modal-call-catalog")) {
+			// 	$("#modal-thanks .after-headline").after('<div class="download-wrap"><a class="h3" href="superlok-catalog.pdf" download>Скачать каталог</a> </div>')
+			// }
+			// else {
+			// 	$(".download-wrap").remove();
+			// }
+			// if (th.hasClass('sQwiz__wrap')) {
+			// 	window.location.replace("/thanks-qwiz.html");
+			// } else {
+			// 	window.location.replace("/thanks.html");
+			// }
+
+			setTimeout(function () {
+				// Done Functions
+				th.trigger("reset"); // $.magnificPopup.close();
+				// $.fancybox.close();
+			}, 4000);
+		}).fail(function () {});
+	});
 	$(".range-area").ionRangeSlider({
 		skin: "round",
 		min: 0,
@@ -329,10 +462,8 @@ function eventHandler() {
 			if (!$(this).hasClass("toggle-input-js")) {
 				parent.find(".sQwiz__next").removeClass("disabled");
 			} else if (parent.find(".sQwiz__toggle-block").find('input').val() != '') {
-				console.log('1');
 				parent.find(".sQwiz__next").removeClass("disabled");
 			} else {
-				console.log('2');
 				parent.find(".sQwiz__next").addClass("disabled");
 			}
 
@@ -346,6 +477,12 @@ function eventHandler() {
 	$('.btn-last-js').click(function () {
 		$('.sQwiz__top').hide();
 		$('.sQwiz').addClass('align-items-center justify-content-center');
+	});
+	$('.sQwiz .tabs__btn').on('click', function () {
+		var btnAttr = $(this).data('tab-btn');
+		var contentAttr = $("[data-tab-content=\"".concat(btnAttr, "\"] input"));
+		$('.tabs__content input').removeAttr('required');
+		contentAttr.attr('required', 'required'); // console.log(btnAttr);
 	});
 	var testSwiper = new Swiper('.jsTestSlider', {
 		effect: 'fade',

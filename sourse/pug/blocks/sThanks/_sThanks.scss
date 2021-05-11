@@ -134,6 +134,20 @@
 		}
 	}
 
+	.border-left {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: 2px;
+			height: 100%;
+			left: -10px;
+			top: 0;
+			background-color: $danger;
+		}
+	}
+
 	@include media-breakpoint-up(sm) {
 	}
 	@include media-breakpoint-between(md, xl) {

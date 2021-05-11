@@ -130,9 +130,9 @@
 						<h1>Открытые вакансии</h1>
 					</div>
 					<ol>
-						<li><a href="#finishers">Отделочники</a></li>
-						<li><a href="#construction-specialties">Рабочие строительных специальностей</a></li>
-					</ol><a class="sVacancies__sendResume" href="#sForm">Отправить резюме</a>
+						<li><a class="scroll-link" href="#finishers">Отделочники</a></li>
+						<li><a class="scroll-link" href="#construction-specialties">Рабочие строительных специальностей</a></li>
+					</ol><a class="sVacancies__sendResume scroll-link" href="#sForm">Отправить резюме</a>
 					<div class="sVacancies__item" id="finishers"> 
 						<h3>Отделочники</h3>
 						<div class="sVacancies__subtitle">Требования:
@@ -192,7 +192,13 @@
 					</div>
 					<div class="sForm__form">
 						<div class="form-wrap">
-							<form> 
+							<form>
+								<input name="example-input-field" type="hidden"/>
+								<input class="order" name="order" type="hidden" value="Резюме с сайта Евразия"/>
+								<input class="utm_source" name="utm_source" type="hidden"/>
+								<input class="utm_term" name="utm_term" type="hidden"/>
+								<input class="utm_medium" name="utm_medium" type="hidden"/>
+								<input class="utm_campaign" name="utm_campaign" type="hidden"/>
 								<div class="add-file">
 									<label><span class="add-file__text">Загрузите резюме<br> (.doc, .docx, .pdf не более 5 Мб)</span><input class="add-file__input" name="file" type="file"/><span class="add-file__btn">Выберите файл</span>
 									</label><span class="add-file__filename"> </span>

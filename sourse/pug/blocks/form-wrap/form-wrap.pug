@@ -40,12 +40,12 @@ mixin select(label,pl,...items)
 					option()= item
 
 //- wrapper for form
-mixin form-wrap(inp)
+mixin form-wrap(inp='Заявка  с сайта')
 	+b.form-wrap&attributes(attributes)
 		form
 			if inp
 				input(name='example-input-field' type='hidden')
-				input(class="order" name='order' type='hidden', value=`Заявка  с сайта`) 
+				input(class="order" name='order' type='hidden', value= inp) 
 				input(class='utm_source' name='utm_source' type="hidden")
 				input(class='utm_term' name='utm_term' type="hidden")
 				input(class='utm_medium' name='utm_medium' type="hidden")

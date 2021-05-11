@@ -205,12 +205,7 @@
 
 	//Кнопки выбора
 	.custom-radio {
-		// display: flex;
-		// flex-wrap: wrap;
-		// margin-left: rem(-10);
-		// margin-right: rem(-10);
 		input {
-			// display: none;
 			@extend .invisible;
 		}
 
@@ -220,26 +215,6 @@
 			margin-left: auto;
 			margin-right: auto;
 			display: block;
-			// @include media-breakpoint-up(md) {
-			// 	margin-left: rem(10);
-			// 	margin-right: rem(10);
-			// }
-			// @include media-breakpoint-only(md) {
-			// 	flex: 0 0 46.5%;
-			// 	max-width: 46.5%;
-			// }
-			// @include media-breakpoint-only(lg) {
-			// 	flex: 0 0 45.7%;
-			// 	max-width: 45.7%;
-			// }
-			// @include media-breakpoint-only(xl) {
-			// 	flex: 0 0 30%;
-			// 	max-width: 30%;
-			// }
-			// @include media-breakpoint-only(xxl) {
-			// 	flex: 0 0 30.9%;
-			// 	max-width: 30.9%;
-			// }
 			color: $body-color !important;
 			border-width: 2px;
 			border-color: #e5e5e5;
