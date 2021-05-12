@@ -275,6 +275,9 @@
 			outline: 0 !important;
 			text-decoration: none;
 			font-weight: 300;
+			&:hover {
+				color: $primary;
+			}
 		}
 	}
 }

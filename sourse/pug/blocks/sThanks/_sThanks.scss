@@ -10,7 +10,7 @@
 		content: "";
 		position: absolute;
 		z-index: 1;
-		bottom: -13px;
+		bottom: -30px;
 		background-image: url("../img/@2x/webp/differ-after.webp");
 		width: 100%;
 		left: 0;
@@ -134,19 +134,19 @@
 		}
 	}
 
-	.border-left {
-		position: relative;
+	// .border-left {
+	// 	position: relative;
 
-		&::before {
-			content: "";
-			position: absolute;
-			width: 2px;
-			height: 100%;
-			left: -10px;
-			top: 0;
-			background-color: $danger;
-		}
-	}
+	// 	&::before {
+	// 		content: "";
+	// 		position: absolute;
+	// 		width: 2px;
+	// 		height: 100%;
+	// 		left: -10px;
+	// 		top: 0;
+	// 		background-color: $danger;
+	// 	}
+	// }
 
 	@include media-breakpoint-up(sm) {
 	}

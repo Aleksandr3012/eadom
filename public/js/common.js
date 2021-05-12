@@ -77,25 +77,19 @@ var JSCCommon = {
 			[document.body, document.querySelector('html')].forEach(function (el) {
 				return el.classList.toggle("fixed");
 			});
-			document.querySelector("html").style.marginRight = scrollWidth + 'px';
 		}, {
 			passive: true
 		});
 	},
 	closeMenu: function closeMenu() {
-		var menu = this.menuMobile;
-		if (!menu) return;
-
-		if (menu.classList.contains("active")) {
-			this.btnToggleMenuMobile.forEach(function (element) {
-				return element.classList.remove("on");
-			});
-			this.menuMobile.classList.remove("active");
-			[document.body, document.querySelector('html')].forEach(function (el) {
-				return el.classList.remove("fixed");
-			});
-			document.querySelector("html").style.marginRight = null;
-		}
+		if (!this.menuMobile) return;
+		this.btnToggleMenuMobile.forEach(function (element) {
+			return element.classList.remove("on");
+		});
+		this.menuMobile.classList.remove("active");
+		[document.body, document.querySelector('html')].forEach(function (el) {
+			return el.classList.remove("fixed");
+		});
 	},
 	mobileMenu: function mobileMenu() {
 		var _this = this;
@@ -303,6 +297,8 @@ function eventHandler() {
 
 			if (th.hasClass('sQwiz__wrap')) {
 				window.location.replace("/thanks-qwiz.html");
+			} else if (th.hasClass('sForm--sm')) {
+				window.location.replace("/thanks-vakansii.html");
 			} else {
 				window.location.replace("/thanks.html");
 			}

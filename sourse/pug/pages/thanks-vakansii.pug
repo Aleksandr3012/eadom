@@ -1,0 +1,30 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sDirections/_sDirections.pug
+include ../blocks/sVacancies/_sVacancies.pug
+include ../blocks/sThanks/_sThanks.pug
+
+block variables
+	- let  mainPage= null
+	- let  bg= null
+
+block title
+	- let  title= 'Благодарим за доверие'
+	title= title
+block pagecontent
+
+
+	//- +mob-mnu()
+	+header()
+		+top-nav()
+	//- +b.page-head
+	//- 	.container
+	//- 		+breadcrumb('Главная','Вакансии') 
+	+sThanks-qwiz({
+		h2: `<span class="text-primary">Спасибо,</span> мы приняли ваше резюме`,
+		h4: `Перезвоним вам в&nbsp;рабочее время с&nbsp;8:00 до&nbsp;17:00, зададим дополнительные вопросы по&nbsp;задаче, чтобы расчитать стоимость работ`
+	})
+	+foot

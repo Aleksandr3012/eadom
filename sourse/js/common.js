@@ -77,18 +77,14 @@ const JSCCommon = {
 			toggle.forEach(el => el.classList.toggle("on"));
 			menu.classList.toggle("active");
 			[document.body, document.querySelector('html')].forEach(el => el.classList.toggle("fixed"));
-			document.querySelector("html").style.marginRight = scrollWidth + 'px';
+
 		}, { passive: true });
 	},
 	closeMenu() {
-		let menu = this.menuMobile;
-		if (!menu) return;
-		if (menu.classList.contains("active")) {
-			this.btnToggleMenuMobile.forEach(element => element.classList.remove("on"));
-			this.menuMobile.classList.remove("active");
-			[document.body, document.querySelector('html')].forEach(el => el.classList.remove("fixed"));
-			document.querySelector("html").style.marginRight = null
-		}
+		if (!this.menuMobile) return;
+		this.btnToggleMenuMobile.forEach(element => element.classList.remove("on"));
+		this.menuMobile.classList.remove("active");
+		[document.body, document.querySelector('html')].forEach(el => el.classList.remove("fixed"));
 
 	},
 	mobileMenu() {
@@ -297,6 +293,8 @@ function eventHandler() {
 
 			if (th.hasClass('sQwiz__wrap')) {
 				window.location.replace("/thanks-qwiz.html");
+			} else if (th.hasClass('sForm--sm')) {
+				window.location.replace("/thanks-vakansii.html");
 			} else {
 				window.location.replace("/thanks.html");
 			}
