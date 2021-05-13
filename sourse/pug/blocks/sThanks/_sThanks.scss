@@ -148,6 +148,33 @@
 	// 	}
 	// }
 
+	&__imgWrap {
+		text-align: center;
+
+		margin-right: -180px;
+		@include media-breakpoint-up(sm) {
+			margin-right: -240px;
+		}
+		@include media-breakpoint-up(md) {
+			margin-left: -102px;
+			margin-right: -148px;
+		}
+		@include media-breakpoint-up(lg) {
+			margin-left: -42px;
+			margin-right: -78px;
+		}
+
+		img {
+			max-width: 410px;
+			@include media-breakpoint-up(sm) {
+				max-width: 480px;
+			}
+			@include media-breakpoint-up(lg) {
+				max-width: 100%;
+			}
+		}
+	}
+
 	@include media-breakpoint-up(sm) {
 	}
 	@include media-breakpoint-between(md, xl) {
