@@ -4,6 +4,8 @@
 1. <https://aleksandr3012.github.io/eadom/public/kontakti.html>
 1. <https://aleksandr3012.github.io/eadom/public/qwiz.html>
 1. <https://aleksandr3012.github.io/eadom/public/thanks.html>
+1. <https://aleksandr3012.github.io/eadom/public/thanks-qwiz.html>
+1. <https://aleksandr3012.github.io/eadom/public/thanks-vakansii.html>
 
 Для проверки форм
 
@@ -13,3 +15,5 @@
 1. <http://test2.alekslv.in.net/kontakti.html>
 1. <http://test2.alekslv.in.net/qwiz.html>
 1. <http://test2.alekslv.in.net/thanks.html>
+1. <http://test2.alekslv.in.net/thanks-qwiz.html>
+1. <http://test2.alekslv.in.net/thanks-vakansii.html>
