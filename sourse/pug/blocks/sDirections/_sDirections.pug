@@ -7,9 +7,9 @@ mixin sDirections(data)
 					h2!= data.h2
 					h3!= data.h3
 
-				.row
+				+e.row
 					each item in data.items 
-						+e.col.col-lg-6 
+						+e.col
 							+e.item 
 								+pic(item.img, 'bg', '')(class="picture-bg")
 								+e.title!= item.title
