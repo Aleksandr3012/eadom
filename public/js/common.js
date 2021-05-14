@@ -491,6 +491,7 @@ function eventHandler() {
 	var headerBlockSlider = new Swiper('.headerBlock__slider--js', {
 		slidesPerView: 1,
 		loop: true,
+		autoHeight: true,
 		spaceBetween: 0,
 		navigation: {
 			nextEl: '.headerBlock .swiper-button-next',

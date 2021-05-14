@@ -76,6 +76,18 @@
 		border: 1px solid #e4e5ea;
 		padding: rem(25) rem(18);
 		height: 100%;
+		@include media-breakpoint-down(md) {
+			height: 100%;
+		}
+		@include media-breakpoint-up(md) {
+			min-height: rem(230);
+		}
+		@include media-breakpoint-up(lg) {
+			min-height: rem(270);
+		}
+		@include media-breakpoint-up(xl) {
+			min-height: rem(230);
+		}
 	}
 	&__img {
 		margin-bottom: rem(12);
