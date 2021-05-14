@@ -35,9 +35,9 @@
 
 	&__slide {
 		position: relative;
-		min-height: rem(100);
+		height: rem(100);
 		@include media-breakpoint-up(md) {
-			min-height: rem(168);
+			height: rem(168);
 		}
 		display: block;
 		width: 100%;

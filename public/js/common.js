@@ -478,6 +478,7 @@ function eventHandler() {
 
 	var partnerSlider = new Swiper('.partners__slider--js', {
 		slidesPerView: 'auto',
+		autoHeight: true,
 		freeMode: true,
 		loop: true,
 		spaceBetween: 40,
@@ -509,7 +510,7 @@ function eventHandler() {
 	});
 	var sOurWorkSlider = new Swiper('.sOurWork__itemWrap .sOurWork__slider--js', {
 		slidesPerView: 1,
-		// loop: true,
+		autoHeight: true,
 		spaceBetween: 0,
 		pagination: {
 			el: '.sOurWork__itemWrap .swiper-pagination',

@@ -135,14 +135,14 @@
 	&__btn {
 		font-size: $h4-font-size;
 		span {
-			height: auto;
+			// height: auto;
 			padding: rem(24) rem(43);
 		}
 	}
 
 	&__nav {
 		position: absolute;
-		bottom: 25%;
+		top: rem(280);
 		right: 20px;
 		display: flex;
 		@include roww(14px, m);
