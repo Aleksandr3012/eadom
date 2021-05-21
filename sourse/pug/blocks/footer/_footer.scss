@@ -3,6 +3,10 @@
 	padding-bottom: rem(30);
 	margin-top: auto;
 	padding-top: rem(25);
+
+		a {
+			text-decoration: none !important;
+		}
 	@include media-breakpoint-down(sm) {
 		text-align: center;
 	}

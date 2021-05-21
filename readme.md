@@ -6,6 +6,7 @@
 1. <https://aleksandr3012.github.io/eadom/public/thanks.html>
 1. <https://aleksandr3012.github.io/eadom/public/thanks-qwiz.html>
 1. <https://aleksandr3012.github.io/eadom/public/thanks-vakansii.html>
+2. <https://aleksandr3012.github.io/eadom/public/stroitelstvo-domov-pod-kluch/>
 
 Для проверки форм
 

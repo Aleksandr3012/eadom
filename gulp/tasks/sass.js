@@ -11,7 +11,7 @@ module.exports = () => {
 			// $.flexGapPolyfill(),
 			// $.postcssPresetEnv(),
 		];
-		return $.gulp.src($.sourse + '/sass/main.scss')
+		return $.gulp.src($.sourse + '/sass/*.scss')
 			.pipe($.sassGlob())
 			.pipe($.sass().on("error", $.notify.onError()))
 			.pipe($.gcmq())

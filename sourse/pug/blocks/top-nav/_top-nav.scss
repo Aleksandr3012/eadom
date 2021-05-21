@@ -6,6 +6,9 @@
 	z-index: 800;
 	padding-left: 6px;
 	padding-right: 6px;
+	a{
+		text-decoration: none !important;
+	}
 	@include media-breakpoint-up(sm) {
 		padding-left: 15px;
 		padding-right: 15px;

@@ -1,0 +1,28 @@
+.s-quiz .form-group label {
+  display: block;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.s-quiz .form-group .form-wrap__input {
+  margin-top: 80px;
+  margin-bottom: 120px;
+  background-color: #f4f5f7;
+  border-color: #f4f5f7;
+  padding: 1rem; }
+  .s-quiz .form-group .form-wrap__input::-webkit-input-placeholder {
+    color: #929292; }
+  .s-quiz .form-group .form-wrap__input:-ms-input-placeholder {
+    color: #929292; }
+  .s-quiz .form-group .form-wrap__input::-ms-input-placeholder {
+    color: #929292; }
+  .s-quiz .form-group .form-wrap__input::placeholder {
+    color: #929292; }
+  .s-quiz .form-group .form-wrap__input:focus::-webkit-input-placeholder {
+    color: #373737; }
+  .s-quiz .form-group .form-wrap__input:focus:-ms-input-placeholder {
+    color: #373737; }
+  .s-quiz .form-group .form-wrap__input:focus::-ms-input-placeholder {
+    color: #373737; }
+  .s-quiz .form-group .form-wrap__input:focus::placeholder {
+    color: #373737; }
