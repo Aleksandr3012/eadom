@@ -19,13 +19,13 @@ const JSCCommon = {
 					PREV: "Назад",
 				},
 			},
-			beforeLoad: function () {
-				if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = scrollWidth + 'px';
-			},
-			afterClose: function () {
-				if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = null;
-				// 	document.querySelector("html").classList.remove("fixed")
-			},
+			// beforeLoad: function () {
+			// 	if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = scrollWidth + 'px';
+			// },
+			// afterClose: function () {
+			// 	if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = null;
+			// 	// 	document.querySelector("html").classList.remove("fixed")
+			// },
 		});
 		$(".modal-close-js").click(function () {
 			$.fancybox.close();
@@ -202,7 +202,7 @@ const JSCCommon = {
 };
 
 $(document).ready(function () {
-	// JSCCommon.modalCall();
+	JSCCommon.modalCall();
 	// JSCCommon.tabscostume('.tabs--js');
 	JSCCommon.mobileMenu();
 	// JSCCommon.inputMask();

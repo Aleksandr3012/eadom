@@ -75,7 +75,7 @@
 				}
 			}
 		}
-
+		
 		&:hover {
 			.navMenu__link {
 				color: $primary;
@@ -115,9 +115,11 @@
 		@include media-breakpoint-up(lg) {
 			text-transform: uppercase;
 			padding: rem(13) rem(18);
+			&.active ,
 			&:hover {
 				background-color: #ffda70;
 			}
 		}
 	}
+
 }

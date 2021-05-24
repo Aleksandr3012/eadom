@@ -22,17 +22,17 @@ block pagecontent
 	mixin mnu()
 
 		+b.UL.navMenu(itemscope itemtype="http://schema.org/SiteNavigationElement")
-			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="#" itemprop="url") Главная
+			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="/" itemprop="url") Главная
 			+e.LI.item--has-children( itemprop="item" )
 				+e.A.link(href="#" itemprop="url") Услуги
 				+b.UL.sub-menu
-					+e.LI.item( temprop="item"  ): +e.A.link(href="#" itemprop="url") Строительство и&nbsp;ремонт коммерческой недвижимости
-					+e.LI.item( temprop="item"  ): +e.A.link(href="#" itemprop="url") Строительство домов и&nbsp;коттеджей
-					+e.LI.item( temprop="item"  ): +e.A.link(href="#" itemprop="url") Проекты домов со&nbsp;стоимостью
-					+e.LI.item( temprop="item"  ): +e.A.link(href="#" itemprop="url") Производство и&nbsp;продажа строительных материалов
-			+e.LI.item.active( temprop="item" itemprop="url"): +e.A.link(href="#" itemprop="url") Проекты домов 
-			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="#" itemprop="url") Вакансии
-			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="#" itemprop="url") Контакты
+					+e.LI.item.active( temprop="item"  ): +e.A.link(href="/remont-magazinov.html" itemprop="url") Строительство и&nbsp;ремонт коммерческой недвижимости
+					+e.LI.item( temprop="item"  ): +e.A.link(href="/stroitelstvo-domov-pod-kluch" itemprop="url") Строительство домов и&nbsp;коттеджей
+					+e.LI.item( temprop="item"  ): +e.A.link(href="https://eadompro.ru/" itemprop="url") Проекты домов со&nbsp;стоимостью
+					+e.LI.item( temprop="item"  ): +e.A.link(href="/stroitelnie-materiali.html" itemprop="url") Производство и&nbsp;продажа строительных материалов
+			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="https://eadompro.ru/" itemprop="url") Проекты домов 
+			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="/vakansii.html" itemprop="url") Вакансии
+			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="/kontakti.html" itemprop="url") Контакты
 
 	+mob-mnu()
 	+header()

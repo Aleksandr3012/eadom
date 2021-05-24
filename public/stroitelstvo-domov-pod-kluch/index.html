@@ -62,7 +62,10 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<meta name="theme-color" content="#3361d8">
 	<link rel="stylesheet" href="">
+	<!-- ad -->
+	<link href="../libs/@fancyapps/fancybox/jquery.fancybox.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="../css/nav-footer.min.css">
+	<!-- ad -->
 	<link rel="stylesheet" href="css/main.min.css">
 	<link rel="stylesheet" href="css/footer.css">
 	<link rel="stylesheet" href="css/dop.css">
@@ -70,38 +73,39 @@
 
 <body>
 	<div class="main-wrapper">
+	<!-- новые блоки -->
 		<div class="menu-mobile menu-mobile--js d-lg-none">
 			<div class="toggle-menu-mobile toggle-menu-mobile--js on"><span></span>
 			</div>
 			<div class="menu-mobile__inner">
 				<ul class="navMenu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-					<li class="navMenu__item active" temprop="item" itemprop="url"><a class="navMenu__link" href="#"
+					<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="/"
 							itemprop="url">Главная</a>
 					</li>
 					<li class="navMenu__item navMenu__item--has-children" itemprop="item"><a class="navMenu__link" href="#"
 							itemprop="url">Услуги</a>
 						<ul class="sub-menu">
-							<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Строительство
-									и&nbsp;ремонт коммерческой недвижимости</a>
+							<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="/remont-magazinov.html"
+									itemprop="url">Строительство и&nbsp;ремонт коммерческой недвижимости</a>
 							</li>
-							<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Строительство
-									домов и&nbsp;коттеджей</a>
+							<li class="sub-menu__item" temprop="item"><a class="sub-menu__link active" href="/stroitelstvo-domov-pod-kluch"
+									itemprop="url">Строительство домов и&nbsp;коттеджей</a>
 							</li>
-							<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Проекты домов
-									со&nbsp;стоимостью</a>
+							<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="https://eadompro.ru/"
+									itemprop="url">Проекты домов со&nbsp;стоимостью</a>
 							</li>
-							<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Производство
-									и&nbsp;продажа строительных материалов</a>
+							<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="/stroitelnie-materiali.html"
+									itemprop="url">Производство и&nbsp;продажа строительных материалов</a>
 							</li>
 						</ul>
 					</li>
-					<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Проекты
-							домов </a>
+					<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="https://eadompro.ru/"
+							itemprop="url">Проекты домов </a>
 					</li>
-					<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#"
+					<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="/vakansii.html"
 							itemprop="url">Вакансии</a>
 					</li>
-					<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#"
+					<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="/kontakti.html"
 							itemprop="url">Контакты</a>
 					</li>
 				</ul>
@@ -119,33 +123,33 @@
 						</div>
 						<div class="col d-none d-lg-block">
 							<ul class="navMenu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-								<li class="navMenu__item active" temprop="item" itemprop="url"><a class="navMenu__link" href="#"
+								<li class="navMenu__item " temprop="item" itemprop="url"><a class="navMenu__link" href="/"
 										itemprop="url">Главная</a>
 								</li>
 								<li class="navMenu__item navMenu__item--has-children" itemprop="item"><a class="navMenu__link" href="#"
 										itemprop="url">Услуги</a>
 									<ul class="sub-menu">
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#"
+										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="/remont-magazinov.html"
 												itemprop="url">Строительство и&nbsp;ремонт коммерческой недвижимости</a>
 										</li>
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#"
-												itemprop="url">Строительство домов и&nbsp;коттеджей</a>
+										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link active"
+												href="/stroitelstvo-domov-pod-kluch" itemprop="url">Строительство домов и&nbsp;коттеджей</a>
 										</li>
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Проекты
-												домов со&nbsp;стоимостью</a>
+										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="https://eadompro.ru/"
+												itemprop="url">Проекты домов со&nbsp;стоимостью</a>
 										</li>
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#"
+										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="/stroitelnie-materiali.html"
 												itemprop="url">Производство и&nbsp;продажа строительных материалов</a>
 										</li>
 									</ul>
 								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#"
+								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="https://eadompro.ru/"
 										itemprop="url">Проекты домов </a>
 								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#"
+								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="/vakansii.html"
 										itemprop="url">Вакансии</a>
 								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#"
+								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="/kontakti.html"
 										itemprop="url">Контакты</a>
 								</li>
 							</ul>
@@ -172,7 +176,7 @@
 									</div>
 									<div class="col-auto"><a class="top-nav__tel" href="tel:8(3519)232020">8 (3519) 23-20-20</a>
 									</div>
-									<div class="col-12"><a class="top-nav__call link-modal-js" href="#modal-call">ЗАКАЗАТЬ ЗВОНОК</a>
+									<div class="col-12"><a class="top-nav__call link-modal-js" href="#modal-call-fancy">ЗАКАЗАТЬ ЗВОНОК</a>
 									</div>
 								</div>
 							</div>
@@ -186,6 +190,48 @@
 			</div>
 		</div>
 		<!-- end top-nav-->
+
+			<div class="modal-win" id="modal-call-fancy" style="display: none">
+				<form class="form-wrap">
+					<div class="row no-gutters">
+						<div class="col-6 d-none d-lg-block"><img src="../img/@2x/modal-1.jpg" alt="" /></div>
+						<div class="form-wrap__col col">
+							<div class="form-wrap__title">Введите ваш номер телефона,</div>
+							<div class="form-wrap__text form-wrap__text--js">и офис-менеджер Наталья позвонит вам сейчас или в удобное
+								для
+								звонка время</div>
+							<input class="utm_source" type="hidden" name="utm_source" />
+							<input class="utm_term" type="hidden" name="utm_term" />
+							<input class="order" type="hidden" name="order" value="Заказать звонок" />
+							<div class="form-wrap__input-wrap form-group">
+								<input class="form-wrap__input form-control" type="tel" placeholder="Введите ваш телефон"
+									required="required" name="tel" />
+							</div>
+							<!-- +e.input-wrap-->
+							<label class="custom-input">
+								<input class="custom-input__input" type="checkbox" name="scr8-time" /><span
+									class="custom-input__lab"></span><span
+									class="custom-input__text custom-input__text--now">СЕЙЧАС</span><span
+									class="custom-input__text custom-input__text--time">КО ВРЕМЕНИ</span>
+							</label>
+							<div class="toggle-block">
+								<div class="form-wrap__input-wrap form-group">
+									<input class="form-wrap__input form-control" type="text" placeholder="Например, среда, 12:00"
+										name="time" />
+								</div>
+								<!-- +e.input-wrap-->
+							</div>
+							<button class="form-wrap__btn btb btn-primary" type="submit"><span>Заказать звонок</span></button>
+							<div class="toggle-block active">
+								<div class="polite">Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку своих персональных
+									данных и&nbsp;соглашаетесь с <a href="#">Политикой конфиденциальности</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		<!-- /новые блоки -->
 		<!-- start HEADER.header-->
 		<header class="header lazy-background">
 			 
@@ -2081,7 +2127,7 @@
 			</div>
 		</div>
 		<!-- end s-contact-->
-		<<footer class="footer">
+		<footer class="footer">
 			<div class="container">
 				<div class="footer__mainRow row">
 					<div class="col-sm-auto"> <a class="footer__logo" href="/">
@@ -2221,13 +2267,17 @@
 				<div class="text-center"><a class="footer__polite" href="#" target="_blank">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
 				</div>
 				<div class="footer__devWrap"> <span>Создание и продвижение сайта: </span><a class="footer__dev"
-						href="https://simonov.marketing" target="_blank"><img class="res-i" src="img/svg/simonov.svg"
+						href="https://simonov.marketing" target="_blank"><img class="res-i" src="../img/svg/simonov.svg"
 							loading="lazy" /></a>
 				</div>
 			</div>
 			</footer>
 		<div id="top" class="to-top"><img src="img/up.png" alt="Наверх"></div>
 	</div>
+
+	<!--  start modals-->
+
+	<!-- #modal-call-->
 	<div class="form-wrap zoom-anim-dialog mfp-hide modal-win modal-form" id="modal-sm">
 		<form>
 			<div class="row no-gutters">
@@ -2398,6 +2448,9 @@
 		</form>
 	</div>
 	<!-- #modal-call3-->
+
+	
+	
 	<!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(53214919, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/53214919" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 
 	<!--Привязана к Директу Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(47357478, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47357478" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
@@ -2418,7 +2471,10 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/scripts.min.js"></script>
 	<script src="js/common.js"></script>
+	<!-- ad -->
+	<script src="../libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 	<script src="js/custom.js"></script>
+	<!-- ad -->
 </body>
 
 </html>

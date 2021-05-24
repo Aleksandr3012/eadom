@@ -7,6 +7,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "mixin";
 @import "fonts";
 @import "_sprite";
+
 // @import "bootstrap-theme/bootstrap";
 
 // Option B: Include parts of Bootstrap
@@ -17,6 +18,9 @@ $output-bourbon-deprecation-warnings: false;
 
 @import "./node_modules/bootstrap/scss/functions";
 @import "vars";
+.mono {
+	font-family: $font-family-monospace;
+}
 @import "./node_modules/bootstrap/scss/functions";
 @import "./node_modules/bootstrap/scss/variables";
 @import "./node_modules/bootstrap/scss/mixins";
@@ -157,6 +161,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "../pug/blocks/header/_header.scss";
 @import "../pug/blocks/top-nav/_menu-mobile.scss";
 @import "../pug/blocks/top-nav/_menu-mobile.scss";
+@import "../pug/blocks/modal/_modal.scss";
 @import "../pug/blocks/top-nav/_top-nav.scss";
 @import "../pug/blocks/top-nav/_navMenu.scss";
 @import "../pug/blocks/footer/_footer.scss";

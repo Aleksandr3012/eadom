@@ -533,12 +533,12 @@ jQuery(document).ready(function ($) {
 	// form
 	$("form").submit(function () { //Change
 		var th = $(this);
-		th.find('.utm_source').val(gets['utm_source']);
-		th.find('.utm_term').val(gets['utm_term']);
+		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
+		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
 
 		$.ajax({
 			type: "POST",
-			url: 'action.php', //Change
+			url: '/stroitelstvo-domov-pod-kluch/action.php', //Change
 			data: th.serialize()
 		}).success(function () {
 			$.magnificPopup.close();
