@@ -78,8 +78,13 @@
 			margin-right: rem(13);
 		}
 	}
+	.footer__col{
+		@include media-breakpoint-up(sm) {
+			padding-top: 0 !important;
+		}
 
-	&__mainRow {
+	}
+	.footer__mainRow {
 		// @include roww(10px);
 		padding-bottom: rem(55);
 		@include media-breakpoint-up(sm) {
