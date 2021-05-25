@@ -17,20 +17,26 @@
 
 	h1 {
 		letter-spacing: 1px;
-		@include media-breakpoint-up(md) {
-			margin-bottom: rem(20);
+
+		span {
+			font-weight: 500;
+			display: block;
+			padding-top: rem(20);
+			max-width: rem(470);
+			font-size: rem(20);
+			letter-spacing: 0.32px;
+			@include media-breakpoint-up(md) {
+				letter-spacing: 0.6px;
+				font-size: rem(30px);
+			}
+			// font-family: $default-font;
+			line-height: calc(22 / 16);
+			@include media-breakpoint-up(md) {
+				line-height: calc(30 / 23);
+			}
 		}
 	}
 
-	h3 {
-		max-width: rem(470);
-		font-size: rem(20);
-		letter-spacing: 0.32px;
-		@include media-breakpoint-up(md) {
-			letter-spacing: 0.6px;
-			font-size: rem(30px);
-		}
-	}
 
 	&__descr {
 		border-radius: 5px 0 0 5px;
