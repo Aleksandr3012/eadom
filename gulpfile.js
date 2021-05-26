@@ -16,7 +16,7 @@ global.$ = {
     rename: require('gulp-rename'),
     gp: require('gulp-load-plugins'),
     responsive: require('@tigersway/gulp-responsive'),
-
+    resizer: require('gulp-images-resizer'),
     gulpif: require('gulp-if'),
     sassGlob: require('gulp-sass-glob'),
     tabify: require('gulp-tabify'),
@@ -32,7 +32,7 @@ global.$ = {
     nested: require('postcss-nested'),
     plumber: require('gulp-plumber'),
     webpack: require('webpack-stream'),
-    resizer: require('gulp-images-resizer'),
+   
     path: {
         tasks: require('./gulp/config/tasks.js'),
     },
