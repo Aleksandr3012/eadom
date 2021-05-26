@@ -5,14 +5,18 @@ include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug
 include ../blocks/sDirections/_sDirections.pug
 include ../blocks/sVacancies/_sVacancies.pug
+include ../blocks/sHowGet/_sHowGet.pug
+include ../blocks/s-contact/_s-contact.pug
 
 block variables
 	- let  mainPage= null
 	- let  bg= null
 
 block title
-	- let  title= 'Строительные материалы'
+	- let  title= 'Производство и продажа строительных материалов'
 	title= title
+block description
+	meta(name="description", content="О чем страница")
 block pagecontent
 
 	mixin mnu()
@@ -24,16 +28,49 @@ block pagecontent
 				+b.UL.sub-menu
 					+e.LI.item( temprop="item"  ): +e.A.link(href="/remont-magazinov.html" itemprop="url") Строительство и&nbsp;ремонт коммерческой недвижимости
 					+e.LI.item( temprop="item"  ): +e.A.link(href="/stroitelstvo-domov-pod-kluch" itemprop="url") Строительство домов и&nbsp;коттеджей
-					//-+e.LI.item( temprop="item"  ): +e.A.link(href="https://eadompro.ru/" itemprop="url") Проекты домов со&nbsp;стоимостью
-					+e.LI.item( temprop="item"  ): +e.A.link.active(href="/stroitelnie-materiali.html" itemprop="url") Производство и&nbsp;продажа строительных материалов
+					+e.LI.item( temprop="item"  ): +e.A.link(href="https://eadompro.ru/" itemprop="url") Проекты домов со&nbsp;стоимостью
+					+e.LI.item( temprop="item"  ): +e.A.link(href="/stroitelnie-materiali.html" itemprop="url") Производство и&nbsp;продажа строительных материалов
 			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="https://eadompro.ru/" itemprop="url") Проекты домов 
 			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="/vakansii.html" itemprop="url") Вакансии
-			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="/kontakti.html" itemprop="url") Контакты
+			+e.LI.item.active( temprop="item" itemprop="url"): +e.A.link(href="/kontakti.html" itemprop="url") Контакты
+
 	+mob-mnu()
 	+header()
 		+top-nav()
 	+b.page-head
 		.container
-			+breadcrumb('Главная', 'Строительные материалы') 
-
+			+breadcrumb('Главная', title) 
+	+sContact-materiali({
+		h1: `Производство и продажа строительных материалов`,
+		h3: `Подписывайте на наш профиль в инстаграм`,
+		instagram: `https://www.instagram.com/eurasia_mgn/`,
+	})
+	//- +sHowGet
+	+s-contact
 	+foot
+
+	//- +b.tabs--js.opacity-50
+	//- 	+e.caption.d-flex
+	//- 		+e.btn.btn.btn-warning.active  btn1
+	//- 		+e.btn.btn.btn-warning btn 2
+	//- 		+e.btn.btn.btn-warning btn 3
+	//- 		+e.btn.btn.btn-warning btn 4
+	//- 	+e.wrap
+	//- 		+e.content.active content 1
+	//- 		+e.content content 2
+	//- 		+e.content content 3
+	//- 		+e.content content 4
+	//- +b.tabs--js
+	//- 	+e.caption.d-flex
+	//- 		+e.btn.btn.btn-success.active  btn  2 1
+	//- 		+e.btn.btn.btn-success btn 2  2
+	//- 		+e.btn.btn.btn-success btn 2  3
+	//- 		+e.btn.btn.btn-success btn  2 4
+	//- 	+e.wrap
+	//- 		+e.content.active content 1
+	//- 		+e.content content 2
+	//- 		+e.content content 3
+	//- 		+e.content content 4
+
+
+

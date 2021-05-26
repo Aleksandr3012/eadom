@@ -45,4 +45,15 @@ mixin sContact-inner(data)
 					+item('Viber','viber','viber://chat?number=83519232020')
 					+item('Telegram','telegram','tg://resolve?domain=83519232020')
 
+
+mixin sContact-materiali(data)
+	// start sContact
+	+b.SECTION.sContact--inner.section#sContact&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h1!= data.h1
+				h3!= data.h3
+
+			+e.imgWrap(href= data.instagram target="_blank")
+				+pic('instagram.jpg','','')
 	// end sContact
