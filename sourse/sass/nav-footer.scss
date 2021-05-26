@@ -31,7 +31,7 @@ $output-bourbon-deprecation-warnings: false;
 // @import "./node_modules/bootstrap/scss/reboot";
 // @import "./node_modules/bootstrap/scss/type";
 // // @import "./node_modules/bootstrap/scss/images";
-// @import "./node_modules/bootstrap/scss/containers";
+@import "./node_modules/bootstrap/scss/containers";
 @import "./node_modules/bootstrap/scss/grid";
 // // @import "./node_modules/bootstrap/scss/tables";
 // @import "./node_modules/bootstrap/scss/forms";
@@ -59,10 +59,10 @@ $output-bourbon-deprecation-warnings: false;
 // @import "./node_modules/bootstrap/scss/offcanvas";
 
 // Helpers
-// @import "./node_modules/bootstrap/scss/helpers";
+@import "./node_modules/bootstrap/scss/helpers";
 
 // // Utilities
-// @import "./node_modules/bootstrap/scss/utilities/api";
+@import "./node_modules/bootstrap/scss/utilities/api";
 // // scss-docs-end import-stack
 
 // .breadcrumb {
@@ -110,52 +110,53 @@ $output-bourbon-deprecation-warnings: false;
 // // }
 @import "root";
 
+.modal-win,
 .top-nav {
-
-
-.soc {
-	@include roww(2px, m);
-	display: flex;
-
-	&__item {
-		text-decoration: none !important;
-		vertical-align: middle;
-		@include mt;
-		display: grid;
-		place-items: center;
-		background: var(--soc-bg);
-		border-radius: 50%;
-		width: 24px;
-		height: 24px;
+	
+	.soc {
+		@include roww(2px, m);
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		// padding: rem(3);
-
-		&:hover {
-			opacity: 0.8;
+	
+		&__item {
+			text-decoration: none !important;
+			vertical-align: middle;
+			@include mt;
+			display: grid;
+			place-items: center;
+			background: var(--soc-bg);
+			border-radius: 50%;
+			width: 24px;
+			height: 24px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			// padding: rem(3);
+	
+			&:hover {
+				opacity: 0.8;
+			}
+	
+			&--whatsapp {
+				--soc-bg: #27d365;
+			}
+	
+			&--viber {
+				--soc-bg: #665dac;
+			}
+	
+			&--telegram {
+				--soc-bg: #139bcf;
+			}
 		}
-
-		&--whatsapp {
-			--soc-bg: #27d365;
-		}
-
-		&--viber {
-			--soc-bg: #665dac;
-		}
-
-		&--telegram {
-			--soc-bg: #139bcf;
+	
+		.icon {
+			font-size: rem(18) !important;
+			color: #fff;
+			width: 1em;
+			height: 1em;
 		}
 	}
 
-	.icon {
-		font-size: rem(18) !important;
-		color: #fff;
-		width: 1em;
-		height: 1em;
-	}
-}
 }
 // @import "base";
 @import "../pug/blocks/header/_header.scss";
@@ -179,7 +180,7 @@ $output-bourbon-deprecation-warnings: false;
 }
 
 .top-nav__contacts {
-	max-width: 14.2rem;
+	// max-width: 14.2rem;
 }
 
 
@@ -201,7 +202,17 @@ $output-bourbon-deprecation-warnings: false;
 }
 // .s-accord .showhide .s-accord__icon-wrap .icon,
 // .swiper-button-hand .icon{
-// 	stroke: currentColor;
-// 	stroke-width: 2px;
-// 	fiLL: none;
-// }
+	// 	stroke: currentColor;
+	// 	stroke-width: 2px;
+	// 	fiLL: none;
+	// }
+	@include media-breakpoint-up(md) {
+		.d-md-none{
+			display: none !important;
+		}
+	}
+	@include media-breakpoint-up(lg) {
+		.d-lg-none{
+			display: none !important;
+		}
+	}

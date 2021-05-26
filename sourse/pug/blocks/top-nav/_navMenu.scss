@@ -1,6 +1,7 @@
 .navMenu {
 	padding-top: rem(15);
 	list-style: none;
+
 	@include media-breakpoint-up(lg) {
 		display: flex;
 		@include roww(17px);
@@ -20,8 +21,8 @@
 		padding: rem(15) rem(20);
 		@include media-breakpoint-up(lg) {
 			text-align: center;
-			padding: rem(30) rem(0);
-			font-size: $xsmall;
+			padding: rem(15) rem(0);
+			font-size: 13px;
 			text-transform: uppercase;
 		}
 
@@ -112,6 +113,8 @@
 		padding: rem(15) rem(20);
 		color: #535353 !important;
 		display: block;
+
+		font-size: 14px;
 		@include media-breakpoint-up(lg) {
 			text-transform: uppercase;
 			padding: rem(13) rem(18);
