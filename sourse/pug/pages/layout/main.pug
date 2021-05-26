@@ -18,18 +18,19 @@ html(lang="ru")
 	head
 		meta(charset="utf-8")
 
+		block variables
 		block title
 			title title
 		block description
+			meta(name="description", content="lorem ipsum")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 		//- meta(name="viewport", content="width=device-width, shrink-to-fit=no")
 		//- meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,  shrink-to-fit=no")
 		meta(name="viewport", content="width=device-width,initial-scale=1.0")
 		link(type="image/ico", href='favicon.ico', rel='shortcut icon') 
-		<link rel="shortcut icon" type="image/png" href="img/favicon.png">
-		<meta name="format-detection" content="telephone=no"> 
+		//- <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+		meta( name="format-detection" content="telephone=no") 
 		+allcss()
-	block variables
 	//- style.
 	//- 	.loaded_hiding {  opacity: 0; pointer-events: none;  } .loaded_hiding::before { display: none; }
 	//- body.loaded_hiding(class= mainPage) 
