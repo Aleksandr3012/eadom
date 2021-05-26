@@ -12,6 +12,9 @@ block variables
 block title
 	- let  title= 'Eвразия'
 	title= title
+
+block description
+	meta(name="description", content="lorem ipsum")
 block pagecontent
 
 	mixin mnu()
@@ -23,7 +26,7 @@ block pagecontent
 				+b.UL.sub-menu
 					+e.LI.item( temprop="item"  ): +e.A.link(href="/remont-magazinov.html" itemprop="url") Строительство и&nbsp;ремонт коммерческой недвижимости
 					+e.LI.item( temprop="item"  ): +e.A.link(href="/stroitelstvo-domov-pod-kluch" itemprop="url") Строительство домов и&nbsp;коттеджей
-					+e.LI.item( temprop="item"  ): +e.A.link(href="https://eadompro.ru/" itemprop="url") Проекты домов со&nbsp;стоимостью
+					//-+e.LI.item( temprop="item"  ): +e.A.link(href="https://eadompro.ru/" itemprop="url") Проекты домов со&nbsp;стоимостью
 					+e.LI.item( temprop="item"  ): +e.A.link(href="/stroitelnie-materiali.html" itemprop="url") Производство и&nbsp;продажа строительных материалов
 			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="https://eadompro.ru/" itemprop="url") Проекты домов 
 			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="/vakansii.html" itemprop="url") Вакансии
@@ -44,27 +47,28 @@ block pagecontent
 		h3: `Выберите, что вас интересует:`,
 		items: [
 			{
-				link: '#',
+				link: '/remont-magazinov.html',
 				img: 'sDirections-1.jpg',
 				title: `Строительство и&nbsp;ремонт коммерческой недвижимости`,
 				subtitle: `офисов, магазинов, производственных, промышленных зданий и&nbsp;сооружений`
 			},
 			{
-				link: '#',
+				link: '/stroitelstvo-domov-pod-kluch',
 				img: 'sDirections-2.jpg',
 				title: `Строительство домов и&nbsp;коттеджей`,
-				subtitle: `офисов, магазинов, производственных, промышленных зданий и&nbsp;сооружений`
+				subtitle: `От проектирования, разрешения на&nbsp;строительство до&nbsp;воплощения дома в&nbsp;реальность.`
 			},
 			{
-				link: '#',
+				link: 'https://eadompro.ru/',
 				img: 'sDirections-3.jpg',
 				title: `Проекты домов со&nbsp;стоимостью`,
-				subtitle: `офисов, магазинов, производственных, промышленных зданий и&nbsp;сооружений`
+				subtitle: `Выберите проект из каталога, мы поможем адаптировать его под&nbsp;ваш&nbsp;участок`
 			},
 			{
+				link: '/stroitelnie-materiali.html',
 				img: 'sDirections-4.jpg',
 				title: `Производство и&nbsp;продажа строительных материалов`,
-				subtitle: `офисов, магазинов, производственных, промышленных зданий и&nbsp;сооружений`
+				subtitle: `тротуарная плитка, шлакоблок, сухие строительные смеси`
 			},
 		]
 	})

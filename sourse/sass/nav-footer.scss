@@ -110,52 +110,53 @@ $output-bourbon-deprecation-warnings: false;
 // // }
 @import "root";
 
+.modal-win,
 .top-nav {
-
-
-.soc {
-	@include roww(2px, m);
-	display: flex;
-
-	&__item {
-		text-decoration: none !important;
-		vertical-align: middle;
-		@include mt;
-		display: grid;
-		place-items: center;
-		background: var(--soc-bg);
-		border-radius: 50%;
-		width: 24px;
-		height: 24px;
+	
+	.soc {
+		@include roww(2px, m);
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		// padding: rem(3);
-
-		&:hover {
-			opacity: 0.8;
+	
+		&__item {
+			text-decoration: none !important;
+			vertical-align: middle;
+			@include mt;
+			display: grid;
+			place-items: center;
+			background: var(--soc-bg);
+			border-radius: 50%;
+			width: 24px;
+			height: 24px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			// padding: rem(3);
+	
+			&:hover {
+				opacity: 0.8;
+			}
+	
+			&--whatsapp {
+				--soc-bg: #27d365;
+			}
+	
+			&--viber {
+				--soc-bg: #665dac;
+			}
+	
+			&--telegram {
+				--soc-bg: #139bcf;
+			}
 		}
-
-		&--whatsapp {
-			--soc-bg: #27d365;
-		}
-
-		&--viber {
-			--soc-bg: #665dac;
-		}
-
-		&--telegram {
-			--soc-bg: #139bcf;
+	
+		.icon {
+			font-size: rem(18) !important;
+			color: #fff;
+			width: 1em;
+			height: 1em;
 		}
 	}
 
-	.icon {
-		font-size: rem(18) !important;
-		color: #fff;
-		width: 1em;
-		height: 1em;
-	}
-}
 }
 // @import "base";
 @import "../pug/blocks/header/_header.scss";
