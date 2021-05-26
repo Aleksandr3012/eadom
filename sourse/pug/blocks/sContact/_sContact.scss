@@ -183,6 +183,8 @@
 			}
 			margin-bottom: 0.4rem;
 		}
+
+	
 	}
 
 	&__mail {
@@ -194,5 +196,19 @@
 		margin-top: rem(10);
 		text-decoration: none;
 		font-weight: 300;
+	}
+
+	&__imgWrap {
+		margin-left: auto;
+		margin-right: auto;
+		box-shadow: 0 0 19px 2px rgba(234, 234, 234, 0.66);
+		border-radius: 5px;
+		background-color: #ffffff;
+		overflow: hidden;
+		display: block;
+
+		&:hover {
+			box-shadow: 0 0 1px 1px rgba(234, 234, 234, 0.66);
+		}
 	}
 } // end.sContact

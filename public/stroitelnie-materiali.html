@@ -3,8 +3,8 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>Контакты</title>
-		<meta name="description" content="lorem ipsum">
+		<title>Производство и продажа строительных материалов</title>
+		<meta name="description" content="О чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
@@ -117,7 +117,7 @@
 						<ol class="breadcrumb" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
 							<li class="breadcrumb-item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span>
 									<meta itemprop="position" content="1"/></a></li>
-							<li class="breadcrumb-item active" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Контакты</span>
+							<li class="breadcrumb-item active" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Производство и продажа строительных материалов</span>
 									<meta itemprop="position" content="2"/></a></li>
 						</ol>
 					</nav>
@@ -127,87 +127,17 @@
 			<section class="sContact sContact--inner section" id="sContact">
 				<div class="container">
 					<div class="section-title text-center">
-						<h1>Контакты</h1>
-						<h3>Звоните, пишите на email или в мессенджерах</h3>
-					</div>
-					<div class="sContact__wrap">
-						<div class="text-center">
-							<h3>По&nbsp;вопросам проектирования, строительства и&nbsp;ремонта</h3><a class="sContact__tel" href="tel:83519232020">8 (3519) 23-20-20</a><a class="sContact__mail" href="mailto:ea.mgn@mail.ru">ea.mgn@mail.ru</a>
-						</div>
-						<div class="sContact__row row">
-							<div class="col-lg-4 col-6"><a class="sContact__item sContact__item--whatsapp" href="https://wa.me/83519232020" target="_blank"><span class="sContact__iconWrap">
-								<svg class="icon icon-whatsapp ">
-									<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
-								</svg></span><span>WhatsApp</span></a>
-							</div>
-							<div class="col-lg-4 col-6"><a class="sContact__item sContact__item--viber" href="viber://chat?number=83519232020" target="_blank"><span class="sContact__iconWrap">
-								<svg class="icon icon-viber ">
-									<use xlink:href="img/svg/sprite.svg#viber"></use>
-								</svg></span><span>Viber</span></a>
-							</div>
-							<div class="col-lg-4 col-6"><a class="sContact__item sContact__item--telegram" href="tg://resolve?domain=83519232020" target="_blank"><span class="sContact__iconWrap">
-								<svg class="icon icon-telegram ">
-									<use xlink:href="img/svg/sprite.svg#telegram"></use>
-								</svg></span><span>Telegram</span></a>
-							</div>
-						</div>
-					</div>
+						<h1>Производство и продажа строительных материалов</h1>
+						<h3>Подписывайте на наш профиль в инстаграм</h3>
+					</div><a class="sContact__imgWrap" href="https://www.instagram.com/eurasia_mgn/" target="_blank">
+					<!-- picture-->
+					<picture> 
+						<source type="image/webp" srcset="img/@2x/webp/instagram.webp"/><img src="img/@2x/instagram.jpg" alt="" loading="lazy"/>
+					</picture>
+					<!-- /picture--></a>
 				</div>
 			</section>
-			<!-- start sHowGet-->
-			<section class="sHowGet section" id="sHowGet">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>Как добраться</h2>
-						<h3>К&nbsp;нам можно доехать за&nbsp;20&nbsp;минут из&nbsp;любой точки города</h3>
-					</div>
-					<div class="map-wrap">
-						<div class="sHowGet__contact-block">
-							<ul>
-								<li>
-									 Адрес: <br><span>г. Магнитогорск, <br> ул.Комсомольская, 5</span><img loading="lazy" src="img/@2x/maps-and-flags.png" alt=""/></li>
-								<li>
-									 Телефон: <br><a href="tel:+7(3519)23-20-20">+7 (3519) 23-20-20</a><img loading="lazy" src="img/@2x/telephone.png" alt=""/></li>
-								<li>
-									 Email: <br><a href="mailto:ea.mgn@mail.ru">ea.mgn@mail.ru</a><img loading="lazy" src="img/@2x/envelope-shape.png" alt=""/></li>
-								<li>
-									 Работаем: <br><span>Пн-Чт: с 08:00 до 17:00<br>Пт: с 08:00 до 16:00</span><img loading="lazy" src="img/@2x/clock-circular-outline.png" alt=""/></li>
-							</ul>
-						</div>
-						<div class="map-wrap" id="map"></div><script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-						<script>
-							ymaps.ready(function () {
-							var myMap = new ymaps.Map('map', {
-								center: [53.425920, 58.993065],
-								zoom: 16
-									}, {
-										searchControlProvider: 'yandex#search'
-									}),
-							
-									myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-										hintContent: 'Собственный значок метки',
-										balloonContent: 'Это красивая метка'
-									}, {
-										// Опции.
-										// Необходимо указать данный тип макета.
-										iconLayout: 'default#image',
-										// Своё изображение иконки метки.
-										iconImageHref: 'img/@2x/mark.png',
-										// Размеры метки.
-										iconImageSize: [400, 400],
-										// Смещение левого верхнего угла иконки относительно
-										// её "ножки" (точки привязки).
-										iconImageOffset: [-200, -200]
-									});
-							
-							myMap.geoObjects
-								.add(myPlacemark);
-							});
-						</script>
-					</div>
-				</div>
-			</section>
-			<!-- end sHowGet-->
+			<!-- end sContact-->
 			<!-- start s-contact-->
 			<section class="s-contact section" id="s-contact">
 				<div class="container">
