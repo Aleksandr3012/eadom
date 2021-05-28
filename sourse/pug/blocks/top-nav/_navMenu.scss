@@ -7,7 +7,7 @@
 		@include roww(17px);
 	}
 	@include media-breakpoint-up(xl) {
-		@include roww(45px);
+		@include roww(35px);
 	}
 	position: relative;
 	margin-bottom: 0;
@@ -18,16 +18,16 @@
 		display: block;
 		position: relative;
 		color: #535353;
-		padding: rem(15) rem(20);
+		padding: 15px 10px;
 		@include media-breakpoint-up(lg) {
 			text-align: center;
-			padding: rem(15) rem(0);
+			padding: 34px rem(0);
 			font-size: 13px;
 			text-transform: uppercase;
 		}
 
 		@include media-breakpoint-up(xl) {
-			font-size: $small;
+			font-size: 13.6px;
 		}
 		letter-spacing: 0.28px;
 
