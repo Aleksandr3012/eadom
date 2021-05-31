@@ -10,11 +10,13 @@ block variables
 	- let  bg= null
 
 block title
-	- let  title= 'Eвразия'
+	- let  title= 'Eвразия — проектно-строительная компания в Магнитогорске'
 	title= title
 
 block description
-	meta(name="description", content="lorem ipsum")
+	meta(name="description", content="С 2001 г. сдали более 600 объектов в Магнитогорске, Челябиской обл., Респ. Башкортостан.")
+block keywords
+	meta(name="keywords", content="ооо строительная компания, сайт строительной компании, строительная компания, строительная компания официальный, строительные компании магнитогорск")
 block pagecontent
 
 	mixin mnu()
@@ -43,14 +45,14 @@ block pagecontent
 		smText: `в&nbsp;Магнитогорске, Челябиской обл., Респ. Башкортостан`
 	})
 	+sDirections({
-		h2: `Компания ООО&nbsp;ПСК Евразия работает по&nbsp;разным направлениям`,
+		h2: `Компания ООО&nbsp;ПСК «Евразия» работает по&nbsp;разным направлениям`,
 		h3: `Выберите, что вас интересует:`,
 		items: [
 			{
 				link: '/remont-magazinov.html',
 				img: 'sDirections-1.jpg',
 				title: `Строительство и&nbsp;ремонт коммерческой недвижимости`,
-				subtitle: `офисов, магазинов, производственных, промышленных зданий и&nbsp;сооружений`
+				subtitle: `Офисов, магазинов, производственных, промышленных зданий и&nbsp;сооружений`
 			},
 			{
 				link: '/stroitelstvo-domov-pod-kluch',
@@ -68,7 +70,7 @@ block pagecontent
 				link: '/stroitelnie-materiali.html',
 				img: 'sDirections-4.jpg',
 				title: `Производство и&nbsp;продажа строительных материалов`,
-				subtitle: `тротуарная плитка, шлакоблок, сухие строительные смеси`
+				subtitle: `Тротуарная плитка, шлакоблок, сухие строительные смеси`
 			},
 		]
 	})

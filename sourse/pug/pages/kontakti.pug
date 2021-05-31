@@ -13,10 +13,12 @@ block variables
 	- let  bg= null
 
 block title
-	- let  title= 'Контакты'
+	- let  title= 'Контактная информация проектно-строительной компании «Евразия» в Магнитогорске'
 	title= title
 block description
-	meta(name="description", content="lorem ipsum")
+	meta(name="description", content="Подробная контактная информация о проектно-строительной компании «Евраащия» в Магнитогорске: адрес, контактный телефон, адрес электронной почты, режим работы и карта проезда.")
+block keywords
+	meta(name="keywords", content="lorem ipsum")
 block pagecontent
 
 	mixin mnu()
@@ -28,7 +30,7 @@ block pagecontent
 				+b.UL.sub-menu
 					+e.LI.item( temprop="item"  ): +e.A.link(href="/remont-magazinov.html" itemprop="url") Строительство и&nbsp;ремонт коммерческой недвижимости
 					+e.LI.item( temprop="item"  ): +e.A.link(href="/stroitelstvo-domov-pod-kluch" itemprop="url") Строительство домов и&nbsp;коттеджей
-					+e.LI.item( temprop="item"  ): +e.A.link(href="https://eadompro.ru/" itemprop="url") Проекты домов со&nbsp;стоимостью
+					//-+e.LI.item( temprop="item"  ): +e.A.link(href="https://eadompro.ru/" itemprop="url") Проекты домов со&nbsp;стоимостью
 					+e.LI.item( temprop="item"  ): +e.A.link(href="/stroitelnie-materiali.html" itemprop="url") Производство и&nbsp;продажа строительных материалов
 			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="https://eadompro.ru/" itemprop="url") Проекты домов 
 			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="/vakansii.html" itemprop="url") Вакансии
