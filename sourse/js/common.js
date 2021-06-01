@@ -268,7 +268,7 @@ function eventHandler() {
 		inputs.utm_medium = decodeURIComponent(gets['utm_medium'] || '');
 		inputs.utm_campaign = decodeURIComponent(gets['utm_campaign'] || '');
 		
-		var data = new FormData($('form')[0]);
+		var data = new FormData($(this));
 
 		for (var prop in inputs) {
 			if (inputs[prop] ) data.append(prop, inputs[prop]);

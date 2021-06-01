@@ -318,10 +318,7 @@
 	&__next {
 		@include media-breakpoint-up(md) {
 			margin-left: auto;
-			// width: rem(256);
-			width: 100%;
-			// padding: rem(14) rem(5) rem(15);
-			margin-right: rem(-2);
+			// margin-right: rem(-2);
 			font-size: rem(18);
 		}
 		margin-bottom: rem(40);
@@ -331,9 +328,19 @@
 
 		.icon {
 			// margin-top: rem(3);
-			margin-left: rem(12);
-			font-size: rem(12);
-			transform: rotate(180deg);
+			// margin-left: rem(12);
+			// font-size: rem(12);
+			// transform: rotate(180deg);
+		}
+
+		span {
+			display: block;
+		}
+
+		&:hover {
+			&::after {
+				top: 60%;
+			}
 		}
 	}
 
