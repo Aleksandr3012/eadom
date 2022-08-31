@@ -22,7 +22,7 @@ mixin sResults(data)
 									.swiper-wrapper
 										each slide in content.slides 
 											+e.slide.swiper-slide
-												+e.A.slideWrap(data-fancybox='photo' href=`img/@2x/${slide.img}`)
+												+e.A.slideWrap(data-fancybox= slide.fancy href=`img/@2x/${slide.img}`)
 													+pic(slide.img)
 								+e.navWrap
 									+arrow
@@ -41,3 +41,47 @@ mixin sResults(data)
 									+btn('Узнать стоимость работ','','/qwiz.html')
 
 	// end sResults
+
+mixin sResults2(data)
+	// start sResults
+	+b.SECTION.sResults.section#sResults&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Успейте купить новый&nbsp;дом
+				h3 от строительной компании «ПСК Евразия»
+
+
+			.tabs.tabs--js.row
+				.tabs__caption.col-auto
+					each btn in data.btns 
+						.tabs__btn(class= btn.class) 
+							strong= btn.name
+							span= btn.sity
+				.tabs__wrap.col
+					each content in data.contents 
+						.tabs__content(class= content.class) 
+							h4!= content.name
+							+e.sliderWrap
+								+e.slider--js.swiper-container
+									.swiper-wrapper
+										each slide in content.slides 
+											+e.slide.swiper-slide
+												+e.A.slideWrap(data-fancybox= slide.fancy href=`img/@2x/${slide.img}`)
+													+pic(slide.img)
+								+e.navWrap
+									+arrow
+							each row in content.rows 
+								+e.row.row 
+									+e.col.col-sm-3
+										strong!= row.title
+									.col 
+										p!= row.text
+							+e.btnRow.row 
+								.col-sm-5
+									h4 
+										strong У вас похожая задача?
+									p Ответьте на&nbsp;5&nbsp;вопросов и&nbsp;узнайте стоимость работ
+								.col 
+									+btn('Узнать стоимость работ','','/qwiz.html')
+
+	// end sResults2

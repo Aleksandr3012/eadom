@@ -13,7 +13,7 @@ mixin sContact(data)
 								+icon(icon)
 							span= t
 				+item('WhatsApp','whatsapp','https://wa.me/+79120811400')
-				+item('Viber','viber','viber://chat?number=+79120811400')
+				+item('Viber','viber','viber://chat?number=+79193320007')
 				+item('Telegram','telegram','tg://resolve?domain=pskevrazia')
 			.text-center
 				h3 Или свяжитесь с нами по номеру
@@ -42,7 +42,7 @@ mixin sContact-inner(data)
 									+icon(icon)
 								span= t
 					+item('WhatsApp','whatsapp','https://wa.me/+79120811400')
-					+item('Viber','viber','viber://chat?number=+79120811400')
+					+item('Viber','viber','viber://chat?number=+79193320007')
 					+item('Telegram','telegram','tg://resolve?domain=pskevrazia')
 
 
@@ -54,6 +54,6 @@ mixin sContact-materiali(data)
 				h1!= data.h1
 				h3!= data.h3
 
-			+e.imgWrap(href= data.instagram target="_blank")
-				+pic('instagram.jpg','','')
+			+e.imgWrap.instImg(href= data.instagram target="_blank")
+				+pic('instagram.jpg','ПСК Евразия','')
 	// end sContact

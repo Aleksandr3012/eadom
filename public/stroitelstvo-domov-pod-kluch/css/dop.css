@@ -26,3 +26,17 @@
     color: #373737; }
   .s-quiz .form-group .form-wrap__input:focus::placeholder {
     color: #373737; }
+
+@media (min-width: 992px) and (max-width: 1249px) {
+  .top-nav__inner ul.navMenu {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: auto;
+    padding-right: auto;
+  }
+  .navMenu__link 
+  { 
+    font-size: 12px;
+  }
+}

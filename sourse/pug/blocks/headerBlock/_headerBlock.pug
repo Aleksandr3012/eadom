@@ -64,3 +64,48 @@ mixin headerBlock-02(data)
 						+e.nav
 							+arrow
 	// end headerBlock-02
+
+	
+mixin headerBlock-03(data)
+	// start headerBlock
+	+b.headerBlock--commerce.section#headerBlock&attributes(attributes)
+		+pic(data.bg,'bg')(class='picture-bg')
+		.container
+			+e.row.row
+				.col-lg-6 
+					+b.section-title
+						h1!= data.h1
+						h4!= data.h3
+					
+					+e.descrWrap--modal 
+						+e.descr
+							.row 
+								.col-6
+									+e.num 01.
+									+e.txt 
+										strong Состоим 
+										a(href="/img/@2x/sro-01.jpg" data-fancybox="sert-1" ) 
+											strong в&nbsp;СРО 
+											| по&nbsp;строительству и&nbsp;проектированию
+										a(href="/img/@2x/sro-02.jpg" data-fancybox="sert-1" ) 
+										a(href="/img/@2x/sro-03.jpg" data-fancybox="sert-1" ) 
+										a(href="/img/@2x/sro-04.jpg" data-fancybox="sert-1" ) 
+										a(href="/img/@2x/sro-05.jpg" data-fancybox="sert-1" ) 
+								.col-6
+									+e.num 02.
+									+e.txt Имеем 
+										a.d-inline-block(href="/img/@2x/mchs-01.jpg" data-fancybox="sert-2") 
+											strong лицензию МЧС
+										a.d-inline-block(href="/img/@2x/mchs-02.jpg" data-fancybox="sert-2") 
+
+				.col-6.d-none.d-lg-block 
+					+e.slider--js.swiper-container
+						.swiper-wrapper
+							each slide in data.slides 
+								+e.slide.swiper-slide
+									+e.sliderPhoto 
+										+pic(slide.img,'bg')(class='picture-bg')
+									+e.sliderDescr!= slide.slideText
+						+e.nav
+							+arrow
+	// end headerBlock-03
