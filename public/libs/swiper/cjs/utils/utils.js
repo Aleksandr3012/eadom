@@ -10,6 +10,7 @@ exports.extend = extend;
 exports.bindModuleMethods = bindModuleMethods;
 exports.getComputedStyle = getComputedStyle;
 exports.classesToSelector = classesToSelector;
+exports.createElementIfNotDefined = createElementIfNotDefined;
 
 var _ssrWindow = require("ssr-window");
 
@@ -108,6 +109,15 @@ function isObject(o) {
   return typeof o === 'object' && o !== null && o.constructor && Object.prototype.toString.call(o).slice(8, -1) === 'Object';
 }
 
+function isNode(node) {
+  // eslint-disable-next-line
+  if (typeof window !== 'undefined' && typeof window.HTMLElement !== 'undefined') {
+    return node instanceof HTMLElement;
+  }
+
+  return node && (node.nodeType === 1 || node.nodeType === 11);
+}
+
 function extend() {
   var to = Object(arguments.length <= 0 ? undefined : arguments[0]);
   var noExtend = ['__proto__', 'constructor', 'prototype'];
@@ -115,7 +125,7 @@ function extend() {
   for (var i = 1; i < arguments.length; i += 1) {
     var nextSource = i < 0 || arguments.length <= i ? undefined : arguments[i];
 
-    if (nextSource !== undefined && nextSource !== null) {
+    if (nextSource !== undefined && nextSource !== null && !isNode(nextSource)) {
       var keysArray = Object.keys(Object(nextSource)).filter(function (key) {
         return noExtend.indexOf(key) < 0;
       });
@@ -169,6 +179,23 @@ function classesToSelector(classes) {
     classes = '';
   }
 
-  return "." + classes.trim().replace(/([\.:\/])/g, '\\$1') // eslint-disable-line
+  return "." + classes.trim().replace(/([\.:!\/])/g, '\\$1') // eslint-disable-line
   .replace(/ /g, '.');
+}
+
+function createElementIfNotDefined($container, params, createElements, checkProps) {
+  var document = (0, _ssrWindow.getDocument)();
+
+  if (createElements) {
+    Object.keys(checkProps).forEach(function (key) {
+      if (!params[key] && params.auto === true) {
+        var element = document.createElement('div');
+        element.className = checkProps[key];
+        $container.append(element);
+        params[key] = element;
+      }
+    });
+  }
+
+  return params;
 }

@@ -22,7 +22,7 @@ mixin sResults(data)
 									.swiper-wrapper
 										each slide in content.slides 
 											+e.slide.swiper-slide
-												+e.A.slideWrap(data-fancybox= slide.fancy href=`img/@2x/${slide.img}`)
+												+e.A.slideWrap(data-fancybox= (slide.fancy || "") href=`img/@2x/${slide.img}`)
 													+pic(slide.img)
 								+e.navWrap
 									+arrow
@@ -66,7 +66,7 @@ mixin sResults2(data)
 									.swiper-wrapper
 										each slide in content.slides 
 											+e.slide.swiper-slide
-												+e.A.slideWrap(data-fancybox= slide.fancy href=`img/@2x/${slide.img}`)
+												+e.A.slideWrap(data-fancybox= (slide.fancy || "") href=`img/@2x/${slide.img}`)
 													+pic(slide.img)
 								+e.navWrap
 									+arrow

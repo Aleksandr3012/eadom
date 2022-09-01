@@ -436,8 +436,8 @@ function eventHandler() {
 		if (testSwiper.activeIndex == 0) {// $('.jsSlideBack').hide();
 			// testCounter.textContent = "Осталось 6 вопросов";
 		} else {// testCounter.textContent = "Вопрос " + (testSwiper.activeIndex ) + "/6";
-				// $('.jsSlideBack').show();
-			} //Управление кнопкой "Назад"
+			// $('.jsSlideBack').show();
+		} //Управление кнопкой "Назад"
 
 
 		if (testSwiper.activeIndex == 0) {
