@@ -3,8 +3,6 @@
 exports.__esModule = true;
 exports.default = void 0;
 
-var _ssrWindow = require("ssr-window");
-
 var _dom = _interopRequireDefault(require("../../utils/dom"));
 
 var _utils = require("../../utils/utils");
@@ -126,13 +124,6 @@ var Swiper = /*#__PURE__*/function () {
         var moduleParamName = Object.keys(module.params)[0];
         var moduleParams = module.params[moduleParamName];
         if (typeof moduleParams !== 'object' || moduleParams === null) return;
-
-        if (['navigation', 'pagination', 'scrollbar'].indexOf(moduleParamName) >= 0 && params[moduleParamName] === true) {
-          params[moduleParamName] = {
-            auto: true
-          };
-        }
-
         if (!(moduleParamName in params && 'enabled' in moduleParams)) return;
 
         if (params[moduleParamName] === true) {
@@ -235,7 +226,7 @@ var Swiper = /*#__PURE__*/function () {
         startTranslate: undefined,
         allowThresholdMove: undefined,
         // Form elements to match
-        focusableElements: swiper.params.focusableElements,
+        formElements: 'input, select, option, textarea, button, video, label',
         // Last click time
         lastClickTime: (0, _utils.now)(),
         clickTimeout: undefined,
@@ -472,38 +463,18 @@ var Swiper = /*#__PURE__*/function () {
       return false;
     }
 
-    el.swiper = swiper;
+    el.swiper = swiper; // Find Wrapper
 
-    var getWrapperSelector = function getWrapperSelector() {
-      return "." + (swiper.params.wrapperClass || '').trim().split(' ').join('.');
-    };
+    var $wrapperEl;
 
-    var getWrapper = function getWrapper() {
-      if (el && el.shadowRoot && el.shadowRoot.querySelector) {
-        var res = (0, _dom.default)(el.shadowRoot.querySelector(getWrapperSelector())); // Children needs to return slot items
+    if (el && el.shadowRoot && el.shadowRoot.querySelector) {
+      $wrapperEl = (0, _dom.default)(el.shadowRoot.querySelector("." + swiper.params.wrapperClass)); // Children needs to return slot items
 
-        res.children = function (options) {
-          return $el.children(options);
-        };
-
-        return res;
-      }
-
-      return $el.children(getWrapperSelector());
-    }; // Find Wrapper
-
-
-    var $wrapperEl = getWrapper();
-
-    if ($wrapperEl.length === 0 && swiper.params.createElements) {
-      var document = (0, _ssrWindow.getDocument)();
-      var wrapper = document.createElement('div');
-      $wrapperEl = (0, _dom.default)(wrapper);
-      wrapper.className = swiper.params.wrapperClass;
-      $el.append(wrapper);
-      $el.children("." + swiper.params.slideClass).each(function (slideEl) {
-        $wrapperEl.append(slideEl);
-      });
+      $wrapperEl.children = function (options) {
+        return $el.children(options);
+      };
+    } else {
+      $wrapperEl = $el.children("." + swiper.params.wrapperClass);
     }
 
     (0, _utils.extend)(swiper, {

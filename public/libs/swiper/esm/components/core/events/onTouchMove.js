@@ -63,7 +63,7 @@ export default function onTouchMove(event) {
   }
 
   if (data.isTouchEvent && document.activeElement) {
-    if (e.target === document.activeElement && $(e.target).is(data.focusableElements)) {
+    if (e.target === document.activeElement && $(e.target).is(data.formElements)) {
       data.isMoved = true;
       swiper.allowClick = false;
       return;

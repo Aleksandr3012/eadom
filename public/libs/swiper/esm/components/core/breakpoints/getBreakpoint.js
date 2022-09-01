@@ -7,6 +7,7 @@ export default function getBreakpoint(breakpoints, base, containerEl) {
   if (!breakpoints || base === 'container' && !containerEl) return undefined;
   var breakpoint = false;
   var window = getWindow();
+  var currentWidth = base === 'window' ? window.innerWidth : containerEl.clientWidth;
   var currentHeight = base === 'window' ? window.innerHeight : containerEl.clientHeight;
   var points = Object.keys(breakpoints).map(function (point) {
     if (typeof point === 'string' && point.indexOf('@') === 0) {
@@ -32,11 +33,7 @@ export default function getBreakpoint(breakpoints, base, containerEl) {
         point = _points$i.point,
         value = _points$i.value;
 
-    if (base === 'window') {
-      if (window.matchMedia("(min-width: " + value + "px)").matches) {
-        breakpoint = point;
-      }
-    } else if (value <= containerEl.clientWidth) {
+    if (value <= currentWidth) {
       breakpoint = point;
     }
   }

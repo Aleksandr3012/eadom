@@ -50,7 +50,6 @@ function getParams(obj) {
   });
   ['navigation', 'pagination', 'scrollbar'].forEach(function (key) {
     if (params[key] === true) params[key] = {};
-    if (params[key] === false) delete params[key];
   });
   return {
     params: params,
