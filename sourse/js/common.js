@@ -513,18 +513,24 @@ function eventHandler() {
 	});
 
 
-	const sResultsSlider = new Swiper('.tabs__content .sResults__slider--js', {
-		slidesPerView: 1,
-		loop: true,
-		spaceBetween: 0,
-		observer: true,
-		observeParents: true,
-		navigation: {
-			nextEl: '.tabs__content .swiper-button-next',
-			prevEl: '.tabs__content .swiper-button-prev',
-		},
-	});
+	let tabSliders = document.querySelectorAll(".tabs__content");
+	if(tabSliders) {
 
+		for (const tabSlider of tabSliders) {
+			
+			var sResultsSlider = new Swiper(tabSlider.querySelector('.sResults__slider--js'), {
+				slidesPerView: 1,
+				loop: true,
+				spaceBetween: 0,
+				observer: true,
+				observeParents: true,
+				navigation: {
+					nextEl: tabSlider.querySelector(' .swiper-button-next'),
+					prevEl: tabSlider.querySelector(' .swiper-button-prev')
+				}
+			});
+		}
+	}
 
 
 	const sOurWorkSlider = new Swiper('.sOurWork__itemWrap .sOurWork__slider--js', {
